@@ -1,0 +1,36 @@
+.contactP {
+    color: aliceblue;
+}
+
+#overflowBody {
+    display: flex;
+    flex-direction: row;
+}
+#overflowBody div {
+    position: absolute;
+}
+#overflowBody div p,
+a {
+    padding-left: 10px;
+    font-size: 30px;
+}
+#overflowBody img {
+    position: relative;
+    width: 40vw;
+}
+
+@media only screen and (max-width: 900px) {
+    .contactP {
+        margin-top: -20px;
+    }
+    #contacts div img {
+        width: 80vw;
+    }
+    #overflowBody div p {
+        font-size: 20px;
+    }
+    #overflowBody img {
+        width: 70vw;
+        margin-bottom: 50px;
+    }
+}

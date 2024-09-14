@@ -1,0 +1,12 @@
+#katiaserena div img {
+    max-height: 70vh;
+}
+#about {
+    padding-right: 10%;
+}
+@media only screen and (max-width: 900px) {
+    #about {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

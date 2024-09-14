@@ -1,0 +1,17 @@
+#aroma {
+    display: flex;
+    flex-direction: row;
+}
+#aroma img {
+    width: 40%;
+}
+
+@media only screen and (max-width: 900px) {
+    #aroma {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #aroma img {
+        width: 80%;
+    }
+}

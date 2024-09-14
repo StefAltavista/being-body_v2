@@ -1,0 +1,24 @@
+#massageTherapy {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 10%;
+    width: auto;
+}
+#massageTherapy img {
+    /* position: absolute; */
+    margin: 0px;
+    width: 40vw;
+}
+@media only screen and (max-width: 900px) {
+    #massageTherapy {
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #massageTherapy img {
+        width: 80vw;
+        margin-bottom: 50px;
+    }
+}

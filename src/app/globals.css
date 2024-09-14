@@ -1,0 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    box-sizing: border-box;
+    font-family: "Amatic SC", cursive;
+    font-size: 20px;
+    color: rgb(25, 15, 0);
+}
+body {
+    display: flex;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 300;
+}
+h3 {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 0;
+}
+h1,
+h3,
+p {
+    transition: 700ms;
+}
+a {
+    text-decoration: none;
+}
+p {
+    text-align: justify;
+}
+
+h1:hover,
+h3:hover,
+p:hover {
+    letter-spacing: 0.1px;
+}

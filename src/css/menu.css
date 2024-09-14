@@ -1,0 +1,34 @@
+#menu {
+    min-height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    transition: 1000ms;
+    overflow: hidden;
+    background-color: white;
+    white-space: nowrap;
+}
+.open {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100vw;
+}
+.close {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 0vw;
+}
+
+@media only screen and (max-width: 900px) {
+    #menu {
+        flex-direction: row;
+        position: static;
+        margin: 0;
+        max-width: 100%;
+        border-bottom: 1px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 11px;
+    }
+}
