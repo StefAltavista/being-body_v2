@@ -1,9 +1,16 @@
 html {
     scroll-behavior: smooth;
 }
+@font-face {
+    font-family: "Amatic";
+    src: url("./fonts/AmaticSC-Regular.woff2") format("woff2"),
+        url("./fonts/AmaticSC-Bold.woff2") format("woff2"),
+        url("./fonts/AmaticSC-Regular.ttf") format("truetype"),
+        url("./fonts/AmaticSC-Bold.ttf") format("truetype");
+}
 * {
     box-sizing: border-box;
-    font-family: "Amatic SC", cursive;
+    font-family: "Amatic", cursive;
     font-size: 20px;
     color: rgb(25, 15, 0);
 }

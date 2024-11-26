@@ -1,6 +1,27 @@
+"use client";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Concept({ extension }: { extension: string }) {
+    gsap.registerPlugin(ScrollTrigger);
+    useGSAP(() => {
+        gsap.from(".concept_img", {
+            scrollTrigger: {
+                trigger: ".sectionBody",
+                start: "top bottom",
+                end: "center center",
+                toggleActions: "restart reverse ",
+                markers: true,
+                scrub: 1,
+            },
+            opacity: 0,
+            x: 700,
+            y: -300,
+            // duration: 4,
+        });
+    }, [{ scope: "#concept" }]);
     return (
         <div id="concept" className="section">
             <h3>Concept</h3>
@@ -45,6 +66,7 @@ export default function Concept({ extension }: { extension: string }) {
                     </div>
                 </div>
                 <Image
+                    className="concept_img"
                     src={`/img/concept.${extension}`}
                     alt="BeingBodyConcept"
                     width={300}
