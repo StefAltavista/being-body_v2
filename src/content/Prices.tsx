@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-export default function Prices({ extension }: { extension: string }) {
+export default function Prices({ format }: { format: string }) {
     return (
         <div id="prices" className="section">
             <h3>Prices</h3>
             <div id="overflowBody" className="sectionBody">
                 <Image
-                    src={`/img/prices.${extension}`}
+                    src={`/img/prices.${format}`}
                     alt="BeingBodyPrices"
                     width={300}
                     height={300}

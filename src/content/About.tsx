@@ -1,13 +1,13 @@
 import "../css/about.css";
 import Image from "next/image";
 
-export default function About({ extension }: { extension: string }) {
+export default function About({ format }: { format: string }) {
     return (
         <div id="katiaserena" className="section">
             <h3>Katia Serena</h3>
             <div className="sectionBody">
                 <Image
-                    src={`/img/about.${extension}`}
+                    src={`/img/about.${format}`}
                     alt="beingBodyabout"
                     width={300}
                     height={300}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "../css/aroma.css";
 
-export default function Aroma({ extension }: { extension: string }) {
+export default function Aroma({ format }: { format: string }) {
     return (
         <div id="aromatherapy" className="section">
             <h3>Aromatherapy</h3>
@@ -19,7 +19,7 @@ export default function Aroma({ extension }: { extension: string }) {
                         <strong>plant</strong> essences. They are distilled from
                         certain varieties of certain species of planets, some
                         coming from petals, others from stems, twigs, leaves,
-                        roots, trees, grasses or fruits. They are nature's
+                        roots, trees, grasses or fruits. They are nature`s
                         pharmacopoeia, and can be traced back to ancient
                         therapeutic, spiritual, hygienic and ritualistic
                         practices.{" "}
@@ -47,7 +47,7 @@ export default function Aroma({ extension }: { extension: string }) {
                     </p>
                 </div>
                 <Image
-                    src={`/img/aroma.${extension}`}
+                    src={`/img/aroma.${format}`}
                     alt="beingBodyAromaTherapy"
                     width={300}
                     height={300}

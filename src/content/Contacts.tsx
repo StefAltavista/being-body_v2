@@ -1,13 +1,13 @@
 import "../css/contact.css";
 import Image from "next/image";
 
-export default function Contacts({ extension }: { extension: string }) {
+export default function Contacts({ format }: { format: string }) {
     return (
         <div id="contacts" className="section">
             <h3>Contacts</h3>
             <div id="overflowBody" className="sectionBody">
                 <Image
-                    src={`/img/contact.${extension}`}
+                    src={`/img/contact.${format}`}
                     alt="beingBodyContact"
                     width={300}
                     height={300}

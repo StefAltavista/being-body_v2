@@ -1,7 +1,7 @@
 import "../css/massage.css";
 import Image from "next/image";
 
-export default function Massage({ extension }: { extension: string }) {
+export default function Massage({ format }: { format: string }) {
     return (
         <div id="massage" className="section">
             <h3>Massage Therapy</h3>
@@ -11,7 +11,7 @@ export default function Massage({ extension }: { extension: string }) {
             </p>
             <div id="massageTherapy" className="sectionBody">
                 <Image
-                    src={`/img/therapy2.${extension}`}
+                    src={`/img/therapy2.${format}`}
                     alt="beingBodyTherapy"
                     width={300}
                     height={300}
