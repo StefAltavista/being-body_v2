@@ -40,6 +40,27 @@ p {
 a {
   text-decoration: none;
 }
+
+a p {
+  position: relative;
+  display: inline-block;
+}
+
+a p::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: rgb(255, 255, 255);
+  transition: width 0.3s ease;
+}
+
+a p:hover::after {
+  width: 100%;
+}
+
 p {
   text-align: justify;
 }

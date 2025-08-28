@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 import "./home.css";
-import Header from "@/components/Header";
+
 import Concept from "@/content/Concept";
 import Massage from "@/content/Massage";
 import Aroma from "@/content/Aroma";
@@ -12,6 +12,8 @@ import Prices from "@/content/Prices";
 import About from "@/content/About";
 import Contacts from "@/content/Contacts";
 import Image from "next/image";
+import Cards from "@/components/Cards";
+import Container from "@/components/Container";
 
 export default function Home() {
   const format = browserName == "Safari" ? "png" : "webp";
@@ -36,33 +38,43 @@ export default function Home() {
 
   return (
     <div id="home">
-      <Header home={true}></Header>
-      <div id="welcome">
-        <Image
-          className="title_logo wave_animation "
-          src={`/img/background1.png`}
-          alt="beingBodyLogo"
-          fill
-        />
-
-        <Image
-          className="welcome_img  translate-y-[-50px] filter invert  saturate-[400%] hue-rotate-[256deg] brightness-[74%] contrast-[103%]"
-          src={`/img/logo.png`}
-          alt="beingBodyLogo"
-          width={100}
-          height={300}
-        />
-        <div className="welcome_p z-100">
-          <p>Massage . Bodywork . Movement . Oils</p>
+      <Container>
+        <div className="min-h-[90vh]">
+          <div className="flex flex-col justify-center items-center overflow-hidden relative ">
+            <Image
+              src={`/img/background1.png`}
+              alt="beingBodyLogo"
+              height={400}
+              width={500}
+            />
+            <div className="absolute flex flex-col items-center justify-center">
+              <Image
+                className=" filter invert  saturate-[400%] hue-rotate-[256deg] brightness-[74%] contrast-[103%]"
+                src={`/img/logo.png`}
+                alt="beingBodyLogo"
+                width={100}
+                height={300}
+              />
+              <h3 className="text-center">
+                Occurring material of the abstract <br />
+                Existing present Body
+              </h3>
+            </div>
+          </div>
         </div>
-      </div>
+      </Container>
 
-      <Concept format={format} />
-      <Massage format={format} />
-      <Aroma format={format} />
-      <Prices format={format} />
-      <About format={format} />
-      <Contacts format={format} />
+      <Container>
+        <Concept format={format} />
+      </Container>
+
+      <Container>
+        <Cards />
+      </Container>
+
+      <Container>
+        <About format={format} />
+      </Container>
     </div>
   );
 }

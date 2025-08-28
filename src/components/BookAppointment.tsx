@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import Header from "./Header";
 import InputField from "./InputField";
 import buildMessage from "@/actions/buildMessage";
@@ -7,7 +8,6 @@ import submitForm from "@/actions/submitForm";
 import Loading from "./Loading";
 
 export default function BookAppointment() {
-  window.scrollTo(0, 0);
   const [result, setResult] = useState();
   const [data, setData] = useState({
     name: "",
@@ -29,7 +29,6 @@ export default function BookAppointment() {
 
   return (
     <div id="book">
-      <Header home={false}></Header>
       <div id="side">
         <h3>Book an appointment</h3>
         {!result && (
