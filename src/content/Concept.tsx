@@ -23,28 +23,25 @@ export default function Concept({ format }: { format: string }) {
   //   });
   // }, [{ scope: "#concept" }]);
   return (
-    <div id="concept" className="">
+    <div id="concept" className=" mt-[30px]">
       <div className="sectionBody   ">
         <div className="flex flex-col justify-start items-start ">
           <h3 className="my-8">
             Body is a vessel to express and a tool to connect.{" "}
           </h3>
-          <p>
+          <p className="handWrite2">
             Creating pathways for healing, well being and spiritual growth. My
             goal is to generate a healing experience through the harmonisation
             of body, mind and spirit. To create a safe space to connect with,
-            explore and listen to the self through guided corporal awareness:
+            explore and listen to the self through guided corporal awareness.
           </p>
-
-          <h3 className="my-8">When you truly listen, the body will speak.</h3>
-          <p> All bodies welcome, valid and celebrated. </p>
         </div>
         <Image
-          className="concept_img"
-          src={`/img/concept.png`}
+          className="concept_img blur-[1px] hue-rotate-[100deg]    "
+          src={`/img/bubbles.png`}
           alt="BeingBodyConcept"
-          width={300}
-          height={300}
+          width={500}
+          height={500}
         />
       </div>
     </div>

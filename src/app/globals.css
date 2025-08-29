@@ -1,20 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Patrick+Hand+SC&family=Shadows+Into+Light&display=swap");
 @import "tailwindcss";
-
 html {
   scroll-behavior: smooth;
 }
 @font-face {
   font-family: "Amatic";
   src: url("./fonts/AmaticSC-Regular.woff2") format("woff2"),
-    url("./fonts/AmaticSC-Bold.woff2") format("woff2"),
-    url("./fonts/AmaticSC-Regular.ttf") format("truetype"),
-    url("./fonts/AmaticSC-Bold.ttf") format("truetype");
+    url("./fonts/AmaticSC-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Amatic";
+  src: url("./fonts/AmaticSC-Bold.woff2") format("woff2"),
+    url("./fonts/AmaticSC-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Amatic", cursive;
   font-size: 20px;
-  color: rgb(65, 37, 102);
+  color: rgb(65, 37, 102) !important;
 }
 body {
   display: flex;
@@ -27,8 +36,7 @@ h1 {
   font-weight: 300;
 }
 h3 {
-  font-size: 30px;
-  font-weight: 300;
+  font-size: 32px;
   margin-top: 0;
 }
 h1,
@@ -69,4 +77,23 @@ h1:hover,
 h3:hover,
 p:hover {
   letter-spacing: 0.1px;
+}
+
+.handWrite1 {
+  font-family: "Patrick Hand SC", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+.handWrite2 {
+  font-family: "Shadows Into Light", cursive !important;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+.handWrite3 {
+  font-family: "Gloria Hallelujah", cursive !important;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 16px;
 }

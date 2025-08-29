@@ -17,7 +17,7 @@ export default function Header({ home }: { home: boolean }) {
   useEffect(() => {
     const matched = CardsContent.filter((x) => x.link == location)[0];
     if (!matched) {
-      setColor("white");
+      setColor("#ffffff");
     } else setColor(matched?.color);
   }, [location]);
 
@@ -36,7 +36,7 @@ export default function Header({ home }: { home: boolean }) {
       id="header"
       className="fixed flex justify-center items-center h-[100px] w-[100%]  bg-white/70"
       style={{
-        background: `linear-gradient(to bottom, ${color} 20%, ${color} 1%, rgba(255,255,255,0) 40%)`,
+        background: `linear-gradient(to bottom, ${color} 40%, ${color} 1%, rgba(255,255,255,0) 40%)`,
       }}
     >
       <div
