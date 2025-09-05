@@ -9,8 +9,10 @@ export default function page() {
 
   return (
     <Container>
-      <Contacts format={format} />
-      <BookAppointment />;
+      <div className="flex flex-row ">
+        <Contacts format={format} />
+        <BookAppointment />;
+      </div>
     </Container>
   );
 }

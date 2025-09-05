@@ -8,7 +8,7 @@ import "./home.css";
 import Concept from "@/content/Concept";
 import Massage from "@/content/Massage";
 import Aroma from "@/content/Aroma";
-import Prices from "@/content/Prices";
+import Prices from "@/content/MassagePrices";
 import About from "@/content/About";
 import Contacts from "@/content/Contacts";
 import Image from "next/image";
@@ -97,7 +97,7 @@ export default function Home() {
       </Container>
 
       <Container>
-        <BookButton />
+        <BookButton className="my-20" />
       </Container>
 
       <Container classname="bg-[#7d6e59] py-10 ">
