@@ -1,22 +1,56 @@
 import React from "react";
 
-export default function InputField({ f, data, setData }) {
-    return f == "extraInfo" || f == "distresses" || f == "message" ? (
+type fieldType = "textArea" | "text" | "email" | "tel" | "list";
+
+export default function InputField({
+  fieldName,
+  fieldType,
+  data,
+  setData,
+  list,
+}: {
+  fieldName: string;
+  fieldType: fieldType;
+  data;
+  setData;
+  list?: string[] | null;
+}) {
+  return (
+    <div className="bg-violet-100 rounded flex justify-end w-full ">
+      {fieldType == "textArea" ? (
         <textarea
-            type="text"
-            value={data[f]}
-            onChange={(e) =>
-                setData({
-                    ...data,
-                    [f]: e.target.value,
-                })
-            }
+          className="w-full min-h-[200px] px-1"
+          value={data[fieldName]}
+          onChange={(e) =>
+            setData({
+              ...data,
+              [fieldName]: e.target.value,
+            })
+          }
         />
-    ) : (
+      ) : fieldType == "list" ? (
+        <select id="cars" name="cars" className="w-full  px-1">
+          {list &&
+            list.map((x, i) =>
+              i == 0 ? (
+                <option value={x} key={x} selected>
+                  {x}
+                </option>
+              ) : (
+                <option value={x} key={x}>
+                  {x}
+                </option>
+              )
+            )}
+        </select>
+      ) : (
         <input
-            type="text"
-            value={data[f]}
-            onChange={(e) => setData({ ...data, [f]: e.target.value })}
+          className="w-full px-1 "
+          type={fieldType}
+          value={data[fieldName]}
+          onChange={(e) => setData({ ...data, [fieldName]: e.target.value })}
         />
-    );
+      )}
+    </div>
+  );
 }

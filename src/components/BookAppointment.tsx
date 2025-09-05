@@ -13,7 +13,7 @@ export default function BookAppointment() {
     name: "",
     pronouns: "",
     email: "",
-    phone: "",
+    tel: "",
     message: "",
   });
   const [load, setLoad] = useState(false);
@@ -27,53 +27,79 @@ export default function BookAppointment() {
     setLoad(false);
   };
 
+  const inputClassName = "w-full grid grid-cols-[1fr_2fr]  pb-0 m-2 mr-0 ";
+  const labelClassName = "handWrite1 !text-right !w-full !px-2";
   return (
-    <div id="book">
-      <div id="side">
-        <h3>Book an appointment</h3>
-        {!result && (
-          <>
-            {" "}
-            <p>Feel Free to contact me to discuss availability!</p>
-            <p id="privacy">
-              *<br></br> All informations are held in strictest confidence. At
-              no given point is information disclosed or shared without client`s
-              consent. You may choose to skip answering any question you feel
-              impinges on personal information you do not wish to disclose.
-            </p>
-          </>
-        )}
-      </div>
+    <div>
       {!result ? (
-        <div id="input">
-          <button onClick={send}>SEND</button>
-          <div id="personalInfo">
-            <div>
-              <p>Name:</p>
-              <InputField f={"name"} data={data} setData={setData} />
-            </div>
-            <div>
-              <p>Pronouns:</p>
-              <InputField f={"pronouns"} data={data} setData={setData} />
-            </div>
-            <div>
-              <p>Email:</p>
-              <InputField f={"email"} data={data} setData={setData} />
-            </div>
-            <div>
-              <p>Phone Number</p>
-              <InputField f={"phone"} data={data} setData={setData} />
-            </div>
+        <form className="flex flex-col items-end w-full">
+          <div className={inputClassName}>
+            <p className={labelClassName}>Name:</p>
+            <InputField
+              fieldType="text"
+              fieldName={"name"}
+              data={data}
+              setData={setData}
+            />
           </div>
-          <div id="message">
-            <p>Message</p>
-            <InputField f={"message"} data={data} setData={setData} />
+
+          <div className={inputClassName}>
+            {" "}
+            <p className={labelClassName}>Pronouns:</p>
+            <InputField
+              fieldType="list"
+              fieldName={"pronouns"}
+              data={data}
+              setData={setData}
+              list={[
+                "not specified",
+                "she/her/hers",
+                "they/them/theirs",
+                "he/him/his",
+              ]}
+            />
           </div>
-        </div>
+          <div className={inputClassName}>
+            {" "}
+            <p className={labelClassName}>Email:</p>
+            <InputField
+              fieldType="email"
+              fieldName={"email"}
+              data={data}
+              setData={setData}
+            />
+          </div>
+          <div className={inputClassName}>
+            {" "}
+            <p className={labelClassName}>Phone Number</p>
+            <InputField
+              fieldType="tel"
+              fieldName={"phone"}
+              data={data}
+              setData={setData}
+            />
+          </div>
+          <div className={inputClassName}>
+            <p className={labelClassName}>Message</p>
+            <InputField
+              fieldType="textArea"
+              fieldName={"message"}
+              data={data}
+              setData={setData}
+            />
+          </div>
+
+          <button
+            className="text-right bg-violet-200 rounded w-10 h-6 px-12 flex justify-center items-center"
+            onClick={send}
+          >
+            <p className="handWrite1 ">SEND</p>
+          </button>
+        </form>
       ) : (
         <>
           <p>{result}</p>
-          <Link to="/">
+          <Link href="/">
             <button>Back to website</button>
           </Link>
         </>
