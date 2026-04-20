@@ -93,7 +93,7 @@ export default function BookAppointment() {
             className="text-right bg-violet-200 rounded w-10 h-6 px-12 flex justify-center items-center"
             onClick={send}
           >
-            <p className="handWrite1 ">SEND</p>
+            <p className="handWrite1 ">Book</p>
           </button>
         </form>
       ) : (

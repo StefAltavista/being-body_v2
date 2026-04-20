@@ -33,7 +33,7 @@ export default function InputField({
           {list &&
             list.map((x, i) =>
               i == 0 ? (
-                <option value={x} key={x} selected>
+                <option value={x} key={x} defaultValue={x}>
                   {x}
                 </option>
               ) : (
