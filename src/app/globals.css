@@ -1,11 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Patrick+Hand+SC&family=Shadows+Into+Light&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --animate-shake: shake 0.35s ease-in-out;
+
+  @keyframes shake {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(-10deg);
+    }
+    40% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(-6deg);
+    }
+    80% {
+      transform: rotate(6deg);
+    }
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
 @font-face {
   font-family: "Amatic";
-  src: url("./fonts/AmaticSC-Regular.woff2") format("woff2"),
+  src:
+    url("./fonts/AmaticSC-Regular.woff2") format("woff2"),
     url("./fonts/AmaticSC-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -13,7 +38,8 @@ html {
 
 @font-face {
   font-family: "Amatic";
-  src: url("./fonts/AmaticSC-Bold.woff2") format("woff2"),
+  src:
+    url("./fonts/AmaticSC-Bold.woff2") format("woff2"),
     url("./fonts/AmaticSC-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;

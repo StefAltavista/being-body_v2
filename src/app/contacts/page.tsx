@@ -9,9 +9,9 @@ export default function page() {
 
   return (
     <Container>
-      <div className="flex flex-row ">
-        <Contacts format={format} />
+      <div className="flex flex-col">
         <BookAppointment />;
+        <Contacts format={format} />
       </div>
     </Container>
   );

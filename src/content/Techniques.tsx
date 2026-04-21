@@ -22,13 +22,10 @@ export default function Techniques({ format }: { format: string }) {
 
       {/* Bullet Points */}
       <div className="w-2/3  flex flex-col justify-around">
-        <h1 className="!text-white text-right"> Different Techniques</h1>
+        <h1 className="text-right"> Different Techniques</h1>
         <div className="  flex flex-col justify-around">
           {bulletPoints.map((x, i) => (
-            <h3
-              key={i}
-              className="handWrite2 !text-white  mb-6 !text-[23px] text-right"
-            >
+            <h3 key={i} className="handWrite2  mb-6 !text-[23px] text-right">
               {x}
             </h3>
           ))}

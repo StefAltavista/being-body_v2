@@ -29,7 +29,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
         <div className="flex flex-col ">
-          <Header home={true}></Header>
+          <Header />
+
           <div className="mt-[100px]"></div>
           {children}
           <Footer />
