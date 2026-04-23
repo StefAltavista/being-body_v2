@@ -21,12 +21,30 @@ html {
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "Edda";
+  src: url("./fonts/EddaFilled.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Zeppelin";
+  src: url("./fonts/Zeppelin.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 
+.edda {
+  font-family: Edda !important;
+}
+.zeppelin {
+  font-family: Zeppelin !important;
+}
 * {
   box-sizing: border-box;
   font-family: "Amatic", cursive;
   font-size: 20px;
-  color: rgb(65, 37, 102) !important;
+  color: rgb(37, 79, 102) !important;
 }
 body {
   display: flex;
@@ -46,10 +64,10 @@ h1,
 h3,
 p {
   transition: 700ms;
-  color: rgb(65, 37, 102) !important;
 }
 a {
   text-decoration: none;
+  font-family: Zeppelin !important;
 }
 
 a p {

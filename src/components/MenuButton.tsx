@@ -36,7 +36,7 @@ export default function MenuButton() {
           width={100}
           height={100}
           alt="Menu Icon"
-          className="hue-rotate-30 saturate-40"
+          className="hue-rotate-295 saturate-80 brightness-80"
         />
       </div>
       <Menu menuState={toggleMenu} toggle={setToggleMenu} home={home} />

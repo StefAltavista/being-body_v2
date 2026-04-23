@@ -20,9 +20,11 @@ export default function Menu({
         zIndex: 998,
         overflow: "scroll",
         paddingRight: "80px",
-        // background: "purple",
+        // background:
+        //   "linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255,255,255,0) 100%)",
+
         background:
-          "linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,0) 100%)",
+          "linear-gradient(to right, rgb(236, 225, 255) 0%, rgb(229, 242, 250) 40%, rgba(233, 253, 252, 0.7) 70%, rgba(255,255,255,0) 100%)",
       }}
     >
       <div
@@ -34,27 +36,39 @@ export default function Menu({
       />
 
       {!home && (
-        <Link href="/" className="flex items-start  py-4 ">
+        <Link href="/" className="flex items-start  pt-4 ">
           <Image
             src="/icons/home_flower.svg"
             width={50}
             height={50}
             alt="icon"
           />
-          <p onClick={() => toggle("close")}>Home</p>
+          <p
+            className="scale-y-[1.2] scale-x-[0.75] origin-bottom-left "
+            onClick={() => toggle("close")}
+          >
+            Home
+          </p>
         </Link>
       )}
       {MenuContent &&
         MenuContent.map((x, i) => (
-          <Link key={i} href={x.link} className="flex items-start  py-4 ">
-            <Image
-              className="ml-2 "
-              src={x.icon}
-              width={40}
-              height={40}
-              alt="icon"
-            />
-            <p onClick={() => toggle("close")}>{x.title}</p>
+          <Link key={i} href={x.link}>
+            <div className="flex items-start  pt-4 ">
+              <Image
+                className="ml-2 brightness-0"
+                src={x.icon}
+                width={40}
+                height={40}
+                alt="icon"
+              />
+              <p
+                className="scale-y-[1.2] scale-x-[0.75] origin-bottom-left tracking-[1px]"
+                onClick={() => toggle("close")}
+              >
+                {x.title}
+              </p>
+            </div>
           </Link>
         ))}
     </div>

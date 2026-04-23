@@ -55,7 +55,9 @@ export default function Header() {
 
       <div className="header_titles flex flex-col justify-center items-center pb-[20px] z-10">
         <Link href="/" className="header_title ">
-          <h1 className="header_h1 cursor-pointer">Being Body</h1>
+          <h1 className="zeppelin  scale-y-150 header_h1 cursor-pointer">
+            Being Body
+          </h1>
         </Link>
       </div>
     </div>

@@ -29,7 +29,7 @@ p {
   transition: 500ms;
   cursor: pointer;
   margin-left: auto;
-  color: rgb(18, 40, 39);
+  /* color: rgb(18, 40, 39); */
   font-size: 22px;
   text-align: left;
 }

@@ -36,8 +36,8 @@ export default function Welcome() {
           width={500}
         />
       </div>
-      <div className="welcome_text ">
-        <h3 className=" text-center">
+      <div className="welcome_text  mt-12 ">
+        <h3 className=" text-center !text-[24px] !tracking-widest">
           Occurring material of the abstract <br />
           Existing present Body
         </h3>
