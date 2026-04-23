@@ -34,7 +34,7 @@ export default async function getCalendar() {
           end: e.end?.dateTime || e.end?.date,
         }))
         .filter((event) => event.summary == "AVAILABLE");
-  } catch (err: any) {
+  } catch (err) {
     console.error("Error getting calendar", err);
   }
 }

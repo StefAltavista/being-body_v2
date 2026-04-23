@@ -8,7 +8,8 @@ export const CardsContent = [
     image: "/img/massageBG.png",
 
     link: "/massage",
-    color: "#e1fce6ff",
+    bg: "bg-pink-100",
+    hooverColor: "#e1fce6ff",
   },
 
   {
@@ -20,7 +21,8 @@ export const CardsContent = [
 
     image: "/img/pilatesBG.png",
     link: "/pilates",
-    color: "#f8f2d4ff",
+    bg: "bg-orange-100",
+    hooverColor: "#f8f2d4ff",
   },
   {
     id: "3",
@@ -30,7 +32,8 @@ export const CardsContent = [
     icon: "/icons/oil12.svg",
     image: "/img/aroma.png",
     link: "/oils",
-    color: "#f1e6ffff",
+    bg: "bg-violet-200",
+    hooverColor: "#f1e6ffff",
   },
   {
     id: "4",
@@ -41,6 +44,7 @@ export const CardsContent = [
     image: "/img/contact.png",
 
     link: "/workshops",
-    color: "#fee2e2ff",
+    bg: "bg-pink-100",
+    hooverColor: "#fee2e2ff",
   },
 ];

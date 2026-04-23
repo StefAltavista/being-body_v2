@@ -1,0 +1,39 @@
+export const MenuContent = [
+  {
+    title: "Book Appointment",
+    icon: "/icons/booking.svg",
+    link: "/book-appointment",
+  },
+  {
+    title: "Massage Therapy",
+    icon: "/icons/hands1.svg",
+    link: "/massage-therapy",
+  },
+  {
+    title: "Aromatherapy",
+    icon: "/icons/oil12.svg",
+    link: "/aromatherapy",
+  },
+  {
+    title: "Pilates",
+    icon: "/icons/stretching.svg",
+    link: "/pilates",
+  },
+
+  {
+    title: "Workshops",
+    icon: "/icons/workshop.svg",
+    link: "/workshops",
+  },
+
+  {
+    title: "Contacts",
+    icon: "/icons/hand.svg",
+    link: "/contacts",
+  },
+  {
+    title: "About Being.Body",
+    icon: "/img/logo_small.png",
+    link: "/about",
+  },
+];

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MenuButton from "@/components/MenuButton";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,12 +29,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
-        <div className="flex flex-col ">
+        <div className="flex flex-col overflow-hidden w-[100vw]">
           <Header />
 
           <div className="mt-[100px]"></div>
           {children}
           <Footer />
+          <MenuButton />
         </div>
       </body>
     </html>

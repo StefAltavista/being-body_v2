@@ -1,35 +1,35 @@
 "use server";
+import { GoogleEvent } from "./getCalendar";
 import { getCalendarClient } from "./google";
 
 const CALENDAR_ID = process.env.STUDIO_CALENDAR_ID!;
 
-export async function reserveSpot(event, message) {
+export async function reserveSpot(event: GoogleEvent, message: string) {
   try {
-    console.log("here", event);
     const calendar = await getCalendarClient();
 
     const response = await calendar.events.patch({
       calendarId: CALENDAR_ID,
-      eventId: event.id!, // the ID of the existing slot
+      eventId: event.id!,
       requestBody: {
-        summary: "PENDING CONFIRMATION", // or "Booked by Alice"
+        summary: "PENDING CONFIRMATION",
         description: message,
-        colorId: "5", // optional: change color
+        colorId: "5",
       },
-      sendUpdates: "all", // notify attendees if any
+      sendUpdates: "all",
     });
 
-    console.log({
-      id: response.data.id,
-      status: response.status,
-      updated: response.data.updated,
-    });
     return {
       id: response.data.id,
       status: response.status,
       updated: response.data.updated,
     };
-  } catch (err: any) {
+  } catch (err) {
     console.error(err);
+    return {
+      id: null,
+      status: 500,
+      updated: null,
+    };
   }
 }

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div
       id="footer"
-      className="flex flex-row bg-[#edd4c2] h-[300px] justify-around items-center"
+      className="select-none  flex flex-row bg-[#edd4c2] h-[300px] justify-around items-center"
     >
       <div className="flex flex-col items-center justify-center w-1/3 ">
         <Image

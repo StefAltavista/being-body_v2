@@ -1,7 +1,3 @@
-.contactP {
-  color: aliceblue;
-}
-
 #overflowBody {
   display: flex;
   flex-direction: row;
@@ -20,9 +16,6 @@ a {
 }
 
 @media only screen and (max-width: 900px) {
-  .contactP {
-    margin-top: -20px;
-  }
   #contacts div img {
     width: 80vw;
   }

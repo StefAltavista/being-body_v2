@@ -1,29 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Patrick+Hand+SC&family=Shadows+Into+Light&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --animate-shake: shake 0.35s ease-in-out;
-
-  @keyframes shake {
-    0%,
-    100% {
-      transform: rotate(0deg);
-    }
-    20% {
-      transform: rotate(-10deg);
-    }
-    40% {
-      transform: rotate(10deg);
-    }
-    60% {
-      transform: rotate(-6deg);
-    }
-    80% {
-      transform: rotate(6deg);
-    }
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }

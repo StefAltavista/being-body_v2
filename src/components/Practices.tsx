@@ -1,30 +1,3 @@
-// "use client";
-
-// import { CardsContent } from "@/content/CardsContent";
-// import Card from "./Card";
-
-// // import { useGSAP } from "@gsap/react";
-// // import gsap from "gsap";
-// // import { useRef } from "react";
-// // import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// export default function Practices() {
-//   return (
-//     <div className="flex w-full mt-[100px] items-center flex-col">
-//       <h3 className=""> Body & Mind Experiences</h3>
-//       <div className="flex w-full my-[50px] justify-around  flex-wrap  ">
-//         {CardsContent.map((x) => {
-//           return (
-//             <div key={x.id} className="md:w-1/3 m-1 sm:w-1/2  mb-8 ">
-//               <Card content={x} />
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useRef } from "react";
@@ -33,16 +6,45 @@ import Card from "./Card";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Practices() {
   const container = useRef<HTMLDivElement | null>(null);
+  gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(
     () => {
       const cards = gsap.utils.toArray<HTMLElement>(".practice-card");
-
+      gsap.fromTo(
+        ".practice_bg",
+        {
+          rotation: -100,
+          skewX: 0,
+          skewY: 20,
+          scale: 1,
+          y: "0vh",
+          opacity: 0,
+          filter: "hue-rotate(0deg) blur(2px) saturate(0) ",
+          transformOrigin: "center center",
+        },
+        {
+          rotation: 0,
+          skewX: 10,
+          skewY: -50,
+          scale: 2,
+          y: "100vh",
+          opacity: 8,
+          filter: "hue-rotate(180deg) blur(30px) saturate(2) ",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 0.5,
+          },
+        },
+      );
       cards.forEach((card, i) => {
         const odd = i % 2 == 0;
         gsap.fromTo(
@@ -51,7 +53,6 @@ export default function Practices() {
             y: -250,
             x: odd ? -200 : 200,
             transform: odd ? "rotate(0.9turn)" : "rotate(1.1turn)",
-
             opacity: 0,
           },
           {
@@ -64,8 +65,8 @@ export default function Practices() {
             delay: i * (odd ? 0.5 : 2),
             scrollTrigger: {
               trigger: card,
-              start: "top 70%",
-              end: "top -20%",
+              start: "top 50%",
+              end: "top -10%",
               scrub: 0.2,
             },
           },
@@ -78,8 +79,15 @@ export default function Practices() {
   return (
     <div
       ref={container}
-      className="flex w-full mt-[100px] items-center flex-col"
+      className="flex w-full mt-[100px] items-center flex-col relative"
     >
+      <Image
+        className="z-[-100] absolute top-0 left-0 practice_bg   "
+        src={`/img/bubbles.png`}
+        alt="BeingBodyConcept"
+        width={1000}
+        height={1000}
+      />
       <h3>Body & Mind Experiences</h3>
 
       <div className="flex w-full my-[50px] justify-around flex-wrap pb-5">

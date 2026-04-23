@@ -1,25 +1,38 @@
 import React from "react";
+import { bookingRequestDataType } from "@/types/forms";
 
 type fieldType = "textArea" | "text" | "email" | "tel" | "list";
 
 export default function InputField({
+  label,
   fieldName,
   fieldType,
   data,
   setData,
   list,
+  color = "purple-100",
 }: {
-  fieldName: string;
+  label: string;
+  fieldName:
+    | "name"
+    | "pronouns"
+    | "email"
+    | "tel"
+    | "message"
+    | "sessionDuration";
   fieldType: fieldType;
-  data;
-  setData;
+  data: bookingRequestDataType;
+  setData: (x: bookingRequestDataType) => void;
   list?: string[] | null;
+  color: string;
 }) {
   return (
-    <div className="bg-violet-100 rounded flex justify-end w-full ">
-      {fieldType == "textArea" ? (
+    <div className={`z-100 rounded flex flex-col justify-end w-full`}>
+      <p className="handWrite1">{label}: </p>
+
+      {fieldType === "textArea" ? (
         <textarea
-          className="w-full min-h-[200px] px-1"
+          className={`bg-${color} outline-none w-full min-h-[200px] px-1 rounded`}
           value={data[fieldName]}
           onChange={(e) =>
             setData({
@@ -28,27 +41,36 @@ export default function InputField({
             })
           }
         />
-      ) : fieldType == "list" ? (
-        <select id="cars" name="cars" className="w-full  px-1">
-          {list &&
-            list.map((x, i) =>
-              i == 0 ? (
-                <option value={x} key={x} defaultValue={x}>
-                  {x}
-                </option>
-              ) : (
-                <option value={x} key={x}>
-                  {x}
-                </option>
-              ),
-            )}
+      ) : fieldType === "list" ? (
+        <select
+          className={`bg-${color} outline-none w-full px-1 rounded`}
+          value={data[fieldName]}
+          onChange={(e) =>
+            setData({
+              ...data,
+              [fieldName]: e.target.value,
+            })
+          }
+        >
+          {list?.map((x) => {
+            return (
+              <option value={x} key={x}>
+                {x}
+              </option>
+            );
+          })}
         </select>
       ) : (
         <input
-          className="w-full px-1 "
+          className={`bg-${color} outline-none w-full px-1 rounded`}
           type={fieldType}
           value={data[fieldName]}
-          onChange={(e) => setData({ ...data, [fieldName]: e.target.value })}
+          onChange={(e) =>
+            setData({
+              ...data,
+              [fieldName]: e.target.value,
+            })
+          }
         />
       )}
     </div>

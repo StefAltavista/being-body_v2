@@ -1,9 +1,7 @@
 "use client";
 import BookButton from "@/components/BookButton";
 import Container from "@/components/Container";
-import Massage from "@/content/Massage";
 import Prices from "@/content/MassagePrices";
-import Image from "next/image";
 import { browserName } from "react-device-detect";
 
 export default function page() {
