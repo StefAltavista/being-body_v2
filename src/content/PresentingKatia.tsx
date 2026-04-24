@@ -64,7 +64,7 @@ export default function PresentingKatia() {
       </p>
       <div className="carousel_item shrink-0 mx-10">
         <Image
-          src="/img/homecarousel/1.jpeg"
+          src="/img/homeCarousel/1.jpeg"
           width={200}
           height={400}
           alt="img"

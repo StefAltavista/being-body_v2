@@ -53,7 +53,7 @@ export default function MenuButton() {
             }`}
           >
             <Image
-              src="/icons/Menu_Open.png"
+              src="/icons/Menu_open.png"
               alt="Menu open icon"
               fill
               className="object-contain hue-rotate-70 brightness-150"
