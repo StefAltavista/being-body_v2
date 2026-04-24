@@ -19,6 +19,7 @@ export default function BodyWelcome() {
         duration: 2 * 1,
         ease: "power3.out",
         delay: 1,
+
         scrollTrigger: {
           trigger: ".hands_background",
           start: "top 70%",

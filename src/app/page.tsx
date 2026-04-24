@@ -6,7 +6,7 @@ import BookButton from "@/components/BookButton";
 import Techniques from "@/content/Techniques";
 import BodyWelcome from "@/content/BodyWelcome";
 import Welcome from "@/content/Welcome";
-import HandsSection from "@/content/HandsSection";
+import PresentingKatia from "@/content/PresentingKatia";
 
 export default function Home() {
   return (
@@ -17,19 +17,20 @@ export default function Home() {
       <Container classname="overflow-visible">
         <Concept />
       </Container>
-
       <Container classname="overflow-visible">
         <Practices />
       </Container>
       <Container>
         <BookButton className="my-20" />
       </Container>
-      <Container classname="overflow-visible">
-        <HandsSection />
+      <Container classname="mt-20 overflow-visible">
+        <PresentingKatia />
       </Container>
-      <Container classname="py-10">
+
+      <Container classname=" overflow-visible mb-80">
         <Techniques />
       </Container>
+
       <Container classname=" py-10 my-20 h-[100vh] relative !overflow-visible">
         <BodyWelcome />
       </Container>

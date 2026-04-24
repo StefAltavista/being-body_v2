@@ -12,13 +12,15 @@ export default function MenuButton() {
   const [toggleMenu, setToggleMenu] = useState("close");
   const home = usePathname() === "/";
   const menuIconRef = useRef<HTMLDivElement | null>(null);
+
   useGSAP(
     () => {
       if (home) {
         gsap.from(".menu_icon", {
-          top: -100,
-          duration: 0.5,
+          top: -120,
+          duration: 1,
           delay: 4,
+          ease: "bounce",
         });
       }
     },
@@ -26,19 +28,40 @@ export default function MenuButton() {
   );
 
   return (
-    <div className=" " ref={menuIconRef}>
+    <div ref={menuIconRef}>
       <div
         onClick={() => setToggleMenu(toggleMenu === "close" ? "open" : "close")}
-        className="z-999 menu_icon fixed left-[-20] top-[-23px] transition duration-400 hover:scale-120 cursor-pointer "
+        className="menu_icon fixed left-[-10px] top-[-30px] z-[999] rotate-180 cursor-pointer"
       >
-        <Image
-          src="/icons/plant5.svg"
-          width={100}
-          height={100}
-          alt="Menu Icon"
-          className="hue-rotate-295 saturate-80 brightness-80"
-        />
+        <div className="relative w-[100px] h-[100px]">
+          <div
+            className={`absolute inset-0 transition-opacity duration-600 ${
+              toggleMenu === "close" ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src="/icons/Menu_closed.png"
+              alt="Menu closed icon"
+              fill
+              className="object-contain hue-rotate-70 brightness-150"
+            />
+          </div>
+
+          <div
+            className={`absolute inset-0 transition-opacity duration-300 ${
+              toggleMenu === "open" ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src="/icons/Menu_Open.png"
+              alt="Menu open icon"
+              fill
+              className="object-contain hue-rotate-70 brightness-150"
+            />
+          </div>
+        </div>
       </div>
+
       <Menu menuState={toggleMenu} toggle={setToggleMenu} home={home} />
     </div>
   );

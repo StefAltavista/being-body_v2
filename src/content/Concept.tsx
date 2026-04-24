@@ -75,12 +75,10 @@ export default function Concept() {
   );
   return (
     <div id="concept" className=" mt-[30px]" ref={concept}>
-      <div className="sectionBody  md:flex-row mb-48">
-        <div className="flex flex-col  ">
-          <h3 className="my-24 text-left reveal_text1">
-            Body is a vessel to express <br></br>and a tool to connect.{" "}
-          </h3>
-        </div>
+      <div className=" md:flex-row mb-48">
+        <h3 className="my-24 text-left reveal_text1">
+          Body as a vessel to express <br></br>and a tool to connect.{" "}
+        </h3>
         <div className="flex justify-center relative z-[2]">
           <Image
             className="absolute concept_img blur-[1px] hue-rotate-[100deg]    "
@@ -98,18 +96,8 @@ export default function Concept() {
           />
         </div>
         <h3 className="my-24 text-right reveal_text2">
-          Creating pathways for healing, <br></br>well being and spiritual
-          growth.
+          Creating pathways for healing, <br></br>well being and growth.
         </h3>
-        <div className="flex flex-row">
-          <div className="min-w-1/2"></div>
-          <p className="handWrite2 w-1/2 reveal_text3 ">
-            My goal is to generate a healing experience through the
-            harmonisation of body, mind and spirit. To create a safe space to
-            connect with, explore and listen to the self through guided corporal
-            awareness.
-          </p>
-        </div>
       </div>
     </div>
   );

@@ -4,10 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CardsContent } from "@/content/CardsContent";
 import { usePathname } from "next/navigation";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Header() {
   const location = usePathname();
@@ -25,6 +26,20 @@ export default function Header() {
           delay: 2,
         });
       }
+
+      gsap.to(".header_title", {
+        scale: 0.7,
+        y: -40,
+        transformOrigin: "center center",
+        ease: "none",
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: "top top+=10",
+          end: "top top-=90",
+          scrub: 0.8,
+          // markers: true,
+        },
+      });
     },
     { scope: headerRef },
   );
@@ -54,8 +69,8 @@ export default function Header() {
       />
 
       <div className="header_titles flex flex-col justify-center items-center pb-[20px] z-10">
-        <Link href="/" className="header_title ">
-          <h1 className="zeppelin  scale-y-150 header_h1 cursor-pointer">
+        <Link href="/" className="header_title">
+          <h1 className="zeppelin scale-y-150 header_h1 cursor-pointer">
             Being Body
           </h1>
         </Link>

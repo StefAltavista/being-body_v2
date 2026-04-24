@@ -24,13 +24,13 @@ export default function Menu({
         //   "linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255,255,255,0) 100%)",
 
         background:
-          "linear-gradient(to right, rgb(236, 225, 255) 0%, rgb(229, 242, 250) 40%, rgba(233, 253, 252, 0.7) 70%, rgba(255,255,255,0) 100%)",
+          "linear-gradient(to right, rgb(237, 212, 252) 0%, rgb(233, 255, 252) 40%, rgba(233, 253, 252, 0.7) 70%, rgba(255,255,255,0) 100%)",
       }}
     >
       <div
         className={
           menuState +
-          "  overlay top-0 w-[200vw] h-[100vh] fixed bg-[rgba(255,255,255,0.5)]"
+          "  overlay top-0 w-[200vw] h-[100vh] fixed bg-[rgba(255, 255, 255, 0)]"
         }
         onClick={() => toggle("close")}
       />

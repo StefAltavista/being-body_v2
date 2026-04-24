@@ -1,7 +1,8 @@
 export const MenuContent = [
   {
     title: "Book Appointment",
-    icon: "/icons/booking.svg",
+    // icon: "/icons/magic_pen.svg",
+    icon: "/icons/feather.svg",
     link: "/book-appointment",
   },
   {
