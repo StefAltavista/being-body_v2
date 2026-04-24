@@ -58,9 +58,9 @@ export default function PresentingKatia() {
       className="w-full flex  flex-row justify-between py-6"
     >
       <p className="handWrite2 reveal_text3 mb-8">
-        "My goal is to generate a healing experience through the harmonisation
+        ``My goal is to generate a healing experience through the harmonisation
         of body, mind and spirit. To create a space to connect with, explore and
-        listen to the self through guided corporal awareness."
+        listen to the self through guided corporal awareness``
       </p>
       <div className="carousel_item shrink-0 mx-10">
         <Image
