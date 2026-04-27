@@ -38,13 +38,6 @@ export default function BodyWelcome() {
         alt="beingBodyLogo"
         fill
       />{" "}
-      <Image
-        src={`/img/hands_tr2.png`}
-        alt="beingBodyLogo"
-        className="absolute rotate-[-90deg] left-[50] bottom-[75]  brightness-[0.8] scale-x-[-1.5] scale-y-[1.5]  hue-rotate-[-80deg]"
-        height={200}
-        width={300}
-      />{" "}
       <h3 className="my-8  z-1">When you truly listen, the body will speak.</h3>
       <p className="handWrite2  z-1">
         All bodies welcome, valid and celebrated.{" "}

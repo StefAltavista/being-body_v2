@@ -18,7 +18,7 @@ export default function Footer() {
         />
         <h4>Being Body</h4>
       </div>
-      <div className="flex flex-col text-[10px] pl-10 border-l border-white w-1/3">
+      <div className=" z-999 flex flex-col text-[10px] pl-10 border-l border-white w-1/3">
         <Link href="/">
           <p>Home</p>
         </Link>{" "}
@@ -32,7 +32,7 @@ export default function Footer() {
           <p>Impressum</p>
         </Link>
       </div>
-      <div className="flex flex-col text-[10px] border-l pl-10 border-white w-1/3">
+      <div className="flex  z-999 flex-col text-[10px] border-l pl-10 border-white w-1/3">
         <Link href="/massage">
           <p>Massage</p>
         </Link>

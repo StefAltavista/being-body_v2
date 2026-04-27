@@ -21,13 +21,12 @@ export default function Home() {
         <Practices />
       </Container>
       <Container>
-        <BookButton className="my-20" />
+        <BookButton className="my-20 overflow-visible" />
       </Container>
       <Container classname="mt-20 overflow-visible">
         <PresentingKatia />
       </Container>
-
-      <Container classname=" overflow-visible mb-80">
+      <Container classname=" overflow-visible my-40">
         <Techniques />
       </Container>
 

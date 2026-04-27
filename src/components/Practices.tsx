@@ -22,8 +22,7 @@ export default function Practices() {
         {
           rotation: -100,
           skewX: 0,
-          skewY: 20,
-          scale: 1,
+          scale: 2,
           y: "0vh",
           opacity: 0,
           filter: "hue-rotate(0deg) blur(2px) saturate(0) ",
@@ -32,9 +31,8 @@ export default function Practices() {
         {
           rotation: 0,
           skewX: 10,
-          skewY: -50,
-          scale: 2,
-          y: "100vh",
+          scale: 3,
+          y: "200vh",
           opacity: 8,
           filter: "hue-rotate(180deg) blur(30px) saturate(2) ",
           scrollTrigger: {
@@ -89,6 +87,11 @@ export default function Practices() {
         height={1000}
       />
       <h3>Body & Mind Experiences</h3>
+      <p className="handWrite2 reveal_text3 !my-8">
+        ``My goal is to generate a healing experience through the harmonisation
+        of body, mind and spirit. To create a space to connect with, explore and
+        listen to the self through guided corporal awareness``
+      </p>
 
       <div className="flex w-full my-[50px] justify-around flex-wrap pb-5">
         {CardsContent.map((x) => {

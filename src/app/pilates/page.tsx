@@ -20,14 +20,14 @@ export default function page() {
           and pain with the help of mindful breath.
         </p>
       </div>
-      <div className=" w-full flex flex-row my-16">
-        <div className="w-1/2">
+      <div className=" w-full flex flex-col  my-16">
+        <div className="">
           <Prices format={format} />
           <div className="z-10">
             <BookButton />
           </div>
         </div>
-        <div className="w-1/2 px-15 flex flex-col items-center  p-3  ">
+        <div className=" px-15 flex flex-col items-center  p-3  ">
           <p className="handWrite2 bg-orange-100 !p-6 !pt-0">
             <br></br> I use a mix of techniques, guided by what the body tells
             me. My intention is to create a space to listen. Bring people into a

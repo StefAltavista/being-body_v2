@@ -31,13 +31,12 @@ export default function Techniques() {
       if (!section) return;
 
       const handsImg = section.querySelector(".hands_img");
-      const handsFloat = section.querySelector(".hands_float");
       const techBubbles = gsap.utils.toArray<HTMLElement>(
         ".tech_bubble",
         section,
       );
 
-      if (!handsImg || !handsFloat) return;
+      if (!handsImg) return;
 
       // Big bubble scroll animation: enters from bottom, stays visible, fades out at top
       const bubbleTl = gsap.timeline({
@@ -45,7 +44,7 @@ export default function Techniques() {
           trigger: section,
           start: "top bottom",
           end: "bottom top",
-          scrub: 0.8,
+          scrub: 0.4,
           // markers: true,
         },
       });
@@ -53,55 +52,19 @@ export default function Techniques() {
       bubbleTl.fromTo(
         handsImg,
         {
-          scale: 3,
-          x: -200,
-          y: -500,
-          autoAlpha: 0,
+          opacity: 0,
+          scale: 1,
+          x: 200,
+          y: -200,
         },
         {
           scale: 0.2,
-          x: 200,
+          x: -200,
           y: 500,
-          autoAlpha: 1,
-          ease: "none",
-          duration: 1,
+          opacity: 1,
         },
         0,
       );
-
-      bubbleTl
-        .to(
-          handsImg,
-          {
-            autoAlpha: 1,
-            ease: "none",
-            duration: 0.55,
-          },
-          0.2,
-        )
-        .to(
-          handsImg,
-          {
-            autoAlpha: 0,
-            ease: "none",
-            duration: 0.25,
-          },
-          0.75,
-        );
-
-      // Big bubble random floating motion
-      const floatBubble = () => {
-        gsap.to(handsFloat, {
-          x: gsap.utils.random(-18, 18),
-          y: gsap.utils.random(-22, 22),
-          rotation: gsap.utils.random(-3, 3),
-          duration: gsap.utils.random(1.6, 3.2),
-          ease: "sine.inOut",
-          onComplete: floatBubble,
-        });
-      };
-
-      floatBubble();
 
       // Floating technique bubbles
       techBubbles.forEach((bubble, i) => {
@@ -190,8 +153,10 @@ export default function Techniques() {
   return (
     <div
       ref={sectionRef}
-      className="handsSection relative w-full flex flex-col justify-end my-4 py-16 min-h-[700px]"
+      className="handsSection relative w-full flex flex-col justify-end  min-h-[300px]"
     >
+      {" "}
+      <h1 className="text-right z-10">My Techniques</h1>
       <div className="absolute inset-0 pointer-events-none">
         {techniques.map((tech) => (
           <div
@@ -205,35 +170,23 @@ export default function Techniques() {
           </div>
         ))}
       </div>
-
-      <div className="relative z-10 flex items-end">
-        <div className="hands_img m-6">
-          <div
-            className="
-              hands_float
-              relative
-              p-3
-              rounded-full
-              bg-white/12
-              border border-white/45
-              backdrop-blur-md
-              shadow-[inset_0_3px_16px_rgba(255,255,255,0.95),inset_0_-12px_22px_rgba(255,255,255,0.18),0_0_24px_rgba(255,255,255,0.28),0_16px_40px_rgba(255,255,255,0.18)]
-            "
-          >
-            <div className="absolute top-[10%] left-[16%] w-[40%] h-[40%] rounded-full bg-white/35 blur-xl pointer-events-none" />
+      {/* FLOATING HAND SECTION */}
+      <div className="absolute w-[130vw] relative z-10 flex items-end">
+        <div className="absolute  hands_img m-6">
+          <div className=" hands_float realative aspect-square h-full rounded-full  bg-gradient-to-br from-pink-200/70 to-sky-200/70 backdrop-blur-sm shadow-[inset_0px_10px_rgba(255,255,255,1),inset_0_-8px_16px_rgba(255,255,255,1),0_0_18px_rgba(255,255,255,1)]">
+            <div className=" absolute top-[40%] left-[16%] rounded-full bg-white/35 blur-xl pointer-events-none" />
             <Image
               src="/img/hands_tr2.png"
               alt="beingBodyLogo"
-              height={1200}
-              width={1200}
-              className="rounded-full brightness-[0.9] hue-rotate-[-80deg]"
+              height={1000}
+              width={1000}
+              className=" !brightness-100 saturate-60 p-4 rounded-full brightness-[0.9] hue-rotate-[-80deg]"
             />
           </div>
         </div>
 
-        <div>
-          <h1 className="text-right relative z-10">My Techniques</h1>
-          <div className="flex flex-col justify-around">
+        <div className=" w-[90vw] ">
+          <div className="flex flex-col ">
             {bulletPoints.map((x, i) => (
               <h3 key={i} className="handWrite2 mb-6 !text-[23px] text-right">
                 {x}

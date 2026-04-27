@@ -6,7 +6,7 @@ import { GoogleEvent } from "@/lib/getCalendar";
 import RequestAppointment from "@/components/Form.RequestAppointment";
 import Modal from "@/components/Modal";
 
-export default function BookAppointmentPage() {
+export default function BookApointmentPage() {
   const [event, setEvent] = useState<GoogleEvent>();
   const [openBooking, setOpenBooking] = useState(false);
 
