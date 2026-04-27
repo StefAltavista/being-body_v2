@@ -30,7 +30,7 @@ export default function Home() {
         <Techniques />
       </Container>
 
-      <Container classname=" py-10 my-20 h-[100vh] relative !overflow-visible">
+      <Container classname=" py-16 my-20 h-[100vh] relative !overflow-visible">
         <BodyWelcome />
       </Container>
     </div>

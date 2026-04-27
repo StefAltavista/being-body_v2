@@ -17,34 +17,60 @@ export default function Practices() {
   useGSAP(
     () => {
       const cards = gsap.utils.toArray<HTMLElement>(".practice-card");
-      gsap.fromTo(
-        ".practice_bg",
-        {
-          rotation: -100,
-          skewX: 0,
-          scale: 2,
-          y: "0vh",
-          opacity: 0,
-          filter: "hue-rotate(0deg) blur(2px) saturate(0) ",
-          transformOrigin: "center center",
+
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+      const bgFrom = isMobile
+        ? {
+            rotation: -80,
+            skewX: 0,
+            scale: 3.5,
+            y: "20vh",
+            opacity: 0.25,
+            filter: "hue-rotate(0deg) blur(1px) saturate(0.8)",
+            transformOrigin: "center center",
+          }
+        : {
+            rotation: -100,
+            skewX: 0,
+            scale: 2,
+            y: "0vh",
+            opacity: 0,
+            filter: "hue-rotate(0deg) blur(2px) saturate(0)",
+            transformOrigin: "center center",
+          };
+
+      const bgTo = isMobile
+        ? {
+            rotation: 0,
+            skewX: 5,
+            scale: 5,
+            y: "320vh",
+            opacity: 1,
+            filter: "hue-rotate(180deg) blur(18px) saturate(2.5)",
+          }
+        : {
+            rotation: 0,
+            skewX: 10,
+            scale: 3,
+            y: "200vh",
+            opacity: 1,
+            filter: "hue-rotate(180deg) blur(30px) saturate(2)",
+          };
+
+      gsap.fromTo(".practice_bg", bgFrom, {
+        ...bgTo,
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 0.5,
         },
-        {
-          rotation: 0,
-          skewX: 10,
-          scale: 3,
-          y: "200vh",
-          opacity: 8,
-          filter: "hue-rotate(180deg) blur(30px) saturate(2) ",
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.5,
-          },
-        },
-      );
+      });
+
       cards.forEach((card, i) => {
         const odd = i % 2 == 0;
+
         gsap.fromTo(
           card,
           {
@@ -58,7 +84,7 @@ export default function Practices() {
             x: 0,
             transform: "rotate(1turn)",
             opacity: 1,
-            duration: 2 * 1,
+            duration: 2,
             ease: "power3.out",
             delay: i * (odd ? 0.5 : 2),
             scrollTrigger: {
@@ -73,6 +99,66 @@ export default function Practices() {
     },
     { scope: container },
   );
+
+  // useGSAP(
+  //   () => {
+  //     const cards = gsap.utils.toArray<HTMLElement>(".practice-card");
+  //     gsap.fromTo(
+  //       ".practice_bg",
+  //       {
+  //         rotation: -100,
+  //         skewX: 0,
+  //         scale: 2,
+  //         y: "0vh",
+  //         opacity: 0,
+  //         filter: "hue-rotate(0deg) blur(2px) saturate(0) ",
+  //         transformOrigin: "center center",
+  //       },
+  //       {
+  //         rotation: 0,
+  //         skewX: 10,
+  //         scale: 3,
+  //         y: "200vh",
+  //         opacity: 8,
+  //         filter: "hue-rotate(180deg) blur(30px) saturate(2) ",
+  //         scrollTrigger: {
+  //           trigger: container.current,
+  //           start: "top bottom",
+  //           end: "bottom top",
+  //           scrub: 0.5,
+  //         },
+  //       },
+  //     );
+  //     cards.forEach((card, i) => {
+  //       const odd = i % 2 == 0;
+  //       gsap.fromTo(
+  //         card,
+  //         {
+  //           y: -250,
+  //           x: odd ? -200 : 200,
+  //           transform: odd ? "rotate(0.9turn)" : "rotate(1.1turn)",
+  //           opacity: 0,
+  //         },
+  //         {
+  //           y: 100,
+  //           x: 0,
+  //           transform: "rotate(1turn)",
+  //           opacity: 1,
+  //           duration: 2 * 1,
+  //           ease: "power3.out",
+  //           delay: i * (odd ? 0.5 : 2),
+  //           scrollTrigger: {
+  //             trigger: card,
+  //             start: "top 50%",
+  //             end: "top -10%",
+  //             scrub: 0.2,
+  //           },
+  //         },
+  //       );
+  //     });
+  //   },
+  //   { scope: container },
+  // );
 
   return (
     <div

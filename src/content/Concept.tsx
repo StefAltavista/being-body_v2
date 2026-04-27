@@ -74,8 +74,8 @@ export default function Concept() {
     { scope: concept },
   );
   return (
-    <div id="concept" className=" " ref={concept}>
-      <div className=" md:flex-row ">
+    <div id="concept" className=" w-full" ref={concept}>
+      <div className=" md:flex-row w-full ">
         <h3 className="my-24 text-left reveal_text1">
           Body as a vessel to express <br></br>and a tool to connect.{" "}
         </h3>
