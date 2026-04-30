@@ -25,18 +25,18 @@ export default function Practices() {
             rotation: -80,
             skewX: 0,
             scale: 3.5,
-            y: "20vh",
+            y: "-120vh",
             opacity: 0.25,
-            filter: "hue-rotate(0deg) blur(1px) saturate(0.8)",
+            filter: "hue-rotate(0deg) blur(20px) saturate(2)",
             transformOrigin: "center center",
           }
         : {
             rotation: -100,
             skewX: 0,
             scale: 2,
-            y: "0vh",
+            y: "-100vh",
             opacity: 0,
-            filter: "hue-rotate(0deg) blur(2px) saturate(0)",
+            filter: "hue-rotate(0deg) blur(20px) saturate(2)",
             transformOrigin: "center center",
           };
 
@@ -45,9 +45,9 @@ export default function Practices() {
             rotation: 0,
             skewX: 5,
             scale: 5,
-            y: "320vh",
+            y: "300vh",
             opacity: 1,
-            filter: "hue-rotate(180deg) blur(18px) saturate(2.5)",
+            filter: "hue-rotate(180deg) blur(20px) saturate(2)  ",
           }
         : {
             rotation: 0,
@@ -55,7 +55,7 @@ export default function Practices() {
             scale: 3,
             y: "200vh",
             opacity: 1,
-            filter: "hue-rotate(180deg) blur(30px) saturate(2)",
+            filter: "hue-rotate(180deg) blur(20px) saturate(2) ",
           };
 
       gsap.fromTo(".practice_bg", bgFrom, {
@@ -120,7 +120,7 @@ export default function Practices() {
   //         scale: 3,
   //         y: "200vh",
   //         opacity: 8,
-  //         filter: "hue-rotate(180deg) blur(30px) saturate(2) ",
+  //         filter: "hue-rotate(180deg) blur(20px) saturate(2) ",
   //         scrollTrigger: {
   //           trigger: container.current,
   //           start: "top bottom",
@@ -166,11 +166,11 @@ export default function Practices() {
       className="flex w-full mt-[100px] items-center flex-col relative"
     >
       <Image
-        className="z-[-100] absolute top-0 left-0 practice_bg   "
+        className="z-[-100] absolute top-0 left-0 practice_bg blur-xl 30 saturate-200  "
         src={`/img/bubbles.png`}
         alt="BeingBodyConcept"
-        width={1000}
-        height={1000}
+        width={800}
+        height={800}
       />
       <h3>Body & Mind Experiences</h3>
       <p className="handWrite2 reveal_text3 !my-8">

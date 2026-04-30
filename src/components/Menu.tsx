@@ -20,11 +20,9 @@ export default function Menu({
         zIndex: 998,
         overflow: "scroll",
         paddingRight: "80px",
-        // background:
-        //   "linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.7) 70%, rgba(255,255,255,0) 100%)",
 
         background:
-          "linear-gradient(to right, rgb(237, 212, 252) 0%, rgb(233, 255, 252) 40%, rgba(233, 253, 252, 0.7) 70%, rgba(255,255,255,0) 100%)",
+          "linear-gradient(to right, rgb(237, 212, 252) 0%, rgb(233, 245, 255) 50%, rgb(238, 245, 252) 70%, rgba(255,255,255,0) 100%)",
       }}
     >
       <div

@@ -5,10 +5,9 @@ export default function About({ format }: { format: string }) {
   return (
     <div
       id="katiaserena"
-      className="flex items-start justify-start items-center w-full"
+      className="flex flex-col  justify-center items-center w-full"
     >
-      <div className="w-1/3 mr-8">
-        {/* <h3>Katia Serena</h3> */}
+      <div className="w-full flex justify-center py-12">
         <Image
           src={`/img/about.${format}`}
           alt="beingBodyabout"
@@ -17,7 +16,7 @@ export default function About({ format }: { format: string }) {
         />
       </div>
 
-      <div id="" className="w-2/3">
+      <div className="py-12">
         <p>
           Hi, I am Katia.
           <br></br> The body has always intrigued me. I have been a mover since

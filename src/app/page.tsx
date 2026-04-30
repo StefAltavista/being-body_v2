@@ -21,7 +21,7 @@ export default function Home() {
         <Practices />
       </Container>
       <Container>
-        <BookButton className="my-20 overflow-visible" />
+        <BookButton className=" overflow-visible" />
       </Container>
       <Container classname="mt-20 overflow-visible">
         <PresentingKatia />
@@ -30,7 +30,7 @@ export default function Home() {
         <Techniques />
       </Container>
 
-      <Container classname=" py-16 my-20 h-[100vh] relative !overflow-visible">
+      <Container classname="  h-[100vh] relative !px-0 !m-0 !min-w-[100vw]">
         <BodyWelcome />
       </Container>
     </div>

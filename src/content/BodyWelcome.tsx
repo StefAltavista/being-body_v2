@@ -4,33 +4,33 @@ import gsap from "gsap";
 import Image from "next/image";
 
 export default function BodyWelcome() {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".hands_background",
-      {
-        opacity: 0,
-        transform: "scaleX(5)",
-        filter: "blur(10px)",
-      },
-      {
-        opacity: 1,
-        transform: "scaleX(1.5)",
-        filter: "blur(0px)",
-        duration: 2 * 1,
-        ease: "none",
+  // useGSAP(() => {
+  //   gsap.fromTo(
+  //     ".hands_background",
+  //     {
+  //       opacity: 0,
+  //       transform: "scaleX(5)",
+  //       filter: "blur(10px)",
+  //     },
+  //     {
+  //       opacity: 1,
+  //       transform: "scaleX(1.5)",
+  //       filter: "blur(0px)",
+  //       duration: 2 * 1,
+  //       ease: "none",
 
-        scrollTrigger: {
-          trigger: ".hands_background",
-          start: "top 60%",
-          end: "bottom -50%",
-          scrub: 0.2,
-        },
-      },
-    );
-  }, [{ scope: ".hands_background" }]);
+  //       scrollTrigger: {
+  //         trigger: ".hands_background",
+  //         start: "top 60%",
+  //         end: "bottom -50%",
+  //         scrub: 0.2,
+  //       },
+  //     },
+  //   );
+  // }, [{ scope: ".hands_background" }]);
 
   return (
-    <div className="w-full flex flex-col items-center justify-center my-4 py-8">
+    <div className="w-full flex flex-col items-center justify-center ">
       <Image
         src={`/img/background1.png`}
         className="hands_background absolute  filter  saturate-[0.8] "

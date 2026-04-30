@@ -7,7 +7,8 @@ export default function Container({
   children: ReactNode;
   classname?: string;
 }) {
-  classname +=
-    " w-full  flex flex-col items-center justify-center px-8 sm:px-12 lg:px-14  overflow-hidden ";
+  classname =
+    " w-full  flex flex-col items-center justify-center px-8 sm:px-12 lg:px-14  overflow-hidden " +
+    classname;
   return <div className={classname}>{children}</div>;
 }

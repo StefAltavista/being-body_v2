@@ -35,6 +35,7 @@ function BubbleContent() {
 }
 
 export default function BookButton({ className }: { className?: string }) {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const triggerRef = useRef<HTMLDivElement | null>(null);
 
   const originalShellRef = useRef<HTMLDivElement | null>(null);
@@ -47,6 +48,7 @@ export default function BookButton({ className }: { className?: string }) {
 
   useGSAP(
     () => {
+      const sectionEl = sectionRef.current;
       const trigger = triggerRef.current;
       const originalShell = originalShellRef.current;
       const originalBubble = originalBubbleRef.current;
@@ -54,6 +56,7 @@ export default function BookButton({ className }: { className?: string }) {
       const fixedBubble = fixedBubbleRef.current;
 
       if (
+        !sectionEl ||
         !trigger ||
         !originalShell ||
         !originalBubble ||
@@ -94,6 +97,19 @@ export default function BookButton({ className }: { className?: string }) {
         });
       };
 
+      const collapseSection = () => {
+        gsap.killTweensOf(sectionEl);
+
+        gsap.to(sectionEl, {
+          height: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+          duration: 0.8,
+          ease: "power3.inOut",
+          overflow: "hidden",
+        });
+      };
+
       const showFixedInCorner = () => {
         const cornerCenter = getCornerCenterCoords();
 
@@ -101,6 +117,13 @@ export default function BookButton({ className }: { className?: string }) {
 
         gsap.set(originalShell, {
           autoAlpha: 0,
+        });
+
+        gsap.set(sectionEl, {
+          height: 0,
+          paddingTop: 0,
+          paddingBottom: 0,
+          overflow: "hidden",
         });
 
         gsap.set(fixedShell, {
@@ -139,6 +162,8 @@ export default function BookButton({ className }: { className?: string }) {
           zIndex: 50,
         });
 
+        collapseSection();
+
         const tl = gsap.timeline({
           onComplete: () => {
             hasMovedToCornerRef.current = true;
@@ -159,6 +184,11 @@ export default function BookButton({ className }: { className?: string }) {
           ease: "power3.inOut",
         });
       };
+
+      gsap.set(sectionEl, {
+        height: 400,
+        overflow: "hidden",
+      });
 
       gsap.set(originalShell, {
         scale: START_SCALE,
@@ -222,20 +252,24 @@ export default function BookButton({ className }: { className?: string }) {
 
         scrollTrigger.kill();
 
+        gsap.killTweensOf(sectionEl);
         gsap.killTweensOf(originalShell);
         gsap.killTweensOf(originalBubble);
         gsap.killTweensOf(fixedShell);
         gsap.killTweensOf(fixedBubble);
       };
     },
-    { scope: triggerRef },
+    { scope: sectionRef },
   );
 
   return (
-    <>
+    <section
+      ref={sectionRef}
+      className="Book_appointment_button w-full flex h-[400px] justify-center overflow-hidden"
+    >
       <div
         ref={triggerRef}
-        className={`relative z-50 flex min-h-[120px] w-[120px] items-center ${className ?? ""}`}
+        className={`relative z-50 flex w-[120px] items-center ${className ?? ""}`}
       >
         <div ref={originalShellRef} className="relative h-[120px] w-[120px]">
           <div ref={originalBubbleRef}>
@@ -246,12 +280,12 @@ export default function BookButton({ className }: { className?: string }) {
 
       <div
         ref={fixedShellRef}
-        className="invisible pointer-events-none fixed left-0 top-0 z-50 h-[120px] w-[120px] opacity-0"
+        className="invisible pointer-events-none fixed left-0 top-0 z-50 w-[120px] opacity-0"
       >
         <div ref={fixedBubbleRef}>
           <BubbleContent />
         </div>
       </div>
-    </>
+    </section>
   );
 }
