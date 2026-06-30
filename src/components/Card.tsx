@@ -41,14 +41,12 @@ export default function Card({ content }: { content: CardContent }) {
           />
         </div>
         <div className=" relative  !p-4 ">
-          {/* <div className="w-full h-full bg-white absolute top-0 left-0 blur-xl rounded-full"></div>{" "} */}
           <h3 className="relative !text-[35px] border-white tracking-wider z-2 zeppelin w-full text-center !font-bold p-0  my-4   decoration-1 underline-offset-8 decoration-color-[rgb(31, 100, 93)]  ">
             {content.title}
           </h3>
         </div>
 
         <div className=" relative border-white border-y  !p-4 ">
-          {/* <div className="w-full h-full bg-white absolute top-0 left-0 blur-xl rounded-full"></div>{" "} */}
           <p className="!text-[22px]  tracking-wide !text-center relative">
             {content.description}
           </p>

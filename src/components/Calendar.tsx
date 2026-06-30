@@ -66,13 +66,11 @@ export default function Calendar({
     <>
       {loading && (
         <div>
-          <p>...Loading Availabilities</p>
+          <h3>...Loading Availabilities</h3>
         </div>
       )}
       {}
       <div className="w-full ">
-        <h3>Heres my next availabilities for Massage sessions </h3>
-
         {sortedDay && (
           <Swiper
             className="w-[100%] bg-red-100 rounded "
@@ -110,10 +108,6 @@ export default function Calendar({
             ))}
           </Swiper>
         )}
-        <p>
-          Feel free to chose what works best for you, if you need to adjust
-          timings you can send me a message during reservation process
-        </p>
       </div>
     </>
   );

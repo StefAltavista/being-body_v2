@@ -77,7 +77,7 @@ export default function Concept() {
     <div id="concept" className=" w-full" ref={concept}>
       <div className=" md:flex-row w-full ">
         <h3 className="my-24 text-left reveal_text1">
-          Body as a vessel to express <br></br>and a tool to connect.{" "}
+          A vessel to express <br></br>and a tool to connect.{" "}
         </h3>
         <div className="flex justify-center relative z-[2]">
           <Image

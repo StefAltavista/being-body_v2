@@ -1,16 +1,11 @@
 export const MenuContent = [
   {
-    title: "Book Appointment",
-    icon: "/icons/feather.svg",
-    link: "/book-apointment",
-  },
-  {
     title: "Massage Therapy",
     icon: "/icons/hands1.svg",
     link: "/massage-therapy",
   },
   {
-    title: "Aromatherapy",
+    title: "Oils",
     icon: "/icons/oil12.svg",
     link: "/aromatherapy",
   },
@@ -24,6 +19,11 @@ export const MenuContent = [
     title: "Workshops",
     icon: "/icons/workshop.svg",
     link: "/workshops",
+  },
+  {
+    title: "Book Appointment",
+    icon: "/icons/feather.svg",
+    link: "/book-apointment",
   },
 
   {

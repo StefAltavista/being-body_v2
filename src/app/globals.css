@@ -86,18 +86,12 @@ a p::after {
   transition: width 0.3s ease;
 }
 
-a p:hover::after {
-  width: 100%;
+a:hover::after {
+  border-bottom: 1px solid white;
 }
 
 p {
   text-align: justify;
-}
-
-h1:hover,
-h3:hover,
-p:hover {
-  letter-spacing: 0.1px;
 }
 
 .handWrite1 {
@@ -117,4 +111,30 @@ p:hover {
   font-weight: 200;
   font-style: normal;
   font-size: 16px;
+}
+@keyframes bubble-float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate3d(40px, -14px, 30px) rotate(2deg);
+  }
+
+  50% {
+    transform: translate3d(-16px, 16px, 0) rotate(-15deg);
+  }
+
+  75% {
+    transform: translate3d(16px, -52px, 10px) rotate(10deg);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+.animate-bubble-float {
+  animation: bubble-float 10s ease-in-out infinite;
+  will-change: transform;
 }

@@ -156,9 +156,22 @@ export default function Techniques() {
       className="handsSection relative w-full flex flex-col justify-end  min-h-[300px]"
     >
       {" "}
-      <h1 className="text-right z-10">My Techniques</h1>
+      <div className=" w-[90vw] ">
+        <h1 className="text-right z-10">My Techniques</h1>
+        <div className="flex  flex-col ">
+          {bulletPoints.map((x, i) => (
+            <h3
+              key={i}
+              className="!z-1000 handWrite2 mb-6 !text-[23px] text-right"
+            >
+              {x}
+            </h3>
+          ))}
+        </div>
+      </div>
       <div className="absolute inset-0 pointer-events-none">
-        {/* {techniques.map((tech) => (
+        {/* BUBBLES:
+        {techniques.map((tech) => (
           <div
             key={tech.label}
             className="tech_bubble absolute bottom-[-120px] w-20 h-20 flex justify-center items-center rounded-full border border-white/50 bg-gradient-to-br from-pink-200/70 to-sky-200/70 backdrop-blur-sm shadow-[inset_0_2px_10px_rgba(255,255,255,0.85),inset_0_-8px_16px_rgba(255,255,255,0.18),0_0_18px_rgba(255,255,255,0.22)]"
@@ -182,19 +195,6 @@ export default function Techniques() {
               width={1000}
               className=" !brightness-100 saturate-60 p-4 rounded-full brightness-[0.9] hue-rotate-[-80deg] "
             />
-          </div>
-        </div>
-
-        <div className=" w-[90vw] ">
-          <div className="flex  flex-col ">
-            {bulletPoints.map((x, i) => (
-              <h3
-                key={i}
-                className="!z-1000 handWrite2 mb-6 !text-[23px] text-right"
-              >
-                {x}
-              </h3>
-            ))}
           </div>
         </div>
       </div>

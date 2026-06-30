@@ -22,7 +22,7 @@ export default function Menu({
         paddingRight: "80px",
 
         background:
-          "linear-gradient(to right, rgb(237, 212, 252) 0%, rgb(233, 245, 255) 50%, rgb(238, 245, 252) 70%, rgba(255,255,255,0) 100%)",
+          "linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(233, 242, 255) 50%, rgb(238, 245, 252) 70%, rgba(255,255,255,0) 100%)",
       }}
     >
       <div
@@ -42,7 +42,7 @@ export default function Menu({
             alt="icon"
           />
           <p
-            className="scale-y-[1.2] scale-x-[0.75] origin-bottom-left "
+            className="scale-y-[1.3] scale-x-[0.75] origin-bottom-left "
             onClick={() => toggle("close")}
           >
             Home
@@ -61,7 +61,7 @@ export default function Menu({
                 alt="icon"
               />
               <p
-                className="scale-y-[1.2] scale-x-[0.75] origin-bottom-left tracking-[1px]"
+                className="scale-y-[1.3] scale-x-[0.75] origin-bottom-left tracking-[1px]"
                 onClick={() => toggle("close")}
               >
                 {x.title}

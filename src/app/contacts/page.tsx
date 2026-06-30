@@ -15,12 +15,14 @@ export default function Contact() {
         <Contacts format={format} />
       </div>
       <div className="flex flex-col items-center w-full  my-8 ">
-        <p>Feel Free to contact me to discuss availability or have a tea!</p>
+        <h3 className="text-center">
+          Feel Free to contact me to discuss availability or have a tea!
+        </h3>
         <button
           onClick={() => setOpenMessage(true)}
-          className="border border-green-300 p-2 m-2 hover:bg-green-100 cursor-pointer rounded"
+          className="border border-orange-200 bg-green-100 p-2 m-2 hover:bg-blue-100 hover:border-green-100 transition duration-700 cursor-pointer rounded-xl"
         >
-          Send me a message
+          <h3>Send me a message</h3>{" "}
         </button>
 
         {openMessage && (
