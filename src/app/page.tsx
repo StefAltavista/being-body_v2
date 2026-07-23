@@ -7,6 +7,7 @@ import Techniques from "@/content/Techniques";
 import BodyWelcome from "@/content/BodyWelcome";
 import Welcome from "@/content/Welcome";
 import PresentingKatia from "@/content/PresentingKatia";
+import AutoCarousel from "@/content/autoCarousel";
 
 export default function Home() {
   return (
@@ -23,8 +24,11 @@ export default function Home() {
       <Container>
         <BookButton className=" overflow-visible" />
       </Container>
-      <Container classname="mt-20 overflow-visible">
+      {/* <Container classname="mt-20 overflow-visible">
         <PresentingKatia />
+      </Container> */}
+      <Container classname="mt-20 overflow-visible">
+        <AutoCarousel />
       </Container>
       <Container classname=" overflow-visible my-40">
         <Techniques />

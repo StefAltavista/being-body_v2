@@ -3,12 +3,8 @@
 import { useRef } from "react";
 import { CardsContent } from "@/content/CardsContent";
 import Card from "./Card";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, useGSAP } from "@/lib/gsap";
 import AnimatedBackgroundImage from "@/components/AnimatedBackground";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Practices() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -25,22 +21,24 @@ export default function Practices() {
           {
             y: -250,
             x: odd ? -200 : 200,
-            transform: odd ? "rotate(0.9turn)" : "rotate(1.1turn)",
-            opacity: 0,
+            rotation: odd ? 324 : 396,
+            autoAlpha: 0,
           },
           {
             y: 100,
             x: 0,
-            transform: "rotate(1turn)",
-            opacity: 1,
+            rotation: 360,
+            autoAlpha: 1,
             duration: 2,
             ease: "power3.out",
             delay: i * (odd ? 0.5 : 2),
+            force3D: true,
             scrollTrigger: {
               trigger: card,
               start: "top 50%",
               end: "top -10%",
               scrub: 0.2,
+              invalidateOnRefresh: true,
             },
           },
         );

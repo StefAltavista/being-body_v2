@@ -1,12 +1,8 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import Link from "next/link";
 import { useRef } from "react";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const BUBBLE_SIZE = 120;
 const START_SCALE = 2;
@@ -237,12 +233,18 @@ export default function BookButton({ className }: { className?: string }) {
         },
       });
 
+      const resizeRefresh = gsap.delayedCall(0.15, () => {
+        ScrollTrigger.refresh();
+      });
+
+      resizeRefresh.pause();
+
       const handleResize = () => {
         if (hasMovedToCornerRef.current) {
           showFixedInCorner();
         }
 
-        ScrollTrigger.refresh();
+        resizeRefresh.restart(true);
       };
 
       window.addEventListener("resize", handleResize);
@@ -251,6 +253,7 @@ export default function BookButton({ className }: { className?: string }) {
         window.removeEventListener("resize", handleResize);
 
         scrollTrigger.kill();
+        resizeRefresh.kill();
 
         gsap.killTweensOf(sectionEl);
         gsap.killTweensOf(originalShell);

@@ -2,13 +2,9 @@
 import "../css/header.css";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { CardsContent } from "@/content/CardsContent";
 import { usePathname } from "next/navigation";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Header() {
   const location = usePathname();
@@ -18,20 +14,46 @@ export default function Header() {
 
   useGSAP(
     () => {
-      if (home) {
-        gsap.from(".header_title", {
-          marginTop: 100,
-          opacity: 0,
-          duration: 2,
-          delay: 2,
+      gsap.set(".header_title", {
+        autoAlpha: 1,
+        transformOrigin: "center center",
+      });
+
+      if (!home) {
+        gsap.set(".header_title", {
+          scale: 0.7,
+          y: -40,
+          force3D: true,
         });
+
+        return;
       }
+
+      gsap.set(".header_title", {
+        scale: 1,
+        y: 0,
+        force3D: true,
+      });
+
+      gsap.fromTo(
+        ".header_title",
+        {
+          autoAlpha: 0,
+        },
+        {
+          autoAlpha: 1,
+          duration: 1.2,
+          delay: 1.4,
+          ease: "power3.out",
+        },
+      );
 
       gsap.to(".header_title", {
         scale: 0.7,
         y: -40,
         transformOrigin: "center center",
         ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: document.documentElement,
           start: "top top+=10",
@@ -41,7 +63,7 @@ export default function Header() {
         },
       });
     },
-    { scope: headerRef },
+    { scope: headerRef, dependencies: [home], revertOnUpdate: true },
   );
 
   useEffect(() => {

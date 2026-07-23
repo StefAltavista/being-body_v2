@@ -2,11 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+import { gsap, useGSAP } from "@/lib/gsap";
 
 type AnimatedBackgroundImageProps = {
   className?: string;
@@ -22,7 +18,7 @@ export default function AnimatedBackgroundImage({
   className = "",
   imageClassName = "",
   width = 800,
-  height = 800,
+  height = 1067,
   startY,
   maxY,
   clipped = false,
@@ -78,13 +74,19 @@ export default function AnimatedBackgroundImage({
             filter: "hue-rotate(180deg) blur(20px) saturate(2)",
           };
 
+      gsap.set(bgImage, {
+        willChange: "transform, opacity, filter",
+      });
+
       gsap.fromTo(bgImage, bgFrom, {
         ...bgTo,
+        force3D: true,
         scrollTrigger: {
           trigger: container.current,
           start: "top bottom",
           end: "bottom top",
           scrub: 0.5,
+          invalidateOnRefresh: true,
         },
       });
     },

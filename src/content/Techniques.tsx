@@ -1,20 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, useGSAP } from "@/lib/gsap";
 import Image from "next/image";
-
-gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-const techniques = [
-  { label: "Deep Tissue", left: "22%" },
-  { label: "Aromatherapy", left: "38%" },
-  { label: "Lomi Lomi", left: "56%" },
-  { label: "Trigger Point", left: "72%" },
-  { label: "Relaxation", left: "86%" },
-];
 
 const bulletPoints = [
   "Combined from Traditional Thai Massage, LOMILOMI, and trigger point therapy",
@@ -45,6 +33,7 @@ export default function Techniques() {
           start: "top bottom",
           end: "bottom top",
           scrub: 0.4,
+          invalidateOnRefresh: true,
           // markers: true,
         },
       });
@@ -62,6 +51,7 @@ export default function Techniques() {
           x: -200,
           y: 500,
           opacity: 1,
+          force3D: true,
         },
         0,
       );

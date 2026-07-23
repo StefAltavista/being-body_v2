@@ -1,26 +1,40 @@
 import Image from "next/image";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import { useRef } from "react";
 
 export default function Welcome() {
-  gsap.registerPlugin(useGSAP);
   const welcomRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(() => {
-    gsap.from(".welcome_img", {
-      transform: "scaleX(1.5)",
-      filter: "blur(10px)",
-      opacity: 0,
-      duration: 2,
+    gsap.set([".welcome_img", ".welcome_text"], {
+      willChange: "transform, opacity, filter",
     });
-    gsap.from(".welcome_text", {
-      filter: "blur(5px)",
-      opacity: 0,
-      duration: 1,
-      delay: 3,
-    });
-  }, [{ scope: welcomRef }]);
+
+    gsap
+      .timeline({
+        defaults: {
+          ease: "power3.out",
+          force3D: true,
+        },
+      })
+      .from(".welcome_img", {
+        scale: 1.12,
+        filter: "blur(10px)",
+        autoAlpha: 0,
+        duration: 2,
+        clearProps: "willChange",
+      })
+      .from(
+        ".welcome_text",
+        {
+          filter: "blur(5px)",
+          autoAlpha: 0,
+          duration: 1,
+          clearProps: "willChange",
+        },
+        "+=1",
+      );
+  }, { scope: welcomRef });
 
   return (
     <div
@@ -32,8 +46,11 @@ export default function Welcome() {
         <Image
           src={`/img/welcome_new.png`}
           alt="beingBodyLogo"
-          height={400}
-          width={500}
+          height={1610}
+          width={1206}
+          priority
+          sizes="(max-width: 900px) 70vw, 500px"
+          style={{ width: "min(70vw, 500px)", height: "auto" }}
         />
       </div>
       <div className="welcome_text  mt-12 ">

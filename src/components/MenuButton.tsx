@@ -1,12 +1,9 @@
 "use client";
 import { useRef, useState } from "react";
 import Menu from "./Menu";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "@/lib/gsap";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-
-gsap.registerPlugin(useGSAP);
 
 export default function MenuButton() {
   const [toggleMenu, setToggleMenu] = useState("close");
@@ -17,10 +14,11 @@ export default function MenuButton() {
     () => {
       if (home) {
         gsap.from(".menu_icon", {
-          top: -120,
+          y: -90,
           duration: 1,
           delay: 4,
-          ease: "bounce",
+          ease: "back.out(1.8)",
+          force3D: true,
         });
       }
     },
@@ -43,6 +41,7 @@ export default function MenuButton() {
               src="/icons/Menu_closed.png"
               alt="Menu closed icon"
               fill
+              sizes="100px"
               className="object-contain hue-rotate-70 brightness-150"
             />
           </div>
@@ -56,6 +55,7 @@ export default function MenuButton() {
               src="/icons/Menu_open.png"
               alt="Menu open icon"
               fill
+              sizes="100px"
               className="object-contain hue-rotate-70 brightness-150"
             />
           </div>
