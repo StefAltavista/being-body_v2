@@ -7,7 +7,7 @@ export const MenuContent = [
   {
     title: "Oils",
     icon: "/icons/oil12.svg",
-    link: "/aromatherapy",
+    link: "/oils",
   },
   {
     title: "Pilates",

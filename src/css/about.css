@@ -1,12 +1,154 @@
-#katiaserena div img {
-    max-height: 70vh;
+#katiaserena {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 150px);
+  padding: 2.5rem 0 5rem;
 }
-#about {
-    padding-right: 10%;
+
+.about-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-areas:
+    "intro portrait"
+    "closing portrait";
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(100%, 76rem);
+  margin: 0 auto;
+  padding: 0 clamp(0rem, 2vw, 2rem);
 }
+
+.about-copy {
+  max-width: 42rem;
+}
+
+.about-intro {
+  grid-area: intro;
+  align-self: end;
+}
+
+.about-closing {
+  grid-area: closing;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.about-copy p {
+  margin: 0;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.about-pullquote {
+  max-width: 33rem;
+  margin-bottom: 0.6rem !important;
+  align-self: center;
+  text-align: center !important;
+}
+
+.about-portrait {
+  grid-area: portrait;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 34rem);
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+}
+
+.about-contact-button {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  padding: 0.7rem 1.45rem;
+  border: 1px solid rgba(37, 79, 102, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0.5rem 1.4rem rgba(37, 79, 102, 0.08);
+  font-family: "Patrick Hand SC", cursive !important;
+  font-size: 1.35rem;
+  line-height: 1;
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    transform 300ms ease;
+}
+
+.about-contact-button:hover,
+.about-contact-button:focus-visible {
+  background: rgba(255, 255, 255, 0.72);
+  transform: translateY(-2px);
+}
+
 @media only screen and (max-width: 900px) {
-    #about {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
+  #katiaserena {
+    padding-top: 1.25rem;
+  }
+
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.9fr);
+    gap: 2.25rem;
+  }
+
+  .about-copy p {
+    font-size: 1.05rem;
+  }
+
+  .about-portrait {
+    width: min(100%, 28rem);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #katiaserena {
+    padding: 0 0 3.5rem;
+  }
+
+  .about-layout {
+    grid-template-areas:
+      "intro"
+      "portrait"
+      "closing";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    padding: 0;
+  }
+
+  .about-copy {
+    max-width: none;
+  }
+
+  .about-intro {
+    align-self: start;
+  }
+
+  .about-portrait {
+    width: min(100%, 24rem);
+    margin: 0 auto;
+  }
+
+  .about-portrait img {
+    max-height: none;
+  }
+
+  .about-closing {
+    gap: 1.35rem;
+  }
+
+  .about-copy p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .about-contact-button {
+    align-self: center;
+    margin-top: 0.2rem;
+  }
 }
