@@ -21,31 +21,32 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function sendMessage(subject: string, message: string) {
+async function sendMessage(
+  subject: string,
+  message: string,
+  replyTo?: string,
+) {
   const options = {
     from: EMAIL_FROM,
     to: EMAIL_TO,
     subject,
     html: message,
+    replyTo: replyTo || undefined,
   };
   try {
     await transporter.verify();
-    console.log("SMTP ready");
-  } catch (e) {
-    console.error("SMTP verify failed", e);
-  }
-  try {
     await transporter.sendMail(options);
     return {
-      e: null,
-      result: "Message sent!",
-    };
-  } catch (e) {
-    console.log("ERROR Message NOT sent", e);
-    return {
-      e,
+      success: true,
       result:
-        ":/ sorry there was a problem with the server. Please try again or send the info directly at being.body.practice@gmail.com",
+        "Your message has been sent. I will get back to you as soon as possible.",
+    };
+  } catch (error) {
+    console.error("Contact message could not be sent.", error);
+    return {
+      success: false,
+      result:
+        "Sorry, there was a problem sending your message. Please try again later or email being.body.practice@gmail.com directly.",
     };
   }
 }
@@ -101,10 +102,25 @@ export async function POST(req: Request) {
       );
     }
 
-    const message = buildMessage(subject, checked.sanitized);
-    const result = await sendMessage(subject, message);
+    if (!EMAIL_TO || !EMAIL_FROM || !EMAIL_PASS) {
+      console.error("Contact email configuration is incomplete.");
+      return NextResponse.json(
+        { result: "The message could not be sent right now." },
+        { status: 500 },
+      );
+    }
 
-    return NextResponse.json(result, { status: 200 });
+    const message = buildMessage(subject, checked.sanitized);
+    const result = await sendMessage(
+      subject,
+      message,
+      checked.sanitized.email,
+    );
+
+    return NextResponse.json(
+      { result: result.result },
+      { status: result.success ? 200 : 500 },
+    );
   } catch {
     return NextResponse.json(
       {

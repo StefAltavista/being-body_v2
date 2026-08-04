@@ -26,7 +26,7 @@ export default function Contact() {
         </button>
 
         {openMessage && (
-          <Modal close={() => setOpenMessage(false)} color="bg-green-100">
+          <Modal close={() => setOpenMessage(false)} color="bg-[#f8f5f0]">
             {(requestClose) => <SendMessageForm close={requestClose} />}
           </Modal>
         )}
