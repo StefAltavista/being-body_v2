@@ -89,6 +89,7 @@ const oils: OilBlend[] = [
     description:
       "Earthy vetiver, moving cypress, and igniting cinnamon—a spell for grounding when the soil itself seems nowhere to be found. The warm hug of earth, the spirit to carry on 🍁🔥",
   },
+
   {
     name: "Feeling Fir",
     intention: "Revealing",
@@ -108,6 +109,26 @@ const oils: OilBlend[] = [
     ],
     description:
       "Gentle silver fir, focusing fennel, and sacred frankincense—a spell to hear the harmony of voices that echo in our internal mountain ranges. 🌬️🍃",
+  },
+  {
+    name: "Zephyrous Zest",
+    intention: "Elevating",
+    ingredients: "Cedarwood,Bergamot, Ylang-Ylang",
+    character: "Buoyant and effervescent, powerful in inspiration",
+    benefit: "Can boost mood, self esteem and ease anxiety",
+    images: [
+      "/img/oils/rr-logo.png",
+      "/img/oils/rr-foto.png",
+      "/icons/oil12.svg",
+    ],
+    poem: [
+      "This blend is inspired by the sweet breeze of spring",
+      "Soft licks lapping against limbs",
+      "Floating footsteps, rustle of leaves",
+      "Dulcet harmonies carrying, calling",
+    ],
+    description:
+      "Anchoring cedar, uplifting bergamot and stimulating ylang ylang. A spell for navigating swirling gusts, motivating withering winds; soothing inner conflict, finding balance. Light and bright, encouraging us will the calls of a sweet, soft breeze of serenity 🌬️✨",
   },
 ];
 

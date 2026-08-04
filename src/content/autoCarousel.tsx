@@ -103,26 +103,6 @@ export default function AutoCarousel() {
     };
   }, []);
 
-  const goPrevious = () => {
-    setPosition((current) => {
-      const next = wrapPosition(current - 1);
-      positionRef.current = next;
-
-      return next;
-    });
-    setDragOffset(0);
-  };
-
-  const goNext = () => {
-    setPosition((current) => {
-      const next = wrapPosition(current + 1);
-      positionRef.current = next;
-
-      return next;
-    });
-    setDragOffset(0);
-  };
-
   const handlePointerDown = (event: React.PointerEvent<HTMLElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -322,65 +302,6 @@ export default function AutoCarousel() {
         })}
       </div>
 
-      {/* <button
-        type="button"
-        aria-label="Previous image"
-        onClick={goPrevious}
-        className="
-          absolute
-          left-4
-          top-1/2
-          z-50
-          flex
-          h-12
-          w-12
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-full
-          bg-white/80
-          text-3xl
-          font-light
-          text-black
-          shadow-xl
-          backdrop-blur-md
-          transition
-          hover:scale-105
-          active:scale-95
-        "
-      >
-        &lt;
-      </button>
-
-      <button
-        type="button"
-        aria-label="Next image"
-        onClick={goNext}
-        className="
-          absolute
-          right-4
-          top-1/2
-          z-50
-          flex
-          h-12
-          w-12
-          -translate-y-1/2
-          items-center
-          justify-center
-          rounded-full
-          bg-white/80
-          text-3xl
-          font-light
-          text-black
-          shadow-xl
-          backdrop-blur-md
-          transition
-          hover:scale-105
-          active:scale-95
-        "
-      >
-        &gt;
-      </button> */}
     </section>
   );
 }

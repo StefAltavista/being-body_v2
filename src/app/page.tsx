@@ -6,7 +6,6 @@ import BookButton from "@/components/BookButton";
 import Techniques from "@/content/Techniques";
 import BodyWelcome from "@/content/BodyWelcome";
 import Welcome from "@/content/Welcome";
-import PresentingKatia from "@/content/PresentingKatia";
 import AutoCarousel from "@/content/autoCarousel";
 
 export default function Home() {

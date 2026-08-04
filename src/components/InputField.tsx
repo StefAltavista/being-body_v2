@@ -28,7 +28,7 @@ export default function InputField({
 }) {
   return (
     <div className={`z-100 rounded flex flex-col justify-end w-full`}>
-      <p className="handWrite1">{label}: </p>
+      <p>{label}: </p>
 
       {fieldType === "textArea" ? (
         <textarea

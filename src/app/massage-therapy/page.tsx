@@ -94,8 +94,8 @@ export default function Page() {
               dissolve them.<br></br>
             </p>
             <p className="handWrite2 !text-center w-full !mt-16 md:!text-[26px]">
-              "I use a mix of techniques, <br></br>guided by what the body tells
-              me.""
+              &ldquo;I use a mix of techniques, <br></br>guided by what the body
+              tells me.&rdquo;
             </p>
           </div>
           <BookButton />

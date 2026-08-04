@@ -7,13 +7,11 @@ import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
 
-export default function page() {
+export default function Page() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      const paragraphs = gsap.utils.toArray<HTMLElement>(".reveal-p");
-
       gsap.fromTo(
         ".pilates-hero-image",
         {
