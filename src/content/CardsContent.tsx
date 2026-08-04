@@ -7,7 +7,7 @@ export const CardsContent = [
     icon: "/icons/hands1.svg",
     image: "/img/massageBG.png",
 
-    link: "/massage",
+    link: "/massage-therapy",
     bg: "bg-pink-100",
     hooverColor: "#e1fce6ff",
   },

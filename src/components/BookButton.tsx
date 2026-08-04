@@ -18,11 +18,11 @@ function BubbleContent() {
         href="/book-apointment"
         className="relative z-10 flex h-full w-full flex-col items-center justify-center rounded-full text-center"
       >
-        <span className="handWrite2 text-[24px] leading-none text-slate-700">
+        <span className="handWrite2 !text-[16px] leading-none text-slate-700">
           Book
         </span>
 
-        <span className="handWrite2 mt-1 text-[17px] leading-none text-slate-700">
+        <span className="handWrite2 mt-1 !text-[16px] leading-none text-slate-700">
           Appointment
         </span>
       </Link>

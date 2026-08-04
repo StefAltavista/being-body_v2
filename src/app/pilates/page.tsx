@@ -67,7 +67,7 @@ export default function PilatesPage() {
   return (
     <Container classname="w-full justify-start items-start mt-10 overflow-hidden">
       <div ref={container} className="w-full">
-        <Background rotate={80} imageClassName="opacity-100" />
+        <Background rotate={200} imageClassName="opacity-100" />
 
         <div className="w-full relative">
           <div className="flex items-center">

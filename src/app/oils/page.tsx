@@ -17,7 +17,7 @@ const rituals = [
   },
   {
     name: "Room Diffuser",
-    instruction: "Add 2 to 3 drops to a bowl of hot water or a diffuser.",
+    instruction: "Add 2 to 3 drops to a bowl of hot water.",
     delay: "1s",
   },
   {
@@ -34,6 +34,11 @@ const oils: OilBlend[] = [
     ingredients: "Lavender, Clary Sage, Mint",
     character: "Clearing and calming, powerful in intuition",
     benefit: "Can promote clarity of thought, ease tension, and enhance vision",
+    images: [
+      "/img/oils/cc-logo.png",
+      "/img/oils/cc-foto.png",
+      "/icons/oil12.svg",
+    ],
     poem: [
       "This blend is inspired by trickling tranquility",
       "Winding through mossy stones",
@@ -50,6 +55,11 @@ const oils: OilBlend[] = [
     ingredients: "Cardamom, Myrtle, Jasmine",
     character: "Stimulating and meditative, powerful in sensitivity",
     benefit: "Can soothe, enhance mood, and embolden love",
+    images: [
+      "/img/oils/ss-logo.png",
+      "/img/oils/ss-foto.png",
+      "/icons/oil12.svg",
+    ],
     poem: [
       "This blend is inspired by the in-between",
       "The threads of connection",
@@ -65,6 +75,11 @@ const oils: OilBlend[] = [
     ingredients: "Vetiver, Cypress, Cinnamon",
     character: "Warm and centering, powerful in generosity of spirit",
     benefit: "Can alleviate stress and aid in moments of transition",
+    images: [
+      "/img/oils/rr-logo.png",
+      "/img/oils/rr-foto.png",
+      "/icons/oil12.svg",
+    ],
     poem: [
       "This blend is inspired by the scattering of leaves",
       "Embers of a fire that warm the earth from the inside",
@@ -80,6 +95,11 @@ const oils: OilBlend[] = [
     ingredients: "Silver Fir, Fennel, Frankincense",
     character: "Mysterious and full of wonder, powerful in perception",
     benefit: "Can promote peace of mind and enhance meditation",
+    images: [
+      "/img/oils/ff-logo.png",
+      "/img/oils/ff-foto.png",
+      "/icons/oil12.svg",
+    ],
     poem: [
       "This blend is inspired by a gentle mist in a lost forest",
       "Sweet chills along ridges",
@@ -143,7 +163,7 @@ export default function OilsPage() {
   return (
     <Container classname="w-full items-start justify-start mt-10 overflow-hidden">
       <div ref={container} className="w-full">
-        <Background rotate={120} imageClassName="opacity-100" />
+        <Background rotate={330} imageClassName="opacity-100" />
 
         <header className="relative w-full">
           <div className="flex items-center">
@@ -157,23 +177,39 @@ export default function OilsPage() {
             />
             <h1>Oils</h1>
           </div>
-          <p className="reveal-p !mt-8 !text-[30px]">
-            Blends of aromatic anointing oils
-          </p>
-          <p className="reveal-p  !mt-4 max-w-5xl !text-left !text-[26px] leading-relaxed">
-            Aromatherapy oil blends thoughtfully handcrafted using pure
-            botanicals. Each blend is inspired by the healing wisdom of nature—a
-            unique vision—and carefully created to evoke a specific feeling,
-            support intention, and nurture the mind, body, and spirit.
-          </p>
         </header>
-
-        <section className="relative mx-auto mt-14 w-full max-w-6xl">
-          <h3 className="reveal-p  !mt-2 !text-center !text-[36px] tracking-[0.18em]">
+        <div className=" reveal-p rounded flex justify-between md:flex-row flex-col items-start mb-16">
+          <div>
+            {" "}
+            <p className=" !text-left md:!text-[32px] !text-[22px] leading-relaxed">
+              Aromatherapy oil blends thoughtfully handcrafted using pure
+              botanicals.<br></br> <br></br> <br></br> Each blend is inspired by
+              the healing wisdom of nature. unique vision and carefully created
+              to evoke a specific feeling, support intention, and nurture the
+              mind, body, and spirit.
+            </p>{" "}
+            <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-left md:!text-[26px] leading-relaxed">
+              Our senses allow us to connect to the world around us. <br></br>
+            </p>
+          </div>
+          <Image
+            src={"/img/oils/hero.png"}
+            width={300}
+            height={300}
+            alt={"Being body oil blends"}
+            className="ml-6 animate-bubble-float  border border-blue-100 rounded-full opacity-70 md:w-[600px] md:h-[600px] w-[400px] h-[400px]"
+          />
+        </div>
+        <section className="relative  mx-auto mt-14 w-full max-w-6xl">
+          <h3 className="reveal-p  !mt-26 !my-2 !text-center  !text-[36px] tracking-[0.18em]">
             : : : : Uses &amp; Rituals : : : :
           </h3>
-
-          <div className="mt-12 grid grid-cols-1 items-start gap-14 md:grid-cols-3 md:gap-10">
+          <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-center md:!text-[24px] leading-relaxed">
+            There are no rules for exploring them, <br></br>but here are some
+            ideas and intentions to spark your own unique, feeling, and
+            ever-evolving practice.
+          </p>
+          <div className="mt-12 grid grid-cols-1 items-center gap-14 md:grid-cols-3 md:gap-10">
             {rituals.map((ritual) => (
               <div key={ritual.name} className="flex flex-col items-center">
                 <Bubble
@@ -183,18 +219,12 @@ export default function OilsPage() {
                   size={36}
                   fontSize={"26px"}
                 />
-                <p className="reveal-p handWrite2 !mt-10 max-w-[270px] !text-center !text-[16px] leading-relaxed">
+                <p className="reveal-p  !mt-10 max-w-[270px] !text-center !text-[26px] leading-relaxed">
                   {ritual.instruction}
                 </p>
               </div>
             ))}
           </div>
-
-          <p className="reveal-p mx-auto !mt-20 max-w-4xl !text-center !text-[23px] leading-relaxed">
-            Our senses allow us to connect to the world around us. There are no
-            rules for exploring them, but here are some ideas and intentions to
-            spark your own unique, feeling, and ever-evolving practice.
-          </p>
         </section>
 
         <section className="relative mx-auto mb-24 mt-28 w-full max-w-7xl">

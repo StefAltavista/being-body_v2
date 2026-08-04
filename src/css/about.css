@@ -49,6 +49,30 @@
   text-align: center !important;
 }
 
+.about-mantra {
+  align-self: center;
+  max-width: 34rem;
+  text-align: center !important;
+}
+
+.about-signoff {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.about-signoff span:first-child {
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 1.1rem;
+}
+
+.about-signoff span:last-child {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.35rem;
+}
+
 .about-portrait {
   grid-area: portrait;
   align-self: center;

@@ -47,18 +47,27 @@ export default function About({ format }: { format: string }) {
             <br />
             And so my study of movement developed into my study of the body and
             its functions and systems, which developed into my study of how to
-            redirect and manipulate them through touch.
+            redirect and manipulate them through touch, which developed into my
+            study of how to channel and direct them, again, through movement.
+          </p>
+
+          <p className="about-mantra">Full circle, and ever evolving.</p>
+
+          <p className="about-mantra">
+            resonating within each revolution: a belief, a truth
           </p>
 
           <p>
-            I believe it takes focused feeling, deep reflection, and open hearts
-            to improve health and wellbeing.
+            it takes focused feeling, deep reflection, and open hearts to
+            instigate understanding and improve wellbeing.
             <br />
-            <strong>
-              This is what I will continue to strive for and continue to
-              explore.
-            </strong>
+            This is what I will continue to strive for and continue to explore.
           </p>
+
+          <div className="about-signoff">
+            <span>With love</span>
+            <span>Xx</span>
+          </div>
 
           <Link href="/contacts" className="about-contact-button">
             Contact me

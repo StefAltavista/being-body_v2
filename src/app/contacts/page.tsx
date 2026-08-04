@@ -20,7 +20,7 @@ export default function Contact() {
         </h3>
         <button
           onClick={() => setOpenMessage(true)}
-          className="border border-orange-200 bg-green-100 p-2 m-2 hover:bg-blue-100 hover:border-green-100 transition duration-700 cursor-pointer rounded-xl"
+          className=" bg-green-100 p-2 m-2 hover:bg-blue-100 hover:border-green-100 transition duration-700 cursor-pointer rounded-xl"
         >
           <h3>Send me a message</h3>{" "}
         </button>

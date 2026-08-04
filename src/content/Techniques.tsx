@@ -4,12 +4,6 @@ import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import Image from "next/image";
 
-const bulletPoints = [
-  "Combined from Traditional Thai Massage, LOMILOMI, and trigger point therapy",
-  "Stone Massage adds warmth and grounding for deeper muscle relaxation and circulation",
-  "Focus on mindful breathing and body feedback to guide pressure and movement",
-];
-
 export default function Techniques() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -146,19 +140,7 @@ export default function Techniques() {
       className="handsSection relative w-full flex flex-col justify-end  min-h-[300px]"
     >
       {" "}
-      <div className=" w-[90vw] ">
-        <h1 className="text-right z-10">My Techniques</h1>
-        <div className="flex  flex-col ">
-          {bulletPoints.map((x, i) => (
-            <h3
-              key={i}
-              className="!z-1000 handWrite2 mb-6 !text-[23px] text-right"
-            >
-              {x}
-            </h3>
-          ))}
-        </div>
-      </div>
+      <div className=" w-[90vw] "></div>
       <div className="absolute inset-0 pointer-events-none">
         {/* BUBBLES:
         {techniques.map((tech) => (

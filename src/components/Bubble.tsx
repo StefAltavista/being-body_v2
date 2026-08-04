@@ -3,7 +3,7 @@ export default function Bubble({
   className = "",
   delay = "0s",
   size = 20,
-  fontSize = 18,
+  fontSize = "18px",
 }: {
   text: string;
   className?: string;

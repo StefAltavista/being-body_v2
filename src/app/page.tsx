@@ -28,6 +28,10 @@ export default function Home() {
         <PresentingKatia />
       </Container> */}
       <Container classname="mt-20 overflow-visible">
+        <h2 className="handWrite2 !text-[22px] text-center">
+          My intention is to create a space to listen;<br></br>Bring people into
+          a place where they can hear themselves, connect with themselves.
+        </h2>
         <AutoCarousel />
       </Container>
       <Container classname=" overflow-visible my-40">
