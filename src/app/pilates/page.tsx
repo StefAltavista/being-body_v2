@@ -93,7 +93,8 @@ export default function PilatesPage() {
             <div className="pilates-hero-wrapper relative w-full max-w-[420px] aspect-square justify-self-center lg:justify-self-end overflow-hidden rounded-[2rem]">
               <Image
                 className="pilates-hero-image object-cover"
-                src="/photos/massage2.jpg"
+                // src="/photos/pilates1.png"
+                src="/photos/pilates2.jpg"
                 fill
                 alt=""
               />

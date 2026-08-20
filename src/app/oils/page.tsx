@@ -256,7 +256,11 @@ export default function OilsPage() {
 
           <div className="flex flex-col gap-16 lg:gap-24">
             {oils.map((oil, index) => (
-              <OilCard key={oil.name} oil={oil} reverse={index % 2 === 1} />
+              <OilCard
+                key={oil.name}
+                oil={oil}
+                imageOnRight={index % 2 === 1}
+              />
             ))}
           </div>
           <p className="handWrite2 !mt-7 !text-left !text-[18px] leading-relaxed opacity-80">

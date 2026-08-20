@@ -7,6 +7,7 @@ type CardContent = {
   id: string;
   link: string;
   title: string;
+  quote: string;
   hooverColor: string;
   image: string;
   icon: string;
@@ -19,7 +20,7 @@ export default function Card({ content }: { content: CardContent }) {
     <Link href={content.link} key={content.id} className="   cursor-pointer">
       <div
         style={{ "--hover-color": content.hooverColor } as React.CSSProperties}
-        className={`${content.bg} w-full overflow-hidden relative h-full card_class  p-8  hover:translate-y-[-3%] hover:mb-1 transition-all  duration-500   hover:bg-[var(--hover-color)] flex flex-col items-center  rounded-3xl   min-h-100 `}
+        className={`${content.bg} w-full overflow-hidden relative h-full card_class  p-8 py-20 hover:translate-y-[-3%] hover:mb-1 transition-all  duration-500   hover:bg-[var(--hover-color)] flex flex-col items-center  rounded-3xl   min-h-100 `}
       >
         <Image
           alt={`${content.title} card`}
@@ -40,17 +41,17 @@ export default function Card({ content }: { content: CardContent }) {
             className="relative"
           />
         </div>
-        <div className=" relative  !p-4 ">
-          <h3 className="relative !text-[35px] border-white tracking-wider z-2 zeppelin w-full text-center !font-bold p-0  my-4   decoration-1 underline-offset-8 decoration-color-[rgb(31, 100, 93)]  ">
+        <p className="!text-[26px]  tracking-wide !text-center relative">
+          {content.quote}
+        </p>
+        <div className=" relative border-white border-y  my-8 ">
+          <h3 className="relative !text-[35px] border-white tracking-wider z-2 zeppelin w-full text-center !font-bold      decoration-1 underline-offset-8 decoration-color-[rgb(31, 100, 93)]  ">
             {content.title}
           </h3>
         </div>
-
-        <div className=" relative border-white border-y  !p-4 ">
-          <p className="!text-[22px]  tracking-wide !text-center relative">
-            {content.description}
-          </p>
-        </div>
+        <p className="!text-[22px]  tracking-wide !text-center relative">
+          {content.description}
+        </p>
       </div>
     </Link>
   );

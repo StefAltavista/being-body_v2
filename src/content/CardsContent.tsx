@@ -1,9 +1,11 @@
 export const CardsContent = [
   {
     id: "1",
+
     title: "Massage",
-    description:
-      "Tailored treatments that relieve tension, ease pain, and restore balance to body and mind. Each session is personalized to your needs for deep relaxation and lasting well-being.",
+
+    quote: "Presence in touch ",
+    description: "Restore balance, connection, and well-being.",
     icon: "/icons/hands1.svg",
     image: "/img/massageBG.png",
 
@@ -14,9 +16,10 @@ export const CardsContent = [
 
   {
     id: "2",
+
     title: "Pilates",
-    description:
-      "Strengthen your core, improve posture, and build flexibility with reformer and mat classes. Gentle yet powerful movements designed to energize your body and support long-term health.",
+    quote: "Grounding  through Movement",
+    description: "Mindful movement to Align, flow and grow",
     icon: "/icons/stretching.svg",
 
     image: "/img/pilatesBG.png",
@@ -26,9 +29,10 @@ export const CardsContent = [
   },
   {
     id: "3",
+
     title: "Oils",
-    description:
-      "Hand-blended oils crafted for relaxation, focus, and renewal. Pure botanicals mixed with care to support your wellness journey naturally.",
+    quote: "Nature in Ritual",
+    description: "Rooted in nature, guided by intention.",
     icon: "/icons/oil12.svg",
     image: "/img/aroma.png",
     link: "/oils",
@@ -37,9 +41,10 @@ export const CardsContent = [
   },
   {
     id: "4",
+
     title: "Workshops",
-    description:
-      "Interactive sessions where you learn massage techniques, partner stretching, and self-care practices. Designed to empower you with tools to relax, connect, and feel better every day.",
+    quote: "",
+    description: "",
     icon: "/icons/workshop.svg",
     image: "/img/contact.png",
 

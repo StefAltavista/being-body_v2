@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Page() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -54,10 +55,18 @@ export default function Page() {
           </div>
           <div className="flex  flex-col w-full min-h-[80vh] mt-10">
             <h3>Coming soon...</h3>
-            <p>
-              If you are interested in hosting or collaborating, contact me
-              ‘Here’
-            </p>
+            <div className="flex ">
+              <p className="handWrite2">
+                If you are interested in hosting or collaborating, contact me
+              </p>
+              <Link
+                href={"/contacts"}
+                className="pl-1 handWrite2 !text-purple-900"
+              >
+                {" "}
+                Here
+              </Link>
+            </div>
           </div>
         </div>{" "}
       </div>

@@ -68,7 +68,7 @@ export default function Practices() {
           return (
             <div
               key={x.id}
-              className="practice-card md:w-1/3 m-1 sm:w-1/2 mb-8 will-change-transform"
+              className="practice-card p-8 sm:p-0 md:p-0 xl:p-8 lg:p-0 lg:w-1/3 m-1 sm:w-1/2 mb-8 will-change-transform"
             >
               <Card content={x} />
             </div>

@@ -16,7 +16,7 @@ export default function MenuButton() {
         gsap.from(".menu_icon", {
           y: -90,
           duration: 1,
-          delay: 4,
+          delay: 2,
           ease: "back.out(1.8)",
           force3D: true,
         });

@@ -13,12 +13,12 @@ export type OilBlend = {
 
 type OilCardProps = {
   oil: OilBlend;
-  reverse?: boolean;
+  imageOnRight?: boolean;
 };
 
-export default function OilCard({ oil, reverse = false }: OilCardProps) {
-  const productOrder = reverse ? "lg:order-2" : "lg:order-1";
-  const detailsOrder = reverse ? "lg:order-1" : "lg:order-2";
+export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
+  const productOrder = imageOnRight ? "lg:order-2" : "lg:order-1";
+  const detailsOrder = imageOnRight ? "lg:order-1" : "lg:order-2";
 
   return (
     <article
