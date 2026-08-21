@@ -43,8 +43,8 @@ export const CardsContent = [
     id: "4",
 
     title: "Workshops",
-    quote: "",
-    description: "",
+    quote: "Growth in Collective",
+    description: "Connect with your practice and your community",
     icon: "/icons/workshop.svg",
     image: "/img/contact.png",
 

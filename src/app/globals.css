@@ -134,6 +134,18 @@ p {
   }
 }
 
+@keyframes oil-details-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-bubble-float {
   animation: bubble-float 10s ease-in-out infinite;
   will-change: transform;

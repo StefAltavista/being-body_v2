@@ -1,3 +1,7 @@
+"use client";
+
+import { useId, useState } from "react";
+
 import OilCarousel from "@/components/OilCarousel";
 
 export type OilBlend = {
@@ -16,17 +20,38 @@ type OilCardProps = {
   imageOnRight?: boolean;
 };
 
+function OilDetails({ oil }: { oil: OilBlend }) {
+  return (
+    <>
+      <blockquote className="relative mb-9 py-3 pl-7 pr-2 sm:pl-9">
+        <p className="!handWrite2 !text-center !text-[32px] leading-[1.75]">
+          {oil.poem.map((line, index) => (
+            <span key={line} className="handWrite2 md:!text-[28px]">
+              {line}
+              {index < oil.poem.length - 1 && <br />}
+            </span>
+          ))}
+        </p>
+      </blockquote>
+
+      <p className="!text-left leading-relaxed md:!text-[25px]">
+        {oil.description}
+      </p>
+    </>
+  );
+}
+
 export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const mobileDetailsId = useId();
   const productOrder = imageOnRight ? "lg:order-2" : "lg:order-1";
   const detailsOrder = imageOnRight ? "lg:order-1" : "lg:order-2";
 
   return (
     <article
-      className="oil-card relative grid w-full grid-cols-1 items-center gap-8 overflow-hidden rounded-[2.5rem] 
+      className="oil-card relative grid w-full grid-cols-1 items-center gap-2 overflow-hidden rounded-[2.5rem] 
      sm:p-8 lg:grid-cols-[minmax(280px,0.82fr)_minmax(0,1.18fr)] lg:gap-12 lg:p-10 p-4"
     >
-      {/* bg-white/30 p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_24px_70px_rgba(62,91,112,0.13)] backdrop-blur-xl */}
-
       <div
         className={`relative flex min-h-[510px] flex-col items-center overflow-hidden rounded-[2rem] border border-white/65 bg-gradient-to-br from-white/65 via-pink-50/35 to-sky-100/35 px-6 py-8 text-center shadow-[inset_0_2px_14px_rgba(255,255,255,0.95),inset_0_-12px_30px_rgba(177,205,224,0.16),0_16px_45px_rgba(73,105,126,0.1)] ${productOrder}`}
       >
@@ -59,22 +84,28 @@ export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
       </div>
 
       <div
-        className={`flex flex-col items-between justify-center px-1 sm:px-3 ${detailsOrder}`}
+        className={`hidden flex-col items-between justify-center px-1 sm:px-3 lg:flex ${detailsOrder}`}
       >
-        <blockquote className="relative mb-9  py-3 pl-7 pr-2 sm:pl-9">
-          <p className="!handWrite2 !text-center text-[22px] !text-[32px] leading-[1.75] ">
-            {oil.poem.map((line, index) => (
-              <span key={line} className="handWrite2 md:!text-[28px]">
-                {line}
-                {index < oil.poem.length - 1 && <br />}
-              </span>
-            ))}
-          </p>
-        </blockquote>
-
-        <p className="!text-left md:!text-[25px] leading-relaxed ">
-          {oil.description}
-        </p>
+        <OilDetails oil={oil} />
+      </div>
+      {isExpanded && (
+        <div
+          id={mobileDetailsId}
+          className=" lg:hidden mt-8 flex w-full animate-[oil-details-reveal_450ms_ease-out] flex-col justify-center px-1 sm:px-3"
+        >
+          <OilDetails oil={oil} />
+        </div>
+      )}
+      <div className="flex flex-col items-center  lg:hidden">
+        <button
+          type="button"
+          aria-expanded={isExpanded}
+          aria-controls={mobileDetailsId}
+          onClick={() => setIsExpanded((current) => !current)}
+          className="min-w-[50px] min-h-[50px] cursor-pointer handWrite1 rounded-full border border-white/70 bg-white/45   !text-[16px]  active:scale-90"
+        >
+          {isExpanded ? "Less…" : "More…"}
+        </button>
       </div>
     </article>
   );
