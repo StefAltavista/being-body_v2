@@ -20,6 +20,7 @@ const appointmentOptions: AppointmentOption[] = [
       "A nourishing, one-to-one massage session shaped around what your body needs that day. We can make space for rest, release, and a gentle return to yourself.",
     image: "/photos/massage1.jpg",
     imageAlt: "Massage session",
+    url: process.env.NEXT_PUBLIC_CALCOM_MASSAGE_URL!,
   },
   {
     title: "Private Pilates Class",
@@ -27,6 +28,7 @@ const appointmentOptions: AppointmentOption[] = [
       "A private Pilates practice with time to move, strengthen, and reconnect at your own pace. Each class is adapted to support your body and your intentions.",
     image: "/photos/pilates2.jpg",
     imageAlt: "Private Pilates class",
+    url: process.env.NEXT_PUBLIC_CALCOM_PILATES_URL!,
   },
 ];
 
@@ -90,9 +92,7 @@ export default function BookApointmentPage() {
                   Close
                 </button>
               </div>
-              <CalBookingEmbed
-                eventUrl={process.env.NEXT_PUBLIC_CALCOM_EVENT_URL!}
-              />
+              <CalBookingEmbed eventUrl={selectedAppointment.url} />
             </div>
           )}
         </Modal>

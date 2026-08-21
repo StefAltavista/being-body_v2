@@ -5,6 +5,7 @@ export type AppointmentOption = {
   description: string;
   image: string;
   imageAlt: string;
+  url: string;
 };
 
 type AppointmentCardProps = {
