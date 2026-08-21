@@ -146,7 +146,11 @@ export default function AutoCarousel() {
     pointerIdRef.current = null;
     setIsPaused(
       event.pointerType === "mouse" &&
-        isPointOverCarouselCard(event.currentTarget, event.clientX, event.clientY),
+        isPointOverCarouselCard(
+          event.currentTarget,
+          event.clientX,
+          event.clientY,
+        ),
     );
 
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
@@ -154,9 +158,7 @@ export default function AutoCarousel() {
     }
   };
 
-  const handleSectionPointerDown = (
-    event: React.PointerEvent<HTMLElement>,
-  ) => {
+  const handleSectionPointerDown = (event: React.PointerEvent<HTMLElement>) => {
     if (event.pointerType === "mouse") {
       handlePointerDown(event);
     }
@@ -206,7 +208,7 @@ export default function AutoCarousel() {
         h-[540px]
         w-full
         overflow-hidden
-        select-none
+        select-none mb-0
       "
       onPointerDown={handleSectionPointerDown}
       onPointerMove={handlePointerMove}
@@ -301,7 +303,6 @@ export default function AutoCarousel() {
           );
         })}
       </div>
-
     </section>
   );
 }

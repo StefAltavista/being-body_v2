@@ -26,12 +26,12 @@ export default function MenuButton() {
   );
 
   return (
-    <div ref={menuIconRef}>
+    <div ref={menuIconRef} className="">
       <div
         onClick={() => setToggleMenu(toggleMenu === "close" ? "open" : "close")}
-        className="menu_icon fixed left-[-10px] top-[-30px] z-[999] rotate-180 cursor-pointer"
+        className="menu_icon fixed left-[-10px] top-[-30px] z-[999] rotate-180 "
       >
-        <div className="relative w-[100px] h-[100px]">
+        <div className="relative w-[100px] h-[100px] ">
           <div
             className={`absolute inset-0 transition-opacity duration-600 ${
               toggleMenu === "close" ? "opacity-100" : "opacity-0"
@@ -42,7 +42,7 @@ export default function MenuButton() {
               alt="Menu closed icon"
               fill
               sizes="100px"
-              className="object-contain hue-rotate-70 brightness-150"
+              className=" object-contain hue-rotate-70 brightness-150 cursor-pointer"
             />
           </div>
 
@@ -56,7 +56,7 @@ export default function MenuButton() {
               alt="Menu open icon"
               fill
               sizes="100px"
-              className="object-contain hue-rotate-70 brightness-150"
+              className="object-contain hue-rotate-70 brightness-150 cursor-pointer"
             />
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function Menu({
       <div
         className={
           menuState +
-          "  overlay top-0 w-[200vw] h-[100vh] fixed bg-[rgba(255, 255, 255, 0)]"
+          "  overlay top-0 w-[200vw] h-[100vh] fixed bg-[rgba(255, 255, 255, 0)] "
         }
         onClick={() => toggle("close")}
       />
@@ -42,7 +42,7 @@ export default function Menu({
             alt="icon"
           />
           <p
-            className="scale-y-[1.3] scale-x-[0.75] origin-bottom-left "
+            className="!relative !inline-block cursor-pointer hover:!text-blue-800 after:!content-[''] after:!absolute after:!left-0 after:!-bottom-0.5 after:!h-px after:!w-0 after:!bg-current after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full !my-1"
             onClick={() => toggle("close")}
           >
             Home
@@ -61,7 +61,7 @@ export default function Menu({
                 alt="icon"
               />
               <p
-                className="scale-y-[1.3] scale-x-[0.75] origin-bottom-left tracking-[1px]"
+                className="!relative !inline-block cursor-pointer hover:!text-blue-800 after:!content-[''] after:!absolute after:!left-0 after:!-bottom-0.5 after:!h-px after:!w-0 after:!bg-current after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full !my-1"
                 onClick={() => toggle("close")}
               >
                 {x.title}

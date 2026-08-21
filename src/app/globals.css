@@ -4,6 +4,33 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* CURSOR */
+/* Normal cursor */
+html,
+body,
+body * {
+  cursor: url("/icons/cursorFlowerNormal.png"), default;
+}
+.cursor-normal {
+  cursor: url("/icons/cursorFlowerNormal.png"), default !important;
+}
+
+/* Equivalent of cursor-pointer */
+a,
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: url("/icons/cursorFlowerPointer_crisp.png"), pointer !important;
+}
+
+/* While mouse button is pressed */
+a:active,
+button:active,
+[role="button"]:active,
+.cursor-pointer:active {
+  cursor: url("/icons/cursorFlowerDown_crisp.png"), pointer !important;
+}
 @font-face {
   font-family: "Amatic";
   src:

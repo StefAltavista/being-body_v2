@@ -88,29 +88,6 @@
   object-fit: contain;
 }
 
-.about-contact-button {
-  align-self: flex-start;
-  margin-top: 0.35rem;
-  padding: 0.7rem 1.45rem;
-  border: 1px solid rgba(37, 79, 102, 0.55);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0.5rem 1.4rem rgba(37, 79, 102, 0.08);
-  font-family: "Patrick Hand SC", cursive !important;
-  font-size: 1.35rem;
-  line-height: 1;
-  transition:
-    background-color 300ms ease,
-    color 300ms ease,
-    transform 300ms ease;
-}
-
-.about-contact-button:hover,
-.about-contact-button:focus-visible {
-  background: rgba(255, 255, 255, 0.72);
-  transform: translateY(-2px);
-}
-
 @media only screen and (max-width: 900px) {
   #katiaserena {
     padding-top: 1.25rem;

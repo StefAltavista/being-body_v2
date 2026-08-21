@@ -93,9 +93,10 @@ export default function Page() {
               Working with attention and love to discover roots of pain and
               dissolve them.<br></br>
             </p>
-            <p className="handWrite2 !text-center w-full !mt-16 md:!text-[26px]">
-              &ldquo;I use a mix of techniques, <br></br>guided by what the body
-              tells me.&rdquo;
+
+            <p className="!mt-20 handWrite2 reveal-p md:!text-[26px] !text-center">
+              &ldquo;I see this rhythmical symbiosis of movement and breath to
+              be a dance between giver and receiver.&rdquo;
             </p>
           </div>
           <BookButton />
@@ -117,17 +118,16 @@ export default function Page() {
                   using fluid, rhythmic motion to restore energy circulation,
                   relax and release with gentle pressure applied through natural
                   gravity, and focus on trigger and pressure points to release
-                  tension and pain with the help of mindful breath. <br />
-                  <br />I see this rhythmical symbiosis of movement and breath
-                  to be a dance between giver and receiver.
+                  tension and pain with the help of mindful breath.
                 </p>
               </div>
             </div>
           </div>
-
-          <p className="handWrite2 reveal-p !text-[26px] !text-center">
-            Your input and intention is key to each session, I am but the
+          <p className="handWrite2 !text-center w-full !mt-16 md:!text-[26px]">
+            I blend various techniques, <br></br> guided by what the body tells
+            me. Your input and intention is key to each session, I am but the
             conduit of your connection.
+            <br />
             <br />
             My goal is to use elements of different therapeutic practices in
             harmony, to generate a holistic experience in alignment with each
@@ -141,18 +141,14 @@ export default function Page() {
                 text={"Aroma Therapy"}
                 className="mt-6 "
                 delay={3 + "s"}
-                size={36}
-                fontSize="28px"
+                size={28}
+                fontSize="24px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
-                Emotions are part of the human experience. These complex
-                internal reactions are somewhat mysterious, and though they
-                differ from person to person, they have a serious impact on our
-                happiness and wellbeing. Aromatherapy goes very deeply into the
-                psyche on all levels of human experience, influencing feeling
-                and enhancing mind, mood and emotion. I blend oils for each
-                session, a mix for each individual based on their pain and their
-                intentions.
+                Aromatherapy goes very deeply into the psyche on all levels of
+                human experience, influencing feeling and enhancing mind, mood
+                and emotion. I blend oils for each session, a mix for each
+                individual based on their pain and their intentions.
                 <br />
               </p>
             </div>
@@ -166,9 +162,9 @@ export default function Page() {
                 fontSize="22px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
-                Using my knowledge of body mechanics and taught me to map the
-                body through lines of energy using Metta, loving kindness, in
-                forms of deep static and rhythmic pressure.
+                My knowledge of body mechanics and meridian lines allows me to
+                map the body in its warious pathways; using Metta, loving
+                kindness, in forms of deep and rhythmic pressure.
               </p>
             </div>
 
@@ -177,8 +173,8 @@ export default function Page() {
                 text={"Circulatory"}
                 className="mt-6"
                 delay={1 + "s"}
-                size={36}
-                fontSize="28px"
+                size={20}
+                fontSize="24px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
                 I work with the body in long flowing motions, incorporating
@@ -195,12 +191,12 @@ export default function Page() {
                 className="mt-6"
                 delay={2 + "s"}
                 size={28}
-                fontSize="28px"
+                fontSize="24px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
-                <strong>Trigger points </strong> gave me the ability to find
-                painful and tense areas in the muscles and fascia and release
-                them, assisting in achieving long term results.
+                Along the energy pathways there are points that, when triggered,
+                can stimulate the nervous system to provide relief from pain and
+                stress.
                 <br />
               </p>
             </div>
