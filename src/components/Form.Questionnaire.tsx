@@ -116,10 +116,12 @@ export default function QuestionnaireForm() {
         kind: "error",
         message: "Please review the highlighted fields and try again.",
       });
-      requestAnimationFrame(() => statusRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      }));
+      requestAnimationFrame(() =>
+        statusRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        }),
+      );
       return;
     }
 
@@ -259,7 +261,7 @@ export default function QuestionnaireForm() {
           />
           <QuestionnaireField
             field="activities"
-            label="What are the physical activities in which you engage?"
+            label="What are the movement pattern and habits ?"
             value={data.activities}
             error={errors.activities}
             type="textarea"
