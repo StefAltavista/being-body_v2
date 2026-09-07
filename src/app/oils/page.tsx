@@ -7,6 +7,7 @@ import Background from "@/components/Background";
 import Bubble from "@/components/Bubble";
 import Container from "@/components/Container";
 import OilCard from "@/components/OilCard";
+import OilsShowcaseCarousel from "@/content/OilsShowcaseCarousel";
 import { oils } from "@/content/oils";
 import { gsap, useGSAP } from "@/lib/gsap";
 
@@ -81,7 +82,6 @@ export default function OilsPage() {
     <Container classname="w-full items-start justify-start mt-10 overflow-hidden">
       <div ref={container} className="w-full">
         <Background rotate={330} imageClassName="opacity-100" />
-
         <header className="relative w-full">
           <div className="flex items-center">
             <Image
@@ -94,29 +94,23 @@ export default function OilsPage() {
             />
             <h1>Oils</h1>
           </div>
-        </header>
-        <div className=" reveal-p rounded flex justify-between md:flex-row flex-col items-start mb-16">
-          <div>
-            {" "}
-            <p className=" !text-left md:!text-[32px] !text-[22px] leading-relaxed">
-              Aromatherapy oil blends thoughtfully handcrafted using pure
-              botanicals.<br></br> <br></br> <br></br> Each blend is inspired by
-              the healing wisdom of nature. unique vision and carefully created
-              to evoke a specific feeling, support intention, and nurture the
-              mind, body, and spirit.
-            </p>{" "}
-            <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-left md:!text-[26px] leading-relaxed">
-              Our senses allow us to connect to the world around us. <br></br>
-            </p>
-          </div>
-          <Image
-            src={"/img/oils/hero.png"}
-            width={300}
-            height={300}
-            alt={"Being body oil blends"}
-            className="ml-6 animate-bubble-float  border border-blue-100 rounded-full opacity-70 md:w-[600px] md:h-[600px] w-[400px] h-[400px]"
-          />
+        </header>{" "}
+        <p className="reveal-p relative z-10 max-w-5xl !text-left !text-[22px] leading-relaxed md:!text-[32px]">
+          Aromatherapy oil blends thoughtfully handcrafted using pure botanical
+          essential oils.{" "}
+        </p>{" "}
+        <div className=" mx-auto mt-16 flex flex-col w-full w-full flex items-center justify-center  ">
+          <h2 className="!text-[30px]  font-normal sm:!text-[34px]">
+            Offerings
+          </h2>
+
+          <p className="!mt-4 handWrite2 reveal-p  z-10  !text-center !text-[16px] leading-relaxed md:!text-[22px]">
+            Each blend is inspired by the healing wisdom of nature.
+            <br /> a unique vision carefully created to evoke a specific
+            feeling, support intention, and nurture the mind, body, and spirit.
+          </p>
         </div>
+        <OilsShowcaseCarousel />
         <section className="relative  mx-auto mt-14 w-full max-w-6xl">
           <h3 className="reveal-p  !mt-26 !my-2 !text-center  !text-[36px] tracking-[0.18em]">
             : : : : Uses &amp; Rituals : : : :
@@ -126,27 +120,29 @@ export default function OilsPage() {
             ideas and intentions to spark your own unique, feeling, and
             ever-evolving practice.
           </p>
-          <div className="mt-12 grid grid-cols-1 items-center gap-14 md:grid-cols-3 md:gap-10">
+          <div className="lg:w-[70%] mx-auto mt-12 grid grid-cols-1 items-center  md:grid-cols-3 ">
             {rituals.map((ritual) => (
               <div key={ritual.name} className="flex flex-col items-center">
                 <Bubble
                   text={ritual.name}
                   className="mt-4 w-"
                   delay={ritual.delay}
-                  size={36}
-                  fontSize={"26px"}
+                  size={20}
+                  fontSize={"20px"}
                 />
-                <p className="reveal-p  !mt-10 max-w-[270px] !text-center !text-[26px] leading-relaxed">
+                <p className="reveal-p  !mt-10 max-w-[270px] !text-center !text-[24px] leading-relaxed">
                   {ritual.instruction}
                 </p>
               </div>
             ))}
           </div>
         </section>
-
         <section className="relative mx-auto mb-24 mt-28 w-full max-w-7xl">
           <div className="reveal-p mb-12 flex items-center gap-5">
-            <h3 className="!mb-0 shrink-0 !text-[38px]">Offerings</h3>
+            <h3 className="!mb-0 shrink-0 !text-[38px]">
+              {" "}
+              Explore my oil blends
+            </h3>
             <div className="h-px w-full bg-slate-500/25" />
           </div>
 

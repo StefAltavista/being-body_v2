@@ -2,10 +2,13 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type OilCarouselProps = {
   images: string[];
   alt: string;
+  variant?: "card" | "detail";
+  slug: string;
 };
 
 const SWIPE_THRESHOLD = 36;
@@ -14,7 +17,12 @@ function wrapIndex(index: number, length: number) {
   return ((index % length) + length) % length;
 }
 
-export default function OilCarousel({ images, alt }: OilCarouselProps) {
+export default function OilCarousel({
+  images,
+  alt,
+  variant = "card",
+  slug,
+}: OilCarouselProps) {
   const hasMultipleImages = images.length > 1;
   const [trackIndex, setTrackIndex] = useState(hasMultipleImages ? 1 : 0);
   const [dragOffset, setDragOffset] = useState(0);
@@ -25,6 +33,7 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
   const pointerIdRef = useRef<number | null>(null);
   const startXRef = useRef(0);
   const dragOffsetRef = useRef(0);
+  const isDraggingRef = useRef(false);
 
   if (images.length === 0) return null;
 
@@ -47,6 +56,12 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
   const activeIndex = hasMultipleImages
     ? wrapIndex(trackIndex - 1, images.length)
     : 0;
+  const isDetail = variant === "detail";
+  const carouselWidth = isDetail
+    ? "w-full max-w-[520px]"
+    : "w-[220px] sm:w-[250px]";
+  const frameShape = isDetail ? "rounded-[2.5rem]" : "rounded-full";
+  const imageDimension = isDetail ? 720 : 250;
 
   const move = (direction: -1 | 1) => {
     if (!hasMultipleImages || isAnimating || isDragging) return;
@@ -89,11 +104,13 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
     setDragOffset(0);
     setTransitionEnabled(false);
     setIsDragging(true);
+    isDraggingRef.current = true;
     event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDragging || pointerIdRef.current !== event.pointerId) return;
+    if (!isDraggingRef.current || pointerIdRef.current !== event.pointerId)
+      return;
 
     const nextOffset = event.clientX - startXRef.current;
     dragOffsetRef.current = nextOffset;
@@ -101,12 +118,14 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
   };
 
   const finishPointerGesture = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!isDragging || pointerIdRef.current !== event.pointerId) return;
+    if (!isDraggingRef.current || pointerIdRef.current !== event.pointerId)
+      return;
 
     const finalOffset = dragOffsetRef.current;
     pointerIdRef.current = null;
     dragOffsetRef.current = 0;
     setIsDragging(false);
+    isDraggingRef.current = false;
     setDragOffset(0);
     setTransitionEnabled(true);
 
@@ -122,7 +141,7 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
 
   return (
     <div
-      className="relative z-10 my-7 w-[220px] select-none sm:w-[250px]"
+      className={`relative z-10 my-7 select-none ${carouselWidth}`}
       role="region"
       aria-label={`${alt} image carousel`}
       aria-roledescription="carousel"
@@ -130,7 +149,7 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
     >
       <div className="relative aspect-square">
         <div
-          className={`h-full w-full overflow-hidden rounded-full border border-white/70 bg-white/30 shadow-[inset_0_5px_18px_rgba(255,255,255,0.9),0_12px_32px_rgba(72,104,126,0.12)] ${hasMultipleImages ? "cursor-grab active:cursor-grabbing" : ""}`}
+          className={`h-full w-full overflow-hidden border border-white/70 bg-white/30 shadow-[inset_0_5px_18px_rgba(255,255,255,0.9),0_12px_32px_rgba(72,104,126,0.12)] ${frameShape} ${hasMultipleImages ? "cursor-grab active:cursor-grabbing" : ""}`}
           style={{ touchAction: "pan-y" }}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
@@ -149,24 +168,27 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
             }}
           >
             {slides.map((slide, slideIndex) => (
-              <div
+              <Link
+                href={`oils/${slug}`}
                 key={`${slide.src}-${slideIndex}`}
-                className="flex h-full w-full shrink-0 items-center justify-center"
+                className="!cursor-pointer flex h-full w-full shrink-0 items-center justify-center"
                 aria-hidden={slide.clone}
               >
                 <Image
                   className="h-[100%] w-[100%] object-cover "
                   src={slide.src}
-                  width={250}
-                  height={250}
+                  width={imageDimension}
+                  height={imageDimension}
                   alt={
                     slide.clone
                       ? ""
                       : `${alt}, image ${slide.imageIndex + 1} of ${images.length}`
                   }
+                  sizes={isDetail ? "(min-width: 1024px) 44vw, 82vw" : "250px"}
+                  priority={isDetail && !slide.clone && slide.imageIndex === 0}
                   draggable={false}
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -178,7 +200,7 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
               aria-label={`Previous ${alt} image`}
               onClick={() => move(-1)}
               onPointerDown={(event) => event.stopPropagation()}
-              className="absolute -left-6 top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full border border-white/75 bg-white/55 pb-px !text-[16px] leading-none shadow-sm backdrop-blur-sm transition duration-200 hover:scale-110 hover:bg-white/80 active:scale-95 disabled:opacity-40"
+              className={`absolute top-1/2 z-20 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/75 bg-white/65 pb-px leading-none shadow-sm backdrop-blur-sm transition duration-200 hover:scale-110 hover:bg-white/85 active:scale-95 disabled:opacity-40 ${isDetail ? "-left-4 h-8 w-8 !text-[22px] sm:-left-5" : "-left-6 h-5 w-5 !text-[16px]"}`}
               disabled={isAnimating}
             >
               ‹
@@ -188,7 +210,7 @@ export default function OilCarousel({ images, alt }: OilCarouselProps) {
               aria-label={`Next ${alt} image`}
               onClick={() => move(1)}
               onPointerDown={(event) => event.stopPropagation()}
-              className="absolute -right-6 top-1/2 z-20 flex h-5 w-5 -translate-y-1/2 items-center justify-center rounded-full border border-white/75 bg-white/55 pb-px !text-[16px] leading-none shadow-sm backdrop-blur-sm transition duration-200 hover:scale-110 hover:bg-white/80 active:scale-95 disabled:opacity-40"
+              className={`absolute top-1/2 z-20 flex -translate-y-1/2 items-center justify-center rounded-full border border-white/75 bg-white/65 pb-px leading-none shadow-sm backdrop-blur-sm transition duration-200 hover:scale-110 hover:bg-white/85 active:scale-95 disabled:opacity-40 ${isDetail ? "-right-4 h-8 w-8 !text-[22px] sm:-right-5" : "-right-6 h-5 w-5 !text-[16px]"}`}
               disabled={isAnimating}
             >
               ›

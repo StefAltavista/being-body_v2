@@ -3,43 +3,14 @@
 import { useId, useState } from "react";
 
 import OilCarousel from "@/components/OilCarousel";
-
-export type OilBlend = {
-  name: string;
-  intention: string;
-  ingredients: string;
-  character: string;
-  benefit: string;
-  images: string[];
-  poem: string[];
-  description: string;
-};
+import OilStory from "@/components/OilStory";
+import type { OilBlend } from "@/content/oils";
+import Link from "next/link";
 
 type OilCardProps = {
   oil: OilBlend;
   imageOnRight?: boolean;
 };
-
-function OilDetails({ oil }: { oil: OilBlend }) {
-  return (
-    <>
-      <blockquote className="relative mb-9 py-3 pl-7 pr-2 sm:pl-9">
-        <p className="!handWrite2 !text-center !text-[32px] leading-[1.75]">
-          {oil.poem.map((line, index) => (
-            <span key={line} className="handWrite2 md:!text-[28px]">
-              {line}
-              {index < oil.poem.length - 1 && <br />}
-            </span>
-          ))}
-        </p>
-      </blockquote>
-
-      <p className="!text-left leading-relaxed md:!text-[25px]">
-        {oil.description}
-      </p>
-    </>
-  );
-}
 
 export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -48,63 +19,59 @@ export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
   const detailsOrder = imageOnRight ? "lg:order-1" : "lg:order-2";
 
   return (
-    <article
-      className="oil-card relative grid w-full grid-cols-1 items-center gap-2 overflow-hidden rounded-[2.5rem] 
-     sm:p-8 lg:grid-cols-[minmax(280px,0.82fr)_minmax(0,1.18fr)] lg:gap-12 lg:p-10 p-4"
-    >
+    <article className="oil-card relative grid w-full grid-cols-1 items-center gap-2 overflow-hidden rounded-[2.5rem] p-4 sm:p-8 lg:grid-cols-[minmax(280px,0.82fr)_minmax(0,1.18fr)] lg:gap-12 lg:p-10">
       <div
         className={`relative flex min-h-[510px] flex-col items-center overflow-hidden rounded-[2rem] border border-white/65 bg-gradient-to-br from-white/65 via-pink-50/35 to-sky-100/35 px-6 py-8 text-center shadow-[inset_0_2px_14px_rgba(255,255,255,0.95),inset_0_-12px_30px_rgba(177,205,224,0.16),0_16px_45px_rgba(73,105,126,0.1)] ${productOrder}`}
       >
         <span className="pointer-events-none absolute left-[12%] top-[8%] h-28 w-28 rounded-full bg-white/70 blur-2xl" />
         <span className="pointer-events-none absolute bottom-[8%] right-[5%] h-36 w-36 rounded-full bg-pink-100/45 blur-3xl" />
 
-        <div className="relative z-10">
-          <h3 className="!mb-0 !text-center !text-[30px] tracking-[0.06em] sm:!text-[34px]">
-            {oil.name}
-          </h3>
-          <p className="!mt-1  handWrite2 !text-center !text-[17px] tracking-[0.18em]">
-            {oil.intention}
-          </p>
-          <p className=" !mt-1 !text-center !text-[21px] md:!text-[26px]  leading-relaxed">
-            {oil.ingredients}
-          </p>
-        </div>
-
-        <OilCarousel images={oil.images} alt={`${oil.name} oil`} />
+        <Link href={`oils/${oil.slug}`} className="!cursor-pointer">
+          <div className="relative z-10 ">
+            <h3 className="!cursor-pointer !mb-0 !text-center !text-[30px] tracking-[0.06em] sm:!text-[34px]">
+              {oil.name}
+            </h3>
+            <p className="handWrite2 !mt-1 !text-center !text-[17px] tracking-[0.18em]">
+              {oil.intention}
+            </p>
+          </div>
+        </Link>
+        <OilCarousel
+          slug={oil.slug}
+          images={oil.images}
+          alt={`${oil.name} oil`}
+        />
 
         <div className="relative z-10 mt-auto w-full">
-          <p className="!text-center !text-[21px] md:!text-[26px] leading-snug">
+          <p className="!text-center !text-[21px] leading-snug md:!text-[26px]">
             {oil.character}
           </p>
-          <div className="mx-auto my-3 w-8 border-t border-slate-500/45" />
-          <p className="!text-center !text-[20px] md:!text-[24px] leading-snug">
-            {oil.benefit}
-          </p>
+          <div className="mx-auto my-3 w-8 " />
         </div>
       </div>
 
       <div
-        className={`hidden flex-col items-between justify-center px-1 sm:px-3 lg:flex ${detailsOrder}`}
+        className={`hidden flex-col items-stretch justify-center px-1 sm:px-3 lg:flex ${detailsOrder}`}
       >
-        <OilDetails oil={oil} />
+        <OilStory oil={oil} />
       </div>
       {isExpanded && (
         <div
           id={mobileDetailsId}
-          className=" lg:hidden mt-8 flex w-full animate-[oil-details-reveal_450ms_ease-out] flex-col justify-center px-1 sm:px-3"
+          className="mt-8 flex w-full animate-[oil-details-reveal_450ms_ease-out] flex-col justify-center px-1 sm:px-3 lg:hidden"
         >
-          <OilDetails oil={oil} />
+          <OilStory oil={oil} />
         </div>
       )}
-      <div className="flex flex-col items-center  lg:hidden">
+      <div className="flex flex-col items-center lg:hidden">
         <button
           type="button"
           aria-expanded={isExpanded}
           aria-controls={mobileDetailsId}
           onClick={() => setIsExpanded((current) => !current)}
-          className="min-w-[50px] min-h-[50px] cursor-pointer handWrite1 rounded-full border border-white/70 bg-white/45   !text-[16px]  active:scale-90"
+          className="handWrite1 min-h-[50px] min-w-[100px] cursor-pointer rounded-full border border-white/70 bg-white/45 px-4 !text-[16px] transition active:scale-90"
         >
-          {isExpanded ? "Less…" : "More…"}
+          {isExpanded ? "Show less…" : "Read more…"}
         </button>
       </div>
     </article>

@@ -1,7 +1,6 @@
 import "../css/about.css";
 import Background from "@/components/Background";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function About({ format }: { format: string }) {
   return (
