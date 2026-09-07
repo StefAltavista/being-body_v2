@@ -55,25 +55,6 @@ export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
       >
         <OilStory oil={oil} />
       </div>
-      {isExpanded && (
-        <div
-          id={mobileDetailsId}
-          className="mt-8 flex w-full animate-[oil-details-reveal_450ms_ease-out] flex-col justify-center px-1 sm:px-3 lg:hidden"
-        >
-          <OilStory oil={oil} />
-        </div>
-      )}
-      <div className="flex flex-col items-center lg:hidden">
-        <button
-          type="button"
-          aria-expanded={isExpanded}
-          aria-controls={mobileDetailsId}
-          onClick={() => setIsExpanded((current) => !current)}
-          className="handWrite1 min-h-[50px] min-w-[100px] cursor-pointer rounded-full border border-white/70 bg-white/45 px-4 !text-[16px] transition active:scale-90"
-        >
-          {isExpanded ? "Show less…" : "Read more…"}
-        </button>
-      </div>
     </article>
   );
 }
