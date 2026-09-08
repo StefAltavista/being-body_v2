@@ -44,7 +44,7 @@ export default function Welcome() {
     >
       <div className="welcome_img  ">
         <Image
-          src={`/img/welcome_new.png`}
+          src={`/img/welcome_new.webp`}
           alt="beingBodyLogo"
           height={1610}
           width={1206}

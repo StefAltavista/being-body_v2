@@ -33,7 +33,7 @@ export const MenuContent = [
   },
   {
     title: "About Being.Body",
-    icon: "/img/logo_small.png",
+    icon: "/img/logo_small.webp",
     link: "/about",
   },
 ];

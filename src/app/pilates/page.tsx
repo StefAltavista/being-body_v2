@@ -94,8 +94,9 @@ export default function PilatesPage() {
               <Image
                 className="pilates-hero-image object-cover"
                 // src="/photos/pilates1.png"
-                src="/photos/pilates2.jpg"
+                src="/photos/pilates2.webp"
                 fill
+                sizes="(min-width: 1024px) 420px, 90vw"
                 alt=""
               />
             </div>

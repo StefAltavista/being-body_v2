@@ -1,0 +1,142 @@
+[
+  {
+    "from": "public/icons/Menu_closed.png",
+    "to": "public/icons/Menu_closed.webp",
+    "originalBytes": 3385,
+    "optimizedBytes": 1102,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/icons/Menu_open.png",
+    "to": "public/icons/Menu_open.webp",
+    "originalBytes": 156578,
+    "optimizedBytes": 98892,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/aroma.png",
+    "to": "public/img/aroma.webp",
+    "originalBytes": 592743,
+    "optimizedBytes": 480742,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/bubbles.png",
+    "to": "public/img/bubbles.webp",
+    "originalBytes": 809036,
+    "optimizedBytes": 440646,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/hands_tr2.png",
+    "to": "public/img/hands_tr2.webp",
+    "originalBytes": 187297,
+    "optimizedBytes": 112520,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/logo.png",
+    "to": "public/img/logo.webp",
+    "originalBytes": 11855,
+    "optimizedBytes": 4370,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/logo_small.png",
+    "to": "public/img/logo_small.webp",
+    "originalBytes": 2614,
+    "optimizedBytes": 1710,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/massageBG.png",
+    "to": "public/img/massageBG.webp",
+    "originalBytes": 55445,
+    "optimizedBytes": 36896,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/pilatesBG.png",
+    "to": "public/img/pilatesBG.webp",
+    "originalBytes": 247249,
+    "optimizedBytes": 218858,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/welcome_new.png",
+    "to": "public/img/welcome_new.webp",
+    "originalBytes": 760208,
+    "optimizedBytes": 548136,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/cc-foto.png",
+    "to": "public/img/oils/cc-foto.webp",
+    "originalBytes": 2710362,
+    "optimizedBytes": 1857242,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/cc-logo.png",
+    "to": "public/img/oils/cc-logo.webp",
+    "originalBytes": 1480783,
+    "optimizedBytes": 804800,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/ff-foto.png",
+    "to": "public/img/oils/ff-foto.webp",
+    "originalBytes": 3322189,
+    "optimizedBytes": 2218902,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/ff-logo.png",
+    "to": "public/img/oils/ff-logo.webp",
+    "originalBytes": 1148071,
+    "optimizedBytes": 630844,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/rr-foto.png",
+    "to": "public/img/oils/rr-foto.webp",
+    "originalBytes": 2954208,
+    "optimizedBytes": 1952386,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/rr-logo.png",
+    "to": "public/img/oils/rr-logo.webp",
+    "originalBytes": 564979,
+    "optimizedBytes": 288248,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/ss-foto.png",
+    "to": "public/img/oils/ss-foto.webp",
+    "originalBytes": 2547264,
+    "optimizedBytes": 1809614,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/ss-logo.png",
+    "to": "public/img/oils/ss-logo.webp",
+    "originalBytes": 1101309,
+    "optimizedBytes": 594872,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/zz-foto.png",
+    "to": "public/img/oils/zz-foto.webp",
+    "originalBytes": 2593830,
+    "optimizedBytes": 1840908,
+    "visiblePixelsIdentical": true
+  },
+  {
+    "from": "public/img/oils/zz-logo.png",
+    "to": "public/img/oils/zz-logo.webp",
+    "originalBytes": 970730,
+    "optimizedBytes": 522476,
+    "visiblePixelsIdentical": true
+  }
+]

@@ -38,7 +38,7 @@ export default function MenuButton() {
             }`}
           >
             <Image
-              src="/icons/Menu_closed.png"
+              src="/icons/Menu_closed.webp"
               alt="Menu closed icon"
               fill
               sizes="100px"
@@ -52,7 +52,7 @@ export default function MenuButton() {
             }`}
           >
             <Image
-              src="/icons/Menu_open.png"
+              src="/icons/Menu_open.webp"
               alt="Menu open icon"
               fill
               sizes="100px"

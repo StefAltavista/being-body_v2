@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import ConceptArtwork from "@/components/ConceptArtwork";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { useRef } from "react";
 
@@ -93,19 +93,14 @@ export default function Concept() {
           A vessel to express <br></br>and a tool to connect.{" "}
         </h3>
         <div className="flex justify-center relative z-[2]">
-          <Image
-            className="absolute concept_img blur-[1px] hue-rotate-[100deg]    "
-            src={`/img/bubbles.png`}
-            alt="BeingBodyConcept"
-            width={500}
-            height={667}
+          <ConceptArtwork
+            className="concept_img"
+            variant="sharp"
+            absolute
           />
-          <Image
-            className=" concept_img2 blur-[10px] hue-rotate-[30deg]    "
-            src={`/img/bubbles.png`}
-            alt="BeingBodyConcept"
-            width={500}
-            height={667}
+          <ConceptArtwork
+            className="concept_img2"
+            variant="soft"
           />
         </div>
         <h3 className="my-24 text-right reveal_text2">

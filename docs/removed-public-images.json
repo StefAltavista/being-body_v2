@@ -1,0 +1,581 @@
+{
+  "removedBytes": 1004371626,
+  "removedImages": [
+    {
+      "path": "public/icons/close.svg",
+      "bytes": 734
+    },
+    {
+      "path": "public/icons/cursorFlower.png",
+      "bytes": 37260
+    },
+    {
+      "path": "public/icons/cursorFlowerDown.png",
+      "bytes": 535
+    },
+    {
+      "path": "public/icons/cursorFlowerPointer.png",
+      "bytes": 630
+    },
+    {
+      "path": "public/img/LOGOLighter.png",
+      "bytes": 14722955
+    },
+    {
+      "path": "public/img/LOGOLighter.webp",
+      "bytes": 1457664
+    },
+    {
+      "path": "public/img/aboutOld.png",
+      "bytes": 50652
+    },
+    {
+      "path": "public/img/aboutOld.webp",
+      "bytes": 11082
+    },
+    {
+      "path": "public/img/aroma.webp",
+      "bytes": 303224
+    },
+    {
+      "path": "public/img/background1.png",
+      "bytes": 883705
+    },
+    {
+      "path": "public/img/bubble1.png",
+      "bytes": 1131661
+    },
+    {
+      "path": "public/img/concept.png",
+      "bytes": 311931
+    },
+    {
+      "path": "public/img/concept.webp",
+      "bytes": 151048
+    },
+    {
+      "path": "public/img/flowers.png",
+      "bytes": 378672
+    },
+    {
+      "path": "public/img/hands.jpeg",
+      "bytes": 27002
+    },
+    {
+      "path": "public/img/handsColored.png",
+      "bytes": 228555
+    },
+    {
+      "path": "public/img/hands_tr.jpeg",
+      "bytes": 48628
+    },
+    {
+      "path": "public/img/hands_tr.png",
+      "bytes": 207438
+    },
+    {
+      "path": "public/img/hands_tr3.png",
+      "bytes": 278132
+    },
+    {
+      "path": "public/img/homeCarousel/10.jpg",
+      "bytes": 7925788
+    },
+    {
+      "path": "public/img/homeCarousel/11.jpg",
+      "bytes": 8005642
+    },
+    {
+      "path": "public/img/homeCarousel/12.jpg",
+      "bytes": 7810469
+    },
+    {
+      "path": "public/img/homeCarousel/13.jpg",
+      "bytes": 7401993
+    },
+    {
+      "path": "public/img/homeCarousel/14.jpg",
+      "bytes": 7805184
+    },
+    {
+      "path": "public/img/homeCarousel/15.jpg",
+      "bytes": 10399803
+    },
+    {
+      "path": "public/img/homeCarousel/16.jpg",
+      "bytes": 10548142
+    },
+    {
+      "path": "public/img/homeCarousel/17.jpg",
+      "bytes": 7677642
+    },
+    {
+      "path": "public/img/homeCarousel/18.jpg",
+      "bytes": 13069945
+    },
+    {
+      "path": "public/img/homeCarousel/19.jpg",
+      "bytes": 10664198
+    },
+    {
+      "path": "public/img/homeCarousel/2.jpg",
+      "bytes": 10282810
+    },
+    {
+      "path": "public/img/homeCarousel/20.jpg",
+      "bytes": 7209684
+    },
+    {
+      "path": "public/img/homeCarousel/21.jpg",
+      "bytes": 9676157
+    },
+    {
+      "path": "public/img/homeCarousel/22.jpg",
+      "bytes": 10055546
+    },
+    {
+      "path": "public/img/homeCarousel/23.jpg",
+      "bytes": 12669410
+    },
+    {
+      "path": "public/img/homeCarousel/3.jpg",
+      "bytes": 8552666
+    },
+    {
+      "path": "public/img/homeCarousel/4.jpg",
+      "bytes": 11370812
+    },
+    {
+      "path": "public/img/homeCarousel/5.jpg",
+      "bytes": 5887321
+    },
+    {
+      "path": "public/img/homeCarousel/6.jpg",
+      "bytes": 7806557
+    },
+    {
+      "path": "public/img/homeCarousel/7.jpg",
+      "bytes": 7594757
+    },
+    {
+      "path": "public/img/homeCarousel/8.jpg",
+      "bytes": 10082723
+    },
+    {
+      "path": "public/img/homeCarousel/9.jpg",
+      "bytes": 9763304
+    },
+    {
+      "path": "public/img/homeCarouselOld/1.jpeg",
+      "bytes": 93178
+    },
+    {
+      "path": "public/img/homeCarouselOld/2.jpeg",
+      "bytes": 58873
+    },
+    {
+      "path": "public/img/homeCarouselOld/3.jpeg",
+      "bytes": 69132
+    },
+    {
+      "path": "public/img/homeCarouselOld/4.jpeg",
+      "bytes": 93178
+    },
+    {
+      "path": "public/img/homeCarouselOld/5.jpeg",
+      "bytes": 69132
+    },
+    {
+      "path": "public/img/homeCarouselOld/6.jpeg",
+      "bytes": 58873
+    },
+    {
+      "path": "public/img/logo.webp",
+      "bytes": 10532
+    },
+    {
+      "path": "public/img/logoH.png",
+      "bytes": 171068
+    },
+    {
+      "path": "public/img/logoH.webp",
+      "bytes": 36954
+    },
+    {
+      "path": "public/img/logoLight.png",
+      "bytes": 412686
+    },
+    {
+      "path": "public/img/logoLight.webp",
+      "bytes": 161412
+    },
+    {
+      "path": "public/img/oils/Alloils.jpg",
+      "bytes": 175839
+    },
+    {
+      "path": "public/img/oils/hero.png",
+      "bytes": 2633043
+    },
+    {
+      "path": "public/img/prices.png",
+      "bytes": 515099
+    },
+    {
+      "path": "public/img/prices.webp",
+      "bytes": 179092
+    },
+    {
+      "path": "public/img/stoneMassage.jpg",
+      "bytes": 501900
+    },
+    {
+      "path": "public/img/studio.png",
+      "bytes": 215147
+    },
+    {
+      "path": "public/img/studio.webp",
+      "bytes": 41438
+    },
+    {
+      "path": "public/img/therapy2.png",
+      "bytes": 74330
+    },
+    {
+      "path": "public/img/therapy2.webp",
+      "bytes": 41056
+    },
+    {
+      "path": "public/img/welcome.png",
+      "bytes": 24291555
+    },
+    {
+      "path": "public/img/welcome.webp",
+      "bytes": 90722
+    },
+    {
+      "path": "public/photos/--> 014A5923 copy 20.jpg",
+      "bytes": 11687468
+    },
+    {
+      "path": "public/photos/--> 014A5923 copy.jpg",
+      "bytes": 10992879
+    },
+    {
+      "path": "public/photos/--> 014A6191 copy.jpg",
+      "bytes": 10282810
+    },
+    {
+      "path": "public/photos/--> 014A6194 copy.jpg",
+      "bytes": 8552666
+    },
+    {
+      "path": "public/photos/--> 014A6196 copy.jpg",
+      "bytes": 11370812
+    },
+    {
+      "path": "public/photos/--> 014A6206 copy.jpg",
+      "bytes": 5887321
+    },
+    {
+      "path": "public/photos/--> 014A6209 copy.jpg",
+      "bytes": 7806557
+    },
+    {
+      "path": "public/photos/--> 014A6238 copy.jpg",
+      "bytes": 7594757
+    },
+    {
+      "path": "public/photos/--> 014A6285 0copy.jpg",
+      "bytes": 10082723
+    },
+    {
+      "path": "public/photos/--> 014A6285 c0opy 2.jpg",
+      "bytes": 9763304
+    },
+    {
+      "path": "public/photos/--> 014A6305 copy.jpg",
+      "bytes": 7925788
+    },
+    {
+      "path": "public/photos/--> 014A6307 2.jpg",
+      "bytes": 8005642
+    },
+    {
+      "path": "public/photos/--> 014A6307 copy.jpg",
+      "bytes": 7810469
+    },
+    {
+      "path": "public/photos/--> 014A630700 copy.jpg",
+      "bytes": 10548142
+    },
+    {
+      "path": "public/photos/--> 014A6309 copy.jpg",
+      "bytes": 7401993
+    },
+    {
+      "path": "public/photos/--> 014A6325 copy.jpg",
+      "bytes": 7805184
+    },
+    {
+      "path": "public/photos/--> 014A6365 copy.jpg",
+      "bytes": 10399803
+    },
+    {
+      "path": "public/photos/-> 014A6022 copy.jpg",
+      "bytes": 7677642
+    },
+    {
+      "path": "public/photos/-> 014A6167 2 c0opy.jpg",
+      "bytes": 13069945
+    },
+    {
+      "path": "public/photos/-> 014A6177 copy.jpg",
+      "bytes": 10664198
+    },
+    {
+      "path": "public/photos/->014A6019 copy.jpg",
+      "bytes": 7209684
+    },
+    {
+      "path": "public/photos/->014A6130 2.jpg",
+      "bytes": 9676157
+    },
+    {
+      "path": "public/photos/->014A6152 copy.jpg",
+      "bytes": 10055546
+    },
+    {
+      "path": "public/photos/->014A6176 copy.jpg",
+      "bytes": 12669410
+    },
+    {
+      "path": "public/photos/Home 1.jpg",
+      "bytes": 4906195
+    },
+    {
+      "path": "public/photos/Home.jpg",
+      "bytes": 5140994
+    },
+    {
+      "path": "public/photos/circle.jpg",
+      "bytes": 1967420
+    },
+    {
+      "path": "public/photos/notSelected/014A5888 -20copy.jpg",
+      "bytes": 10264809
+    },
+    {
+      "path": "public/photos/notSelected/014A5888 -2copy.jpg",
+      "bytes": 10927634
+    },
+    {
+      "path": "public/photos/notSelected/014A5888 copy.jpg",
+      "bytes": 8748523
+    },
+    {
+      "path": "public/photos/notSelected/014A5908 copy.jpg",
+      "bytes": 7334954
+    },
+    {
+      "path": "public/photos/notSelected/014A5932 copy.jpg",
+      "bytes": 8803058
+    },
+    {
+      "path": "public/photos/notSelected/014A5935 copy.jpg",
+      "bytes": 7488042
+    },
+    {
+      "path": "public/photos/notSelected/014A5942 copy 2.jpg",
+      "bytes": 26592450
+    },
+    {
+      "path": "public/photos/notSelected/014A5942 copy.jpg",
+      "bytes": 7604004
+    },
+    {
+      "path": "public/photos/notSelected/014A5953 copy 02.jpg",
+      "bytes": 9682197
+    },
+    {
+      "path": "public/photos/notSelected/014A5953 copy.jpg",
+      "bytes": 8576949
+    },
+    {
+      "path": "public/photos/notSelected/014A5967 copy.jpg",
+      "bytes": 7783560
+    },
+    {
+      "path": "public/photos/notSelected/014A5968 copy.jpg",
+      "bytes": 10763871
+    },
+    {
+      "path": "public/photos/notSelected/014A5970 copy.jpg",
+      "bytes": 8700341
+    },
+    {
+      "path": "public/photos/notSelected/014A5974 copy.jpg",
+      "bytes": 8574224
+    },
+    {
+      "path": "public/photos/notSelected/014A5976 copy.jpg",
+      "bytes": 8318356
+    },
+    {
+      "path": "public/photos/notSelected/014A5981 copy.jpg",
+      "bytes": 14691376
+    },
+    {
+      "path": "public/photos/notSelected/014A5987 copy.jpg",
+      "bytes": 5232793
+    },
+    {
+      "path": "public/photos/notSelected/014A5994 copy.jpg",
+      "bytes": 8496773
+    },
+    {
+      "path": "public/photos/notSelected/014A6013 copy 20.jpg",
+      "bytes": 7823102
+    },
+    {
+      "path": "public/photos/notSelected/014A6013 copy.jpg",
+      "bytes": 7414323
+    },
+    {
+      "path": "public/photos/notSelected/014A60132.jpg",
+      "bytes": 7209040
+    },
+    {
+      "path": "public/photos/notSelected/014A6016 copy.jpg",
+      "bytes": 7306530
+    },
+    {
+      "path": "public/photos/notSelected/014A6017 copy.jpg",
+      "bytes": 14761406
+    },
+    {
+      "path": "public/photos/notSelected/014A6018 copy.jpg",
+      "bytes": 15294690
+    },
+    {
+      "path": "public/photos/notSelected/014A6021 copy.jpg",
+      "bytes": 7262340
+    },
+    {
+      "path": "public/photos/notSelected/014A6026 copy.jpg",
+      "bytes": 8623945
+    },
+    {
+      "path": "public/photos/notSelected/014A6048 copy.jpg",
+      "bytes": 8219601
+    },
+    {
+      "path": "public/photos/notSelected/014A6065 copy.jpg",
+      "bytes": 8757566
+    },
+    {
+      "path": "public/photos/notSelected/014A6075 copy.jpg",
+      "bytes": 11958484
+    },
+    {
+      "path": "public/photos/notSelected/014A6105 copy.jpg",
+      "bytes": 9906293
+    },
+    {
+      "path": "public/photos/notSelected/014A6110 copy.jpg",
+      "bytes": 20599436
+    },
+    {
+      "path": "public/photos/notSelected/014A6130 copy.jpg",
+      "bytes": 9446701
+    },
+    {
+      "path": "public/photos/notSelected/014A6138 copy.jpg",
+      "bytes": 7923579
+    },
+    {
+      "path": "public/photos/notSelected/014A6140 copy.jpg",
+      "bytes": 7656200
+    },
+    {
+      "path": "public/photos/notSelected/014A6142 copy.jpg",
+      "bytes": 9383952
+    },
+    {
+      "path": "public/photos/notSelected/014A6158 copy.jpg",
+      "bytes": 11279083
+    },
+    {
+      "path": "public/photos/notSelected/014A6167 2.jpg",
+      "bytes": 11036826
+    },
+    {
+      "path": "public/photos/notSelected/014A6167 copy.jpg",
+      "bytes": 8072852
+    },
+    {
+      "path": "public/photos/notSelected/014A61670 copy.jpg",
+      "bytes": 13849380
+    },
+    {
+      "path": "public/photos/notSelected/014A6169 copy.jpg",
+      "bytes": 13837597
+    },
+    {
+      "path": "public/photos/notSelected/014A6174 copy.jpg",
+      "bytes": 9617439
+    },
+    {
+      "path": "public/photos/notSelected/014A6179 copy.jpg",
+      "bytes": 5191909
+    },
+    {
+      "path": "public/photos/notSelected/014A6180 copy.jpg",
+      "bytes": 4855264
+    },
+    {
+      "path": "public/photos/notSelected/014A6181 copy.jpg",
+      "bytes": 8616462
+    },
+    {
+      "path": "public/photos/notSelected/014A6192 copy.jpg",
+      "bytes": 9929511
+    },
+    {
+      "path": "public/photos/notSelected/014A6207 copy.jpg",
+      "bytes": 7748411
+    },
+    {
+      "path": "public/photos/notSelected/014A6214 copy.jpg",
+      "bytes": 7512829
+    },
+    {
+      "path": "public/photos/notSelected/014A6267 copy.jpg",
+      "bytes": 9082161
+    },
+    {
+      "path": "public/photos/notSelected/014A6285 copy.jpg",
+      "bytes": 7752199
+    },
+    {
+      "path": "public/photos/notSelected/014A62852.jpg",
+      "bytes": 7855050
+    },
+    {
+      "path": "public/photos/notSelected/014A6293 copy.jpg",
+      "bytes": 9683035
+    },
+    {
+      "path": "public/photos/notSelected/014A63070 copy.jpg",
+      "bytes": 7516630
+    },
+    {
+      "path": "public/photos/notSelected/014A6368 copy.jpg",
+      "bytes": 11583316
+    },
+    {
+      "path": "public/photos/pilates1.png",
+      "bytes": 1778761
+    }
+  ]
+}

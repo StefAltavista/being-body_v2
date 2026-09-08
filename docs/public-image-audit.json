@@ -1,0 +1,355 @@
+{
+  "scannedModules": 66,
+  "totalImages": 47,
+  "totalBytes": 8016028,
+  "usedImages": 47,
+  "unusedImages": 0,
+  "unusedBytes": 0,
+  "missing": [],
+  "images": [
+    {
+      "path": "public/icons/Menu_closed.webp",
+      "bytes": 1102,
+      "references": [
+        "src/components/MenuButton.tsx"
+      ]
+    },
+    {
+      "path": "public/icons/Menu_open.webp",
+      "bytes": 98892,
+      "references": [
+        "src/components/MenuButton.tsx"
+      ]
+    },
+    {
+      "path": "public/icons/cursorFlowerDown_crisp.png",
+      "bytes": 230,
+      "references": [
+        "src/app/globals.css"
+      ]
+    },
+    {
+      "path": "public/icons/cursorFlowerNormal.png",
+      "bytes": 906,
+      "references": [
+        "src/app/globals.css"
+      ]
+    },
+    {
+      "path": "public/icons/cursorFlowerPointer_crisp.png",
+      "bytes": 283,
+      "references": [
+        "src/app/globals.css"
+      ]
+    },
+    {
+      "path": "public/icons/feather.svg",
+      "bytes": 2397,
+      "references": [
+        "src/app/book-apointment/page.tsx",
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/icons/hand.svg",
+      "bytes": 4809,
+      "references": [
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/icons/hands1.svg",
+      "bytes": 14503,
+      "references": [
+        "src/app/massage-therapy/page.tsx",
+        "src/content/CardsContent.tsx",
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/icons/home_flower.svg",
+      "bytes": 12147,
+      "references": [
+        "src/components/Menu.tsx"
+      ]
+    },
+    {
+      "path": "public/icons/oil12.svg",
+      "bytes": 21429,
+      "references": [
+        "src/app/oils/page.tsx",
+        "src/components/OilProductPage.tsx",
+        "src/content/CardsContent.tsx",
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/icons/stretching.svg",
+      "bytes": 2206,
+      "references": [
+        "src/app/pilates/page.tsx",
+        "src/content/CardsContent.tsx",
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/icons/workshop.svg",
+      "bytes": 4093,
+      "references": [
+        "src/app/workshops/page.tsx",
+        "src/content/CardsContent.tsx",
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/img/about.png",
+      "bytes": 245102,
+      "references": [
+        "src/content/About.tsx"
+      ]
+    },
+    {
+      "path": "public/img/about.webp",
+      "bytes": 245102,
+      "references": [
+        "src/content/About.tsx"
+      ]
+    },
+    {
+      "path": "public/img/aroma.webp",
+      "bytes": 480742,
+      "references": [
+        "src/content/CardsContent.tsx"
+      ]
+    },
+    {
+      "path": "public/img/bubbles.webp",
+      "bytes": 440646,
+      "references": [
+        "src/components/Background.tsx",
+        "src/components/ConceptArtwork.tsx",
+        "src/components/AnimatedBackground.tsx"
+      ]
+    },
+    {
+      "path": "public/img/contact.png",
+      "bytes": 374623,
+      "references": [
+        "src/content/Contacts.tsx",
+        "src/content/CardsContent.tsx"
+      ]
+    },
+    {
+      "path": "public/img/contact.webp",
+      "bytes": 229456,
+      "references": [
+        "src/content/Contacts.tsx"
+      ]
+    },
+    {
+      "path": "public/img/hands_tr2.webp",
+      "bytes": 112520,
+      "references": [
+        "src/content/HandBubble.tsx"
+      ]
+    },
+    {
+      "path": "public/img/homeCarousel/1.webp",
+      "bytes": 198070,
+      "references": [
+        "src/content/HomeAboutKatia.tsx"
+      ]
+    },
+    {
+      "path": "public/img/logo.webp",
+      "bytes": 4370,
+      "references": [
+        "src/components/Footer.tsx",
+        "src/content/HandBubble.tsx"
+      ]
+    },
+    {
+      "path": "public/img/logo_small.webp",
+      "bytes": 1710,
+      "references": [
+        "src/content/MenuContent.ts"
+      ]
+    },
+    {
+      "path": "public/img/massageBG.webp",
+      "bytes": 36896,
+      "references": [
+        "src/content/CardsContent.tsx"
+      ]
+    },
+    {
+      "path": "public/img/oils/cc-foto.webp",
+      "bytes": 200100,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/cc-logo.webp",
+      "bytes": 67248,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ff-design.jpg",
+      "bytes": 98182,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ff-foto.webp",
+      "bytes": 293560,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ff-logo.webp",
+      "bytes": 39582,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/rr-design.jpg",
+      "bytes": 82598,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/rr-foto.webp",
+      "bytes": 147850,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/rr-logo.webp",
+      "bytes": 23322,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ss-design.jpg",
+      "bytes": 107522,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ss-foto.webp",
+      "bytes": 176784,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/ss-logo.webp",
+      "bytes": 37186,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/zz-design.jpg",
+      "bytes": 78078,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/zz-foto.webp",
+      "bytes": 197482,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/oils/zz-logo.webp",
+      "bytes": 35834,
+      "references": [
+        "src/content/oils.ts"
+      ]
+    },
+    {
+      "path": "public/img/openGraphsImg.png",
+      "bytes": 1155402,
+      "references": [
+        "src/app/layout.tsx"
+      ]
+    },
+    {
+      "path": "public/img/pilatesBG.webp",
+      "bytes": 218858,
+      "references": [
+        "src/content/CardsContent.tsx"
+      ]
+    },
+    {
+      "path": "public/img/rendered/concept-sharp-1x.webp",
+      "bytes": 170388,
+      "references": [
+        "src/components/ConceptArtwork.tsx"
+      ]
+    },
+    {
+      "path": "public/img/rendered/concept-sharp-2x.webp",
+      "bytes": 399782,
+      "references": [
+        "src/components/ConceptArtwork.tsx"
+      ]
+    },
+    {
+      "path": "public/img/rendered/concept-soft-1x.webp",
+      "bytes": 282968,
+      "references": [
+        "src/components/ConceptArtwork.tsx"
+      ]
+    },
+    {
+      "path": "public/img/rendered/concept-soft-2x.webp",
+      "bytes": 642090,
+      "references": [
+        "src/components/ConceptArtwork.tsx"
+      ]
+    },
+    {
+      "path": "public/img/welcome_new.webp",
+      "bytes": 548136,
+      "references": [
+        "src/content/Welcome.tsx"
+      ]
+    },
+    {
+      "path": "public/photos/massage1.webp",
+      "bytes": 189388,
+      "references": [
+        "src/app/book-apointment/page.tsx"
+      ]
+    },
+    {
+      "path": "public/photos/massage2.webp",
+      "bytes": 155772,
+      "references": [
+        "src/app/massage-therapy/page.tsx"
+      ]
+    },
+    {
+      "path": "public/photos/pilates2.webp",
+      "bytes": 135682,
+      "references": [
+        "src/app/book-apointment/page.tsx",
+        "src/app/pilates/page.tsx"
+      ]
+    }
+  ]
+}

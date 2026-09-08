@@ -105,8 +105,9 @@ export default function Page() {
             <div className="massage-hero-wrapper relative sm:w-full md:w-[80%] lg:w-[50%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
               <Image
                 className="massage-hero-image z-[-1] opacity-80 rounded-full left-0 top-0 object-cover"
-                src={"/photos/massage2.jpg"}
+                src={"/photos/massage2.webp"}
                 fill
+                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
                 alt="icon"
               />
 

@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="flex flex-col items-center justify-center w-1/3 ">
         <Image
           className="logo filter invert  saturate-[400%] hue-rotate-[256deg] brightness-[74%] contrast-[103%]"
-          src={`/img/logo.png`}
+          src={`/img/logo.webp`}
           alt="beingBodyLogo"
           width={30}
           height={100}

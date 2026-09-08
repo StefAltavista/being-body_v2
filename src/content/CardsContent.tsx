@@ -7,7 +7,7 @@ export const CardsContent = [
     quote: "Presence in touch ",
     description: "Restore balance, connection, and well-being.",
     icon: "/icons/hands1.svg",
-    image: "/img/massageBG.png",
+    image: "/img/massageBG.webp",
 
     link: "/massage-therapy",
     bg: "bg-pink-100",
@@ -22,7 +22,7 @@ export const CardsContent = [
     description: "Mindful movement to Align, flow and grow",
     icon: "/icons/stretching.svg",
 
-    image: "/img/pilatesBG.png",
+    image: "/img/pilatesBG.webp",
     link: "/pilates",
     bg: "bg-orange-100",
     hooverColor: "#f8f2d4ff",
@@ -34,7 +34,7 @@ export const CardsContent = [
     quote: "Nature in Ritual",
     description: "Rooted in nature, guided by intention.",
     icon: "/icons/oil12.svg",
-    image: "/img/aroma.png",
+    image: "/img/aroma.webp",
     link: "/oils",
     bg: "bg-violet-200",
     hooverColor: "#f1e6ffff",

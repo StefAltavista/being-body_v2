@@ -1,0 +1,82 @@
+[
+  {
+    "path": "public/img/oils/cc-foto.webp",
+    "sourceBytes": 1857242,
+    "optimizedBytes": 200100,
+    "width": 1200,
+    "height": 1189,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/cc-logo.webp",
+    "sourceBytes": 804800,
+    "optimizedBytes": 67248,
+    "width": 800,
+    "height": 802,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/ff-foto.webp",
+    "sourceBytes": 2218902,
+    "optimizedBytes": 293560,
+    "width": 1200,
+    "height": 1045,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/ff-logo.webp",
+    "sourceBytes": 630844,
+    "optimizedBytes": 39582,
+    "width": 800,
+    "height": 802,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/rr-foto.webp",
+    "sourceBytes": 1952386,
+    "optimizedBytes": 147850,
+    "width": 1200,
+    "height": 900,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/rr-logo.webp",
+    "sourceBytes": 288248,
+    "optimizedBytes": 23322,
+    "width": 800,
+    "height": 800,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/ss-foto.webp",
+    "sourceBytes": 1809614,
+    "optimizedBytes": 176784,
+    "width": 1200,
+    "height": 1217,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/ss-logo.webp",
+    "sourceBytes": 594872,
+    "optimizedBytes": 37186,
+    "width": 800,
+    "height": 800,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/zz-foto.webp",
+    "sourceBytes": 1840908,
+    "optimizedBytes": 197482,
+    "width": 1200,
+    "height": 1163,
+    "quality": 88
+  },
+  {
+    "path": "public/img/oils/zz-logo.webp",
+    "sourceBytes": 522476,
+    "optimizedBytes": 35834,
+    "width": 800,
+    "height": 801,
+    "quality": 88
+  }
+]

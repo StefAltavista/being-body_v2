@@ -6,7 +6,7 @@ export default function HomeAboutKatia() {
     <section className="mx-auto grid w-full max-w-6xl items-center gap-8 overflow-hidden rounded-[2.5rem] border border-white/55 bg-white/30 p-4 shadow-[inset_0_2px_14px_rgba(255,255,255,0.72),0_18px_55px_rgba(73,105,126,0.1)] backdrop-blur-sm sm:p-7 md:grid-cols-[minmax(260px,0.9fr)_minmax(0,1.1fr)] md:gap-12 lg:p-10">
       <div className="relative min-h-[390px] overflow-hidden rounded-[2rem] sm:min-h-[480px]">
         <Image
-          src="/img/homeCarousel/1.jpg"
+          src="/img/homeCarousel/1.webp"
           alt="A quiet space for reconnecting with the body"
           fill
           sizes="(min-width: 768px) 42vw, 90vw"

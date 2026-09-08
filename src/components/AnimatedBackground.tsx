@@ -105,7 +105,7 @@ export default function AnimatedBackgroundImage({
     >
       <Image
         className={`animated-bg-image absolute top-0 left-0 blur-xl saturate-200 ${imageClassName}`}
-        src="/img/bubbles.png"
+        src="/img/bubbles.webp"
         alt="BeingBodyConcept"
         width={width}
         height={height}

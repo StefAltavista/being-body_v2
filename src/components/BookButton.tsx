@@ -84,10 +84,10 @@ export default function BookButton({ className }: { className?: string }) {
       ) => {
         gsap.set(fixedShell, {
           position: "fixed",
-          left: center.x - BUBBLE_SIZE / 2,
-          top: center.y - BUBBLE_SIZE / 2,
-          x: 0,
-          y: 0,
+          left: 0,
+          top: 0,
+          x: center.x - BUBBLE_SIZE / 2,
+          y: center.y - BUBBLE_SIZE / 2,
           scale,
           transformOrigin: "center center",
         });
@@ -167,14 +167,14 @@ export default function BookButton({ className }: { className?: string }) {
         });
 
         tl.to(fixedShell, {
-          left: curveCenter.x - BUBBLE_SIZE / 2,
-          top: curveCenter.y - BUBBLE_SIZE / 2,
+          x: curveCenter.x - BUBBLE_SIZE / 2,
+          y: curveCenter.y - BUBBLE_SIZE / 2,
           scale: 2.35,
           duration: 0.65,
           ease: "sine.inOut",
         }).to(fixedShell, {
-          left: cornerCenter.x - BUBBLE_SIZE / 2,
-          top: cornerCenter.y - BUBBLE_SIZE / 2,
+          x: cornerCenter.x - BUBBLE_SIZE / 2,
+          y: cornerCenter.y - BUBBLE_SIZE / 2,
           scale: END_SCALE,
           duration: 0.9,
           ease: "power3.inOut",

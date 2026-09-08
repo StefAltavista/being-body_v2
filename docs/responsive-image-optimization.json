@@ -1,0 +1,38 @@
+[
+  {
+    "from": "public/img/homeCarousel/1.jpg",
+    "to": "public/img/homeCarousel/1.webp",
+    "sourceBytes": 10992879,
+    "optimizedBytes": 198070,
+    "width": 1080,
+    "height": 1620,
+    "quality": 88
+  },
+  {
+    "from": "public/photos/massage1.jpg",
+    "to": "public/photos/massage1.webp",
+    "sourceBytes": 6641612,
+    "optimizedBytes": 189388,
+    "width": 1280,
+    "height": 2280,
+    "quality": 88
+  },
+  {
+    "from": "public/photos/massage2.jpg",
+    "to": "public/photos/massage2.webp",
+    "sourceBytes": 2716240,
+    "optimizedBytes": 155772,
+    "width": 1200,
+    "height": 2016,
+    "quality": 88
+  },
+  {
+    "from": "public/photos/pilates2.jpg",
+    "to": "public/photos/pilates2.webp",
+    "sourceBytes": 760650,
+    "optimizedBytes": 135682,
+    "width": 1000,
+    "height": 1500,
+    "quality": 88
+  }
+]

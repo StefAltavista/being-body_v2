@@ -20,9 +20,9 @@ export const oils: OilBlend[] = [
     character: "Clearing and calming, powerful in intuition",
     benefit: "Can promote clarity of thought, ease tension, and enhance vision",
     images: [
-      "/img/oils/cc-foto.png",
-      "/img/oils/cc-logo.png",
-      "/img/oils/cc-logo.png",
+      "/img/oils/cc-foto.webp",
+      "/img/oils/cc-logo.webp",
+      "/img/oils/cc-logo.webp",
     ],
     poem: [
       "This blend is inspired by trickling tranquility",
@@ -43,8 +43,8 @@ export const oils: OilBlend[] = [
     character: "Stimulating and meditative, powerful in sensitivity",
     benefit: "Can soothe, enhance mood, and embolden love",
     images: [
-      "/img/oils/ss-foto.png",
-      "/img/oils/ss-logo.png",
+      "/img/oils/ss-foto.webp",
+      "/img/oils/ss-logo.webp",
       "/img/oils/ss-design.jpg",
     ],
     poem: [
@@ -65,8 +65,8 @@ export const oils: OilBlend[] = [
     character: "Warm and centering, powerful in generosity of spirit",
     benefit: "Can alleviate stress and aid in moments of transition",
     images: [
-      "/img/oils/rr-foto.png",
-      "/img/oils/rr-logo.png",
+      "/img/oils/rr-foto.webp",
+      "/img/oils/rr-logo.webp",
       "/img/oils/rr-design.jpg",
     ],
     poem: [
@@ -87,8 +87,8 @@ export const oils: OilBlend[] = [
     character: "Mysterious and full of wonder, powerful in perception",
     benefit: "Can promote peace of mind and enhance meditation",
     images: [
-      "/img/oils/ff-foto.png",
-      "/img/oils/ff-logo.png",
+      "/img/oils/ff-foto.webp",
+      "/img/oils/ff-logo.webp",
       "/img/oils/ff-design.jpg",
     ],
     poem: [
@@ -109,8 +109,8 @@ export const oils: OilBlend[] = [
     character: "Buoyant and effervescent, powerful in inspiration",
     benefit: "Can boost mood, self-esteem, and ease anxiety",
     images: [
-      "/img/oils/zz-foto.png",
-      "/img/oils/zz-logo.png",
+      "/img/oils/zz-foto.webp",
+      "/img/oils/zz-logo.webp",
       "/img/oils/zz-design.jpg",
     ],
     poem: [

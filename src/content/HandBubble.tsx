@@ -254,7 +254,7 @@ export default function HandBubble() {
             <div className="hands_float realative aspect-square h-full rounded-full bg-gradient-to-br from-pink-200/70 to-sky-200/70 backdrop-blur-sm shadow-[inset_0px_10px_rgba(255,255,255,1),inset_0_-8px_16px_rgba(255,255,255,1),0_0_18px_rgba(255,255,255,1)]">
               <div className="pointer-events-none absolute left-[16%] top-[40%] rounded-full bg-white/35 blur-xl" />
               <Image
-                src="/img/hands_tr2.png"
+                src="/img/hands_tr2.webp"
                 alt="beingBodyLogo"
                 height={1000}
                 width={1000}
@@ -270,7 +270,7 @@ export default function HandBubble() {
         className="hands_final_logo pointer-events-none fixed left-1/2 top-1/2 z-[1] opacity-0"
       >
         <Image
-          src="/img/logo.png"
+          src="/img/logo.webp"
           alt="being body logo"
           height={300}
           width={300}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Render existing concept artwork</title>
+<h1>Render existing concept artwork</h1>
+<p>This uses the original image's current Next.js WebP response and native browser filters. No artwork is redrawn. Keep the original 500 px desktop geometry.</p>
+<button id="render">Render</button>
+<pre id="result">Ready</pre>
+<script>
+  document.getElementById("render").onclick = async () => {
+    const output = document.getElementById("result");
+    try {
+      output.textContent = "Rendering…";
+      const results = [];
+      for (const density of [1, 2]) {
+        const image = new Image();
+        image.src = "/source?w=" + (density === 1 ? 640 : 1080);
+        await image.decode();
+        for (const [variant, radius, hue] of [["sharp", 1, 100], ["soft", 10, 30]]) {
+          const canvas = document.createElement("canvas");
+          canvas.width = image.naturalWidth;
+          canvas.height = image.naturalHeight;
+          const context = canvas.getContext("2d");
+          if (!("filter" in context)) throw new Error("Use a browser with Canvas 2D filter support.");
+          context.filter = `blur(${radius * canvas.width / 500}px) hue-rotate(${hue}deg)`;
+          context.drawImage(image, 0, 0);
+          const name = `concept-${variant}-${density}x`;
+          const response = await fetch("/save", { method: "POST", body: JSON.stringify({ name, data: canvas.toDataURL("image/png") }) });
+          if (!response.ok) throw new Error(await response.text());
+          results.push({ name, width: canvas.width, height: canvas.height });
+        }
+      }
+      output.textContent = JSON.stringify(results, null, 2);
+    } catch (error) { output.textContent = error.message; }
+  };
+</script>
+</html>

@@ -45,7 +45,7 @@ export default function Background({
         style={{
           filter: `hue-rotate(${rotate}deg) blur(20px) saturate(2)`,
         }}
-        src="/img/bubbles.png"
+        src="/img/bubbles.webp"
         alt=""
         width={400}
         height={500}

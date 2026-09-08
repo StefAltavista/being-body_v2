@@ -26,6 +26,8 @@ export default function Card({ content }: { content: CardContent }) {
           alt={`${content.title} card`}
           src={content.image}
           fill
+          // Allow for the existing 1.9x background scale, not just the card box.
+          sizes="(min-width: 1280px) calc((100vw - 7rem) / 1.5 - 8rem), (min-width: 1024px) calc((100vw - 7rem) / 1.5), (min-width: 640px) calc(100vw - 6rem), calc(200vw - 17rem)"
           style={{ color: "red" }}
           className="absolute opacity-30  scale-[1.9] hue-rotate-330 brightness-120 saturate-110 "
         />
