@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Background from "@/components/Background";
 import BookButton from "@/components/BookButton";
 import Bubble from "@/components/Bubble";
@@ -9,11 +9,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Modal from "@/components/Modal";
+import { CalBookingEmbed } from "@/components/CalBookingEmbed";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Page() {
   const container = useRef<HTMLDivElement | null>(null);
+  const [openCalendar, setOpenCalendar] = useState(false);
 
   useGSAP(
     () => {
@@ -57,7 +60,7 @@ export default function Page() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: ".massage-hero-wrapper",
-            start: "top 55%",
+            start: "top 65%",
             toggleActions: "play none none reverse",
           },
         },
@@ -102,7 +105,7 @@ export default function Page() {
           <BookButton />
 
           <div className="w-full flex flex-col items-center mb-8">
-            <div className="massage-hero-wrapper relative sm:w-full md:w-[80%] lg:w-[50%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
+            <div className="massage-hero-wrapper relative sm:w-full md:w-[70%] lg:w-[40%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
               <Image
                 className="massage-hero-image z-[-1] opacity-80 rounded-full left-0 top-0 object-cover"
                 src={"/photos/massage2.webp"}
@@ -112,9 +115,11 @@ export default function Page() {
               />
 
               <div className="px-15 flex flex-col items-center">
-                <h3 className="reveal-p !text-white mb-8">Presence in touch</h3>
+                <h3 className="reveal-p underline  !text-white mb-8">
+                  Presence in touch
+                </h3>
 
-                <p className="reveal-p  !text-white  !text-[28px] ">
+                <p className="  !text-white !text-center !text-[36px] ">
                   With knowledge of body mechanics and alignment, I map the body
                   using fluid, rhythmic motion to restore energy circulation,
                   relax and release with gentle pressure applied through natural
@@ -210,6 +215,52 @@ export default function Page() {
     height={400}
     alt="icon"
   /> */}
+          <div className="w-full flex flex-col items-center mb-8">
+            <div className="massage-hero-wrapper relative sm:w-full md:w-[70%] lg:w-[40%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
+              <Image
+                className="massage-hero-image z-[-1] opacity-80 rounded-full left-0 top-0 object-cover"
+                src={"/photos/massage3.jpg"}
+                fill
+                sizes="(min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
+                alt="icon"
+              />
+              <h1
+                onClick={() => setOpenCalendar(true)}
+                className="zeppelin !text-[32px] p-8 !text-white !underline"
+              >
+                View Calendar
+              </h1>
+            </div>
+          </div>
+          {openCalendar && (
+            <Modal close={() => setOpenCalendar(false)} color="bg-[#f8f5f0]">
+              {(requestClose) => (
+                <div className="mx-auto flex w-full max-w-5xl flex-col pb-4">
+                  <div className="mb-6 flex items-start justify-between gap-5">
+                    <div>
+                      <h3 className="!mb-1 !text-[28px] sm:!text-[32px]">
+                        Book your Massage
+                      </h3>
+                      <p className="handWrite2 !mt-0 !text-left !text-[18px] sm:!text-[20px]">
+                        Choose a date and time that feels right for you.
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={requestClose}
+                      aria-label="Close calendar"
+                      className="shrink-0 rounded-full border border-slate-500/35 bg-white/60 px-4 py-2 !text-[20px] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500"
+                    >
+                      Close
+                    </button>
+                  </div>
+                  <CalBookingEmbed
+                    eventUrl={process.env.NEXT_PUBLIC_CALCOM_MASSAGE_URL!}
+                  />
+                </div>
+              )}
+            </Modal>
+          )}
         </div>
       </div>
     </Container>

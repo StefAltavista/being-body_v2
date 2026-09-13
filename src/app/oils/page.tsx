@@ -1,15 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
-
 import Background from "@/components/Background";
-import Bubble from "@/components/Bubble";
+// import Bubble from "@/components/Bubble";
 import Container from "@/components/Container";
 import OilCard from "@/components/OilCard";
 import OilsShowcaseCarousel from "@/content/OilsShowcaseCarousel";
 import { oils } from "@/content/oils";
 import { gsap, useGSAP } from "@/lib/gsap";
+import Image from "next/image";
 
 const rituals = [
   {
@@ -121,15 +120,24 @@ export default function OilsPage() {
             ever-evolving practice.
           </p>
           <div className="lg:w-[70%] mx-auto mt-12 grid grid-cols-1 items-center  md:grid-cols-3 ">
-            {rituals.map((ritual) => (
+            {rituals.map((ritual, i) => (
               <div key={ritual.name} className="flex flex-col items-center">
-                <Bubble
+                <h1>{ritual.name}</h1>
+
+                <Image
+                  src={`/img/oil_use_${i}.png`}
+                  height={800}
+                  width={300}
+                  alt={ritual.name}
+                  className={`rounded-full m-4 p-2 shadow  `}
+                />
+                {/* <Bubble
                   text={ritual.name}
                   className="mt-4 w-"
                   delay={ritual.delay}
                   size={20}
                   fontSize={"20px"}
-                />
+                /> */}
                 <p className="reveal-p  !mt-10 max-w-[270px] !text-center !text-[24px] leading-relaxed">
                   {ritual.instruction}
                 </p>
