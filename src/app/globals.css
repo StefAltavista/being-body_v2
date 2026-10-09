@@ -61,15 +61,35 @@ button:active,
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Tsukimi";
+  src: url("./fonts/TsukimiRounded-Light.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pompiere";
+  src: url("./fonts/Pompiere-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 .edda {
   font-family: Edda !important;
+  letter-spacing: 10;
+  transform: scaleY(0.7);
 }
 .zeppelin {
   font-family: Zeppelin !important;
+  letter-spacing: 3px;
 }
 * {
   box-sizing: border-box;
+  /* font-family: "Pompiere", cursive; */
   font-family: "Amatic", cursive;
+
+  /* font-family: "Tsukimi", cursive; */
   font-size: 20px;
   color: rgb(37, 79, 102) !important;
 }
@@ -128,6 +148,10 @@ p {
   font-size: 20px;
 }
 .handWrite2 {
+  /* font-family: "Amatic", cursive; */
+  /* font-family: "Edda", cursive; */
+  /* font-family: "Pompiere", cursive; */
+
   font-family: "Shadows Into Light", cursive !important;
   font-weight: 400;
   font-style: normal;

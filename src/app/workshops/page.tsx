@@ -51,7 +51,7 @@ export default function Page() {
               alt="Pilates"
             />
 
-            <h1>Workshops</h1>
+            <h1 className="zeppelin">Workshops</h1>
           </div>
           <div className="flex  flex-col w-full min-h-[80vh] mt-10">
             <h3>Coming soon...</h3>

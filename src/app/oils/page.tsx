@@ -13,17 +13,17 @@ import Image from "next/image";
 const rituals = [
   {
     name: "Ointment",
-    instruction: "Roll or rub 1 to 3 drops directly into the skin.",
+    instruction: "Roll or rub 1 to 3 drops directly into the skin",
     delay: "0s",
   },
   {
     name: "Room Diffuser",
-    instruction: "Add 2 to 3 drops to a bowl of hot water.",
+    instruction: "Add 2 to 3 drops to a bowl of hot water",
     delay: "1s",
   },
   {
     name: "Massage",
-    instruction: "Add 5 to 7 drops to a cupped palm’s worth of base oil.",
+    instruction: "Add 5 to 7 drops to a cupped palm’s worth of base oil",
     delay: "2s",
   },
 ];
@@ -91,23 +91,20 @@ export default function OilsPage() {
               alt="Oils"
               priority
             />
-            <h1>Oils</h1>
+            <h1 className="zeppelin">Oils</h1>
           </div>
         </header>{" "}
-        <p className="reveal-p relative z-10 max-w-5xl !text-left !text-[22px] leading-relaxed md:!text-[32px]">
+        <p className="reveal-p relative z-10 max-w-5xl !text-left !text-[20px] leading-relaxed md:!text-[26px]">
           Aromatherapy oil blends thoughtfully handcrafted using pure botanical
-          essential oils.{" "}
+          essential oils. Each blend is inspired by the healing wisdom of
+          nature.
+          <br /> a unique vision carefully created to evoke a specific feeling,
+          support intention, and nurture the mind, body, and spirit.
         </p>{" "}
         <div className=" mx-auto mt-16 flex flex-col w-full w-full flex items-center justify-center  ">
-          <h2 className="!text-[30px]  font-normal sm:!text-[34px]">
+          <h2 className="zeppelin !text-[30px]  font-normal sm:!text-[34px]">
             Offerings
           </h2>
-
-          <p className="!mt-4 handWrite2 reveal-p  z-10  !text-center !text-[16px] leading-relaxed md:!text-[22px]">
-            Each blend is inspired by the healing wisdom of nature.
-            <br /> a unique vision carefully created to evoke a specific
-            feeling, support intention, and nurture the mind, body, and spirit.
-          </p>
         </div>
         <OilsShowcaseCarousel />
         <section className="relative  mx-auto mt-14 w-full max-w-6xl">
@@ -122,7 +119,7 @@ export default function OilsPage() {
           <div className="lg:w-[70%] mx-auto mt-12 grid grid-cols-1 items-center  md:grid-cols-3 ">
             {rituals.map((ritual, i) => (
               <div key={ritual.name} className="flex flex-col items-center">
-                <h1>{ritual.name}</h1>
+                <h1 className="zeppelin">{ritual.name}</h1>
 
                 <Image
                   src={`/img/oil_use_${i}.png`}

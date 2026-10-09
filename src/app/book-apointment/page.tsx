@@ -53,7 +53,7 @@ export default function BookApointmentPage() {
           height={40}
           alt="icon"
         />
-        <h1>Book an appointment </h1>
+        <h1 className="zeppelin">Book an appointment </h1>
       </div>
       <p className="!text-left  lg:max-w-[60%] w-full handWrite2 !mt-16">
         My session options vary in length, and are all offered on a sliding

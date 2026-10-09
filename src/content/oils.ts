@@ -13,6 +13,48 @@ export type OilBlend = {
 
 export const oils: OilBlend[] = [
   {
+    slug: "helios",
+    name: "Helios",
+    intention: "Renewal",
+    ingredients: "Helichrysum, Linden, Neroli, Jasmin, Sweet Orange",
+    character: "Gentle and warm, powerful in restoration",
+    benefit:
+      "Can sooth skin, ease tension and cradle emotions, Nurturing inner & outer radience",
+    images: [
+      "/img/oils/helios-foto.jpg",
+      "/img/oils/helios-logo.webp",
+      "/img/oils/helios-design.webp",
+    ],
+    poem: [
+      "This blend is inspired by the last light of summer",
+      "warm earth holding sky, scattered moments softly glowing",
+      "nostalgic waves of honeyed tranquility",
+      "relaxed, open”,“sensuous surrender to settling in",
+    ],
+    description:
+      "my travels of sunnier days I found a new friend on Isola di Elba - Helichrysum Italicum. Golden flowers shining, perched in peaks and valleys of salty spray and parched stone. Preserved drops of sun, “immortelle”, produced in summer but retaining their colour after picking.  Radiant. Resilient. A natural remedy for bruising and swelling, easing joint and muscle pain, soothing irritation and inflammation, healing wounds, stimulating cell regeneration, and even cooling the burns from the very sun it emulates. This Mediterranean flower is a very powerful topical ally and soothing companion.Inspired by our meeting I began to mix a special blend focused on channeling the plants powers, cushioned in the recollection of the landscape and moment in which we found each other. Helichrysum, golden herbaceous, Linden, honeyed tender - weaving a soft, sun-baked memory.  Neroli, luminous citrus - conjuring the golden air,  Jasmine, hypnotic floral - shifting, welcoming nocturnal.  Sweet Orange, sparkling zest - shimmering, lifting. A spell to wrap you in the warmth of nostalgia, cultivate the deep glow of inner strength and summon the sun that remains after summer has passed 🌾 🌞",
+    backgroundHue: 305,
+  },
+  {
+    slug: "zefiros",
+    name: "Zefiros",
+    intention: "Elevating",
+    ingredients: "Bergamot, Ylang-Ylang, Cedarwood",
+    character: "Buoyant and effervescent, powerful in inspiration",
+    benefit: "Can boost mood, ease anxiety, refocus energies",
+    images: [
+      "/img/oils/zefiros-foto.jpg",
+      "/img/oils/zefiros-logo.png",
+      "/img/oils/zefiros-design.webp",
+    ],
+    poem: [
+      "This blend is inspired by a breeze of new beginnings”,“soft lapping against limbs”,“floating footsteps, rustling of leaves”,“dulcept harmonies carrying, calling",
+    ],
+    description:
+      "This blend brings me back to sweet citrus blooms that enveloped the air of a spontaneous trip to Spain one spring. We walked the streets without plan, silky sun kissing pale hands and fresh necks. Swaying overhead, an unspoken guide, overtaking the senses and caring us forward with soft, encouraging gusts. Faint currents leading us down unknown channels, leading us out of the grey skies and opening our eyes to new possibilities. Bergamot, airy and uplifting, Ylang-Ylang sensual and floating, Cedar, grounding and woody. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze 🌼✨",
+    backgroundHue: 305,
+  },
+  {
     slug: "cleansing-clary",
     name: "Cleansing Clary",
     intention: "Restoring",
@@ -22,7 +64,7 @@ export const oils: OilBlend[] = [
     images: [
       "/img/oils/cc-foto.webp",
       "/img/oils/cc-logo.webp",
-      "/img/oils/cc-logo.webp",
+      "/img/oils/cc-design.webp",
     ],
     poem: [
       "This blend is inspired by trickling tranquility",

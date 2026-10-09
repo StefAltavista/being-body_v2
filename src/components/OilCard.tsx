@@ -1,7 +1,5 @@
 "use client";
 
-import { useId, useState } from "react";
-
 import OilCarousel from "@/components/OilCarousel";
 import OilStory from "@/components/OilStory";
 import type { OilBlend } from "@/content/oils";
@@ -13,8 +11,6 @@ type OilCardProps = {
 };
 
 export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const mobileDetailsId = useId();
   const productOrder = imageOnRight ? "lg:order-2" : "lg:order-1";
   const detailsOrder = imageOnRight ? "lg:order-1" : "lg:order-2";
 
@@ -28,7 +24,7 @@ export default function OilCard({ oil, imageOnRight = false }: OilCardProps) {
 
         <Link href={`oils/${oil.slug}`} className="!cursor-pointer">
           <div className="relative z-10 ">
-            <h3 className="!cursor-pointer !mb-0 !text-center !text-[30px] tracking-[0.06em] sm:!text-[34px]">
+            <h3 className="zeppelin !cursor-pointer !mb-0 !text-center !text-[30px] tracking-[0.06em] sm:!text-[34px]">
               {oil.name}
             </h3>
             <p className="handWrite2 !mt-1 !text-center !text-[17px] tracking-[0.18em]">

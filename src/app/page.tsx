@@ -23,7 +23,7 @@ export default function Home() {
         <BookButton className=" overflow-visible" />
       </Container>
       <Container classname="mt-20 mb-12 overflow-visible">
-        <h2 className="!mb-6 !text-[34px] font-normal leading-tight sm:!text-[42px]">
+        <h2 className="zeppelin !mb-6 !text-[34px] font-normal leading-tight sm:!text-[42px]">
           A space to listen
         </h2>
         <HomeAboutKatia />

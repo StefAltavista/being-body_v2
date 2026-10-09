@@ -1,29 +1,59 @@
 "use client";
 
 import { useRef } from "react";
+import Background from "@/components/Background";
+import Bubble from "@/components/Bubble";
+import Container from "@/components/Container";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Background from "@/components/Background";
-import Bubble from "@/components/Bubble";
-import Container from "@/components/Container";
-
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+const movementImages = [
+  {
+    src: "/photos/pilates/reformer.webp",
+    alt: "Pilates practice on a reformer",
+    caption: "strength with support",
+    figureClassName: "w-[88%] lg:w-full m-0",
+    frameClassName: "[border-radius:48%_48%_46%_54%/34%_38%_62%_66%]",
+    imageClassName: " saturate-80 hue-rotate-30",
+  },
+  {
+    src: "/photos/pilates/chair.webp",
+    alt: "Pilates chair practice in the studio",
+    caption: "balance and control",
+    figureClassName: "w-[88%] lg:w-full m-0 justify-self-end lg:mt-24",
+    frameClassName: "[border-radius:52%_48%_54%_46%/63%_61%_39%_37%]",
+    imageClassName: " saturate-80 hue-rotate-200",
+  },
+  {
+    src: "/photos/pilates/shortSpine.webp",
+
+    alt: "Pilates movement with the legs extended",
+    caption: "space to explore",
+    figureClassName: "w-[88%] lg:w-full m-0 justify-self-center lg:mt-8",
+    frameClassName: "[border-radius:46%_54%_43%_57%/42%_37%_63%_58%]",
+    imageClassName: " saturate-80 hue-rotate-270",
+  },
+];
 
 export default function PilatesPage() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
-      const paragraphs = gsap.utils.toArray<HTMLElement>(".reveal-p");
+      const paragraphs = gsap.utils.toArray<HTMLParagraphElement>(".reveal-p");
 
       paragraphs.forEach((paragraph) => {
         gsap.fromTo(
           paragraph,
-          { opacity: 0, y: 28 },
+          {
+            opacity: 0,
+            y: 28,
+          },
           {
             opacity: 1,
             y: 0,
@@ -43,23 +73,43 @@ export default function PilatesPage() {
         ".pilates-hero-image",
         {
           opacity: 0,
-          scale: 1.08,
+          scaleX: 5,
           filter: "blur(20px)",
           transformOrigin: "center center",
         },
         {
-          opacity: 0.8,
-          scale: 1,
+          opacity: 1,
+          scaleX: 1,
           filter: "blur(0px)",
           duration: 3.5,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: ".pilates-hero-wrapper",
-            start: "top 55%",
-            toggleActions: "play none none reverse",
-          },
         },
       );
+
+      gsap.utils
+        .toArray<HTMLElement>(".pilates-photo")
+        .forEach((photo, index) => {
+          gsap.fromTo(
+            photo,
+            {
+              opacity: 0,
+              y: 70,
+              rotate: index === 1 ? 3 : -3,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              rotate: 0,
+              duration: 1.15,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: photo,
+                start: "top 88%",
+                toggleActions: "play none none none",
+              },
+            },
+          );
+        });
     },
     { scope: container },
   );
@@ -76,55 +126,70 @@ export default function PilatesPage() {
               src="/icons/stretching.svg"
               width={80}
               height={80}
-              alt="Pilates"
+              alt=""
             />
 
-            <h1>Pilates</h1>
+            <h1 className="zeppelin">Pilates</h1>
           </div>
+          <p className=" reveal-p !m-0 !text-[24px] md:!text-[24px] ">
+            Thoughtfully guided movement sessions encouraging body awareness
+            through intentional movement and breath.<br></br>
+            Shift the focus of ‘fitness’ into that of a movement practice, using
+            it as a device to improve mobility, elevate pain, broaden
+            perspective and connect with the self.
+          </p>
 
-          <div className="mb-6">
-            <p className="reveal-p !text-[26px] !mt-8 !text-left">
-              Thoughtfully guided Pilates and movement sessions encouraging Body
-              awareness through intentional movement and breath.
-            </p>
-          </div>
+          <div className="w-full relative py-16">
+            <div className="w-full max-w-[1180px] mx-auto grid grid-cols-1 lg:grid-cols-3 items-start gap-8 lg:gap-12">
+              {movementImages.map((image) => (
+                <figure
+                  className={`pilates-photo ${image.figureClassName}`}
+                  key={image.src}
+                >
+                  <div
+                    className={`group relative aspect-[0.72] overflow-hidden shadow-[0_22px_45px_rgba(29,66,84,0.16)] ${image.frameClassName}`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 29vw, 82vw"
+                      className={`object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] group-hover:scale-[1.035] motion-reduce:transition-none ${image.imageClassName}`}
+                    />
+                  </div>
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-[minmax(280px,420px)_minmax(0,1fr)] gap-10 lg:gap-10 items-center mb-20">
-            <div className="pilates-hero-wrapper relative w-full max-w-[420px] aspect-square justify-self-center lg:justify-self-end overflow-hidden rounded-[2rem]">
-              <Image
-                className="pilates-hero-image object-cover"
-                // src="/photos/pilates1.png"
-                src="/photos/pilates2.webp"
-                fill
-                sizes="(min-width: 1024px) 420px, 90vw"
-                alt=""
-              />
+                  <figcaption className="handWrite2 !mt-4 !text-[clamp(1.15rem,2vw,1.45rem)] !text-center">
+                    {image.caption}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
-            <div className="max-w-2xl">
-              <h3 className="reveal-p !text-left mb-8">A movement practice</h3>
-
-              <p className="reveal-p handWrite2">
-                I want to shift the focus of ‘fitness’ into that of a movement
-                practice, using it as a device to improve mobility, elevate
-                pain, broaden perspective and connect with the self.
-                <br />
-                <br />
-                apparatuses work as well as Mat work
+            <div className="w-full max-w-[900px] mx-auto my-24 flex flex-col gap-7">
+              <p className="reveal-p !m-0 !text-[21px] md:!text-[25px] !text-center text-balance">
+                The apparatus gives movement something to respond to —
+                resistance, support and clear feedback — while mat work asks the
+                body to find its own organisation. I move between both, choosing
+                what helps the body listen, adapt and build trust.
               </p>
-            </div>
+            </div>{" "}
           </div>
         </div>
 
-        <div className="w-full flex flex-col justify-center items-center !mt-26">
-          <h3 className="reveal-p !text-center">My current Weekly Schedule</h3>
+        <div className="w-full flex flex-col justify-center items-center ">
+          <h3 className="zeppelin mb-16 border-b !text-center">
+            Weekly schedule
+          </h3>
 
           <div className="w-full flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20 lg:items-start">
             <div className="flex flex-col items-center xl:px-16">
               <Bubble
-                text="Align & Flow : Reformer"
+                text="Align & Flow  Reformer"
                 className="mt-6"
                 delay="0s"
+                fontSize="28px"
+                size={36}
               />
+
               <p className="reveal-p !my-16 lg:!my-8 handWrite2">
                 Resistance-based training that challenges deep stabilising
                 muscles, focusing on building strength, finding connection and
@@ -136,34 +201,47 @@ export default function PilatesPage() {
 
             <div className="flex flex-col items-center xl:px-16">
               <Bubble
-                text="Dynamic Mobility : Mat"
+                text="Dynamic Mobility Mat"
                 className="mt-6"
                 delay="1s"
+                fontSize="28px"
+                size={36}
               />
+
               <p className="reveal-p !my-16 lg:!my-8 handWrite2">
-                Training focused on functional movement - Pilates foundations to
-                align, strengthen, and heighten neuromuscular control mixed with
+                Training focused on functional movement — Pilates foundations to
+                align, strengthen and heighten neuromuscular control, mixed with
                 dynamic stretching to improve range of motion, increase blood
-                circulation, and reduce muscle tension.
+                circulation and reduce muscle tension.
               </p>
             </div>
           </div>
+          <div className="flex w-full justify-center items-center pilates-hero-wrapper relative w-full md:w-[70%] lg:w-[42%] h-[76vh] md:h-[80vh] mt-8 overflow-hidden rounded-full">
+            <Image
+              className="pilates-hero-image rounded-full left-0 top-0 object-cover object-[50%_54%]"
+              src="/photos/pilates/front.webp"
+              fill
+              priority
+              sizes="(min-width: 1024px) 42vw, (min-width: 768px) 70vw, 100vw"
+              alt="Pilates short spine practice with the feet in straps"
+            />
+          </div>
         </div>
 
-        <div className="w-full flex flex-col items-center !mt-16 !mb-20">
-          <p className="reveal-p !text-[36px] !text-center">
-            If you are curious to
+        <div className="w-full flex flex-col items-center !mt-20 !mb-24">
+          <p className="reveal-p !text-[34px] md:!text-[40px] !text-center">
+            If you are curious to…
           </p>
 
           <ul className="reveal-p handWrite2 !my-8 !text-center list-none">
             <li>book a private session</li>
-            <li>Explore apparatuses</li>
-            <li>Move on the mat</li>
+            <li>explore apparatuses</li>
+            <li>move on the mat</li>
           </ul>
 
           <Link
             href="/contacts"
-            className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border border-white/50 bg-gradient-to-br from-pink-200/70 to-sky-200/70 text-center shadow-[inset_0_2px_10px_rgba(255,255,255,0.85),inset_0_-8px_16px_rgba(255,255,255,0.18),0_0_18px_rgba(255,255,255,0.22)] backdrop-blur-sm transition-transform duration-300 hover:scale-105"
+            className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border border-white/50 bg-gradient-to-br from-pink-200/70 to-sky-200/70 text-center shadow-[inset_0_2px_10px_rgba(255,255,255,0.85),inset_0_-8px_16px_rgba(255,255,255,0.18),0_0_18px_rgba(255,255,255,0.22)] blur-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#254f66] motion-reduce:transition-none"
           >
             <span className="pointer-events-none absolute left-[18%] top-[18%] h-8 w-8 rounded-full bg-white/45 blur-md" />
             <span className="handWrite2 relative z-10 text-[23px] leading-none">

@@ -85,7 +85,7 @@ export default function Page() {
             />
 
             <div>
-              <h1>Massage Therapy</h1>
+              <h1 className="zeppelin">Massage Therapy</h1>
             </div>
           </div>
 
