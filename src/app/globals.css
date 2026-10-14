@@ -84,6 +84,9 @@ button:active,
   font-family: Zeppelin !important;
   letter-spacing: 3px;
 }
+.amatic {
+  font-family: "Amatic", cursive !important;
+}
 * {
   box-sizing: border-box;
   /* font-family: "Pompiere", cursive; */

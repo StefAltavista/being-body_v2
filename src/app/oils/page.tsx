@@ -7,7 +7,7 @@ import Container from "@/components/Container";
 import OilCard from "@/components/OilCard";
 import OilsShowcaseCarousel from "@/content/OilsShowcaseCarousel";
 import { oils } from "@/content/oils";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import Image from "next/image";
 
 const rituals = [
@@ -33,6 +33,9 @@ export default function OilsPage() {
 
   useGSAP(
     () => {
+      const page = container.current;
+      if (!page) return;
+
       gsap.utils.toArray<HTMLElement>(".reveal-p").forEach((element) => {
         gsap.fromTo(
           element,
@@ -51,28 +54,93 @@ export default function OilsPage() {
         );
       });
 
-      gsap.utils.toArray<HTMLElement>(".oil-card").forEach((card, index) => {
-        gsap.fromTo(
-          card,
-          {
-            autoAlpha: 0,
-            x: index % 2 === 0 ? -45 : 45,
-            y: 35,
+      const oilCards = gsap.utils.toArray<HTMLElement>(".oil-card");
+      const cardMedia = gsap.matchMedia();
+
+      cardMedia.add("(max-width: 767px)", () => {
+        gsap.set(oilCards, { autoAlpha: 0, x: 0, y: 24 });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              const card = entry.target as HTMLElement;
+              observer.unobserve(card);
+              gsap.to(card, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.9,
+                ease: "power3.out",
+              });
+            });
           },
-          {
-            autoAlpha: 1,
-            x: 0,
-            y: 0,
-            duration: 1.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: card,
-              start: "top 86%",
-              toggleActions: "play none none reverse",
-            },
-          },
+          { rootMargin: "0px 0px -24px", threshold: 0.08 },
         );
+
+        oilCards.forEach((card) => observer.observe(card));
+        return () => observer.disconnect();
       });
+
+      cardMedia.add("(min-width: 768px)", () => {
+        oilCards.forEach((card, index) => {
+          gsap.fromTo(
+            card,
+            {
+              autoAlpha: 0,
+              x: index % 2 === 0 ? -45 : 45,
+              y: 35,
+            },
+            {
+              autoAlpha: 1,
+              x: 0,
+              y: 0,
+              duration: 1.15,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: card,
+                start: "top 86%",
+                once: true,
+                invalidateOnRefresh: true,
+              },
+            },
+          );
+        });
+      });
+
+      // Production image/font loading can change this long page after
+      // ScrollTrigger first measures it. Refresh the remaining scroll-driven
+      // animations once the final layout is available.
+      const refresh = gsap
+        .delayedCall(0.1, () => ScrollTrigger.refresh())
+        .pause();
+      const scheduleRefresh = () => refresh.restart(true);
+      const pendingImages = Array.from(page.querySelectorAll("img")).filter(
+        (image) => !image.complete,
+      );
+
+      pendingImages.forEach((image) => {
+        image.addEventListener("load", scheduleRefresh, { once: true });
+        image.addEventListener("error", scheduleRefresh, { once: true });
+      });
+
+      if (document.readyState === "complete") {
+        scheduleRefresh();
+      } else {
+        window.addEventListener("load", scheduleRefresh, { once: true });
+      }
+
+      void document.fonts?.ready.then(scheduleRefresh);
+
+      return () => {
+        cardMedia.revert();
+        refresh.kill();
+        window.removeEventListener("load", scheduleRefresh);
+        pendingImages.forEach((image) => {
+          image.removeEventListener("load", scheduleRefresh);
+          image.removeEventListener("error", scheduleRefresh);
+        });
+      };
     },
     { scope: container },
   );

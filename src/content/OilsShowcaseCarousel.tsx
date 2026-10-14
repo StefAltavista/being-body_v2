@@ -241,7 +241,8 @@ export default function OilsShowcaseCarousel({
                 zIndex: 30 - Math.round(absoluteDistance * 10),
                 opacity,
                 transform: `translate3d(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px), 0) scale(${scale}) rotateY(${rotateY}deg)`,
-                transition: isDragging ? "none" : "opacity 300ms ",
+                transitionProperty: "opacity",
+                transitionDuration: isDragging ? "0ms" : "300ms",
                 transitionTimingFunction: "ease-in-out",
               }}
             >
@@ -253,14 +254,7 @@ export default function OilsShowcaseCarousel({
                 onBlur={() => setIsPaused(false)}
                 draggable={false}
               >
-                <div className="relative flex h-full w-full flex-col items-center justify-between overflow-hidden rounded-[0.8rem] border border-white/60 bg-white/40 px-5 py-6 shadow-[inset_0_2px_12px_rgba(255,255,255,0.82),0_22px_50px_rgba(53,83,104,0.16)] backdrop-blur-md transition-transform duration-500 ease-out group-hover:scale-[1.08] group-focus-visible:scale-[1.08]">
-                  <span className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-white/50 blur-2xl" />
-                  <span className="pointer-events-none absolute -bottom-10 -left-8 h-32 w-32 rounded-full bg-sky-100/35 blur-3xl" />
-
-                  <h3 className="relative z-10 !mb-0 !text-center !text-[36px] font-normal leading-tight">
-                    {oil.name}
-                  </h3>
-
+                <div className="relative flex h-full w-full flex-col items-center justify-around overflow-hidden rounded-[0.8rem] border border-white/60 bg-white/40 px-5 py-6 shadow-[inset_0_2px_12px_rgba(255,255,255,0.82),0_22px_50px_rgba(53,83,104,0.16)] backdrop-blur-md transition-transform duration-500 ease-out group-hover:scale-[1.08] group-focus-visible:scale-[1.08]">
                   <div className="relative z-10 h-[190px] w-[190px] overflow-hidden rounded-full border border-white/75 bg-white/35 shadow-[inset_0_2px_12px_rgba(255,255,255,0.82),0_12px_30px_rgba(53,83,104,0.14)]">
                     <Image
                       src={oil.images[1]}

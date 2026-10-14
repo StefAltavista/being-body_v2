@@ -34,7 +34,7 @@ export default function OilProductPage({ oil }: OilProductPageProps) {
           All oils
         </Link>
 
-        <section className="relative grid overflow-visible py-5 sm:py-8 lg:grid-cols-[minmax(0,1.02fr)_minmax(370px,0.98fr)] lg:items-start lg:gap-8 lg:py-12">
+        <section className="relative grid overflow-visible py-3 sm:py-5 lg:grid-cols-[minmax(0,1.02fr)_minmax(370px,2fr)] lg:gap-8 lg:items-start lg:py-12">
           <span className="pointer-events-none absolute -left-12 top-16 h-44 w-44 rounded-full bg-white/40 blur-3xl" />
           <span className="pointer-events-none absolute -right-8 bottom-8 h-52 w-52 rounded-full bg-pink-100/30 blur-3xl" />
 
@@ -43,7 +43,7 @@ export default function OilProductPage({ oil }: OilProductPageProps) {
           </div>
 
           <div className="relative z-10 order-1 pb-10 lg:order-2 lg:pb-0">
-            <div className="mb-5 flex items-center gap-4">
+            <div className="mb-5 flex items-start gap-4">
               <Image
                 src="/icons/oil12.svg"
                 width={48}
@@ -54,7 +54,7 @@ export default function OilProductPage({ oil }: OilProductPageProps) {
               <span className="handWrite2 !text-[17px]  ">{oil.intention}</span>
             </div>
 
-            <h1 className="!mb-3 !text-[48px] leading-none sm:!text-[60px] lg:!text-[68px]">
+            <h1 className="zeppelin !mb-3 !text-[48px] leading-none sm:!text-[60px] lg:!text-[68px]">
               {oil.name}
             </h1>
 

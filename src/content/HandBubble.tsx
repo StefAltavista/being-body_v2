@@ -31,6 +31,7 @@ export default function HandBubble() {
       const precedingSection = document.querySelector<HTMLElement>(
         ".Book_appointment_button",
       );
+      const footer = document.querySelector<HTMLElement>("#footer");
       const refreshLayout = gsap
         .delayedCall(0.15, () => ScrollTrigger.refresh())
         .pause();
@@ -72,12 +73,26 @@ export default function HandBubble() {
       gsap.set(finalLogo, {
         xPercent: -50,
         yPercent: -50,
-
+        y: 0,
         autoAlpha: 0,
         opacity: 0,
         transformOrigin: "center center",
         willChange: "transform, opacity, filter",
       });
+
+      if (footer) {
+        gsap.to(finalLogo, {
+          y: () => -footer.offsetHeight / 2,
+          ease: "none",
+          scrollTrigger: {
+            trigger: footer,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+      }
 
       gsap.set(finalMessage, {
         x: 0,
@@ -274,7 +289,7 @@ export default function HandBubble() {
           alt="being body logo"
           height={300}
           width={300}
-          className="h-[300px] w-[300px] object-contain"
+          className="h-[min(62vw,300px)] w-[min(62vw,300px)] object-contain"
         />
       </div>
     </>

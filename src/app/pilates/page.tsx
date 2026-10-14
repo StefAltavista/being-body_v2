@@ -9,6 +9,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AvailabilityCalendar from "@/components/AvailabilityCalendar";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -19,7 +20,7 @@ const movementImages = [
     caption: "strength with support",
     figureClassName: "w-[88%] lg:w-full m-0",
     frameClassName: "[border-radius:48%_48%_46%_54%/34%_38%_62%_66%]",
-    imageClassName: " saturate-80 hue-rotate-30",
+    imageClassName: " saturate-80 ",
   },
   {
     src: "/photos/pilates/chair.webp",
@@ -27,7 +28,7 @@ const movementImages = [
     caption: "balance and control",
     figureClassName: "w-[88%] lg:w-full m-0 justify-self-end lg:mt-24",
     frameClassName: "[border-radius:52%_48%_54%_46%/63%_61%_39%_37%]",
-    imageClassName: " saturate-80 hue-rotate-200",
+    imageClassName: " saturate-80 ",
   },
   {
     src: "/photos/pilates/shortSpine.webp",
@@ -36,7 +37,7 @@ const movementImages = [
     caption: "space to explore",
     figureClassName: "w-[88%] lg:w-full m-0 justify-self-center lg:mt-8",
     frameClassName: "[border-radius:46%_54%_43%_57%/42%_37%_63%_58%]",
-    imageClassName: " saturate-80 hue-rotate-270",
+    imageClassName: " saturate-80 ",
   },
 ];
 
@@ -177,7 +178,7 @@ export default function PilatesPage() {
 
         <div className="w-full flex flex-col justify-center items-center ">
           <h3 className="zeppelin mb-16 border-b !text-center">
-            Weekly schedule
+            Different Practices
           </h3>
 
           <div className="w-full flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20 lg:items-start">
@@ -216,10 +217,15 @@ export default function PilatesPage() {
               </p>
             </div>
           </div>
+          <h3 className="zeppelin mb-16 border-b !text-center">
+            Next Availabilities
+          </h3>
+
+          <AvailabilityCalendar />
           <div className="flex w-full justify-center items-center pilates-hero-wrapper relative w-full md:w-[70%] lg:w-[42%] h-[76vh] md:h-[80vh] mt-8 overflow-hidden rounded-full">
             <Image
-              className="pilates-hero-image rounded-full left-0 top-0 object-cover object-[50%_54%]"
-              src="/photos/pilates/front.webp"
+              className="pilates-hero-image rounded-full left-0 top-0 object-cover "
+              src="/photos/pilates/katia.png"
               fill
               priority
               sizes="(min-width: 1024px) 42vw, (min-width: 768px) 70vw, 100vw"
@@ -241,7 +247,7 @@ export default function PilatesPage() {
 
           <Link
             href="/contacts"
-            className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border border-white/50 bg-gradient-to-br from-pink-200/70 to-sky-200/70 text-center shadow-[inset_0_2px_10px_rgba(255,255,255,0.85),inset_0_-8px_16px_rgba(255,255,255,0.18),0_0_18px_rgba(255,255,255,0.22)] blur-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#254f66] motion-reduce:transition-none"
+            className="relative flex h-[120px] w-[120px] flex-col items-center justify-center rounded-full border border-white/50 bg-gradient-to-br from-pink-200/70 to-sky-200/70 text-center shadow-[inset_0_2px_10px_rgba(255,255,255,0.85),inset_0_-8px_16px_rgba(255,255,255,0.18),0_0_18px_rgba(255,255,255,0.22)] backdrop-blur-sm transition-transform duration-300 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#254f66] motion-reduce:transition-none"
           >
             <span className="pointer-events-none absolute left-[18%] top-[18%] h-8 w-8 rounded-full bg-white/45 blur-md" />
             <span className="handWrite2 relative z-10 text-[23px] leading-none">
