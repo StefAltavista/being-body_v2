@@ -1,10 +1,8 @@
 "use client";
 
 import Container from "@/components/Container";
-// import Calendar from "@/components/Calendar";
 import { useState } from "react";
-// import { GoogleEvent } from "@/lib/getCalendar";
-// import RequestAppointment from "@/components/Form.RequestAppointment";
+
 import Modal from "@/components/Modal";
 import Image from "next/image";
 import Background from "@/components/Background";
@@ -12,21 +10,24 @@ import { CalBookingEmbed } from "@/components/CalBookingEmbed";
 import AppointmentCard, {
   type AppointmentOption,
 } from "@/components/AppointmentCard";
+import SendMessageForm from "@/components/Form.SendMessage";
 
 const appointmentOptions: AppointmentOption[] = [
   {
+    id: "massage",
     title: "Massage session",
     description:
       "A nourishing, one-to-one massage session shaped around what your body needs that day. We can make space for rest, release, and a gentle return to yourself.",
-    image: "/photos/massage1.webp",
+    image: "/photos/massageCard.jpg",
     imageAlt: "Massage session",
     url: process.env.NEXT_PUBLIC_CALCOM_MASSAGE_URL!,
   },
   {
+    id: "pilates_private",
     title: "Private Pilates Class",
     description:
       "A private Pilates practice with time to move, strengthen, and reconnect at your own pace. Each class is adapted to support your body and your intentions.",
-    image: "/photos/pilates2.webp",
+    image: "/photos/pilatesCard.webp",
     imageAlt: "Private Pilates class",
     url: process.env.NEXT_PUBLIC_CALCOM_PILATES_URL!,
   },
@@ -37,6 +38,10 @@ export default function BookApointmentPage() {
   // const [openBooking, setOpenBooking] = useState(false);
   const [selectedAppointment, setSelectedAppointment] =
     useState<AppointmentOption | null>(null);
+  const [openPilatesRequest, setOpenPilatesRequest] = useState(false);
+
+  const privatePilatesMessage =
+    "Hello, I'm interested in requesting a private Pilates class.";
 
   // const selectEvent = (event: GoogleEvent) => {
   //   setEvent(event);
@@ -45,9 +50,9 @@ export default function BookApointmentPage() {
   return (
     <Container classname=" w-full justify-start items-start mt-10 overflow-hidden ">
       <Background rotate={100} />
-      <div className="flex">
+      <div className="flex border-b border-slate-400  w-[100%] ">
         <Image
-          className="mr-6 brightness-0"
+          className="mr-6"
           src={"/icons/feather.svg"}
           width={40}
           height={40}
@@ -66,6 +71,7 @@ export default function BookApointmentPage() {
             appointment={appointment}
             imageOnRight={index % 2 === 1}
             onCalendar={() => setSelectedAppointment(appointment)}
+            onRequest={() => setOpenPilatesRequest(true)}
           />
         ))}
       </section>
@@ -94,6 +100,18 @@ export default function BookApointmentPage() {
               </div>
               <CalBookingEmbed eventUrl={selectedAppointment.url} />
             </div>
+          )}
+        </Modal>
+      )}
+
+      {openPilatesRequest && (
+        <Modal close={() => setOpenPilatesRequest(false)} color="bg-[#f8f5f0]">
+          {(requestClose) => (
+            <SendMessageForm
+              close={requestClose}
+              initialMessage={privatePilatesMessage}
+              title="Request a Private Pilates Class"
+            />
           )}
         </Modal>
       )}

@@ -15,29 +15,32 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const movementImages = [
   {
-    src: "/photos/pilates/reformer.webp",
+    src: "/photos/pilates/reformer1.webp",
     alt: "Pilates practice on a reformer",
     caption: "strength with support",
-    figureClassName: "w-[88%] lg:w-full m-0",
+    figureClassName: "w-[88%] md:w-[62%] lg:w-full m-0",
     frameClassName: "[border-radius:48%_48%_46%_54%/34%_38%_62%_66%]",
-    imageClassName: " saturate-80 ",
+    imageClassName: " saturate-110 ",
   },
-  {
-    src: "/photos/pilates/chair.webp",
-    alt: "Pilates chair practice in the studio",
-    caption: "balance and control",
-    figureClassName: "w-[88%] lg:w-full m-0 justify-self-end lg:mt-24",
-    frameClassName: "[border-radius:52%_48%_54%_46%/63%_61%_39%_37%]",
-    imageClassName: " saturate-80 ",
-  },
+
   {
     src: "/photos/pilates/shortSpine.webp",
 
     alt: "Pilates movement with the legs extended",
     caption: "space to explore",
-    figureClassName: "w-[88%] lg:w-full m-0 justify-self-center lg:mt-8",
+    figureClassName:
+      "w-[88%] md:w-[62%] lg:w-full m-0 justify-self-center lg:mt-18",
     frameClassName: "[border-radius:46%_54%_43%_57%/42%_37%_63%_58%]",
-    imageClassName: " saturate-80 ",
+    imageClassName: " saturate-130 ",
+  },
+  {
+    src: "/photos/pilates/chair.webp",
+    alt: "Pilates chair practice in the studio",
+    caption: "balance and control",
+    figureClassName:
+      "w-[88%] md:w-[62%] lg:w-full m-0 justify-self-end lg:mt-4",
+    frameClassName: "[border-radius:52%_48%_54%_46%/63%_61%_39%_37%]",
+    imageClassName: " saturate-110 ",
   },
 ];
 
@@ -120,10 +123,10 @@ export default function PilatesPage() {
       <div ref={container} className="w-full">
         <Background rotate={200} imageClassName="opacity-100" />
 
-        <div className="w-full relative">
-          <div className="flex items-center">
+        <div className="w-full relative ">
+          <div className="flex items-center border-b border-slate-400">
             <Image
-              className="mr-6 brightness-0 pb-2"
+              className="mr-6 pb-2"
               src="/icons/stretching.svg"
               width={80}
               height={80}
@@ -154,7 +157,7 @@ export default function PilatesPage() {
                       src={image.src}
                       alt={image.alt}
                       fill
-                      sizes="(min-width: 1024px) 29vw, 82vw"
+                      sizes="(min-width: 1024px) 29vw, (min-width: 768px) 54vw, 82vw"
                       className={`object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] group-hover:scale-[1.035] motion-reduce:transition-none ${image.imageClassName}`}
                     />
                   </div>
@@ -165,20 +168,12 @@ export default function PilatesPage() {
                 </figure>
               ))}
             </div>
-            <div className="w-full max-w-[900px] mx-auto my-24 flex flex-col gap-7">
-              <p className="reveal-p !m-0 !text-[21px] md:!text-[25px] !text-center text-balance">
-                The apparatus gives movement something to respond to —
-                resistance, support and clear feedback — while mat work asks the
-                body to find its own organisation. I move between both, choosing
-                what helps the body listen, adapt and build trust.
-              </p>
-            </div>{" "}
           </div>
         </div>
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <h3 className="zeppelin mb-16 border-b !text-center">
-            Different Practices
+          <h3 className="zeppelin mb-16   !text-center border-y border-slate-400  w-[100%] md:!w-[50%]">
+            : : Different Practices : :
           </h3>
 
           <div className="w-full flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20 lg:items-start">
@@ -217,32 +212,35 @@ export default function PilatesPage() {
               </p>
             </div>
           </div>
-          <h3 className="zeppelin mb-16 border-b !text-center">
-            Next Availabilities
-          </h3>
+          <div className=" w-full flex justify-center">
+            <h3 className="border-y border-slate-400  w-[100%] md:!w-[50%] zeppelin mb-16  !text-center">
+              : : Next Availabilities : :
+            </h3>
+          </div>
 
           <AvailabilityCalendar />
-          <div className="flex w-full justify-center items-center pilates-hero-wrapper relative w-full md:w-[70%] lg:w-[42%] h-[76vh] md:h-[80vh] mt-8 overflow-hidden rounded-full">
+          <div className="pilates-hero-wrapper relative mt-8 aspect-[3/4] w-[78%] max-w-[460px] overflow-hidden shadow-[0_22px_45px_rgba(29,66,84,0.16)] [border-radius:44%_56%_48%_52%/36%_42%_58%_64%] sm:w-[68%] md:w-[54%] lg:w-[34%] xl:w-[30%]">
             <Image
-              className="pilates-hero-image rounded-full left-0 top-0 object-cover "
-              src="/photos/pilates/katia.png"
+              className="pilates-hero-image object-cover"
+              // src="/photos/pilates/katia.png"
+              src="/photos/pilates/reformer.webp"
               fill
               priority
-              sizes="(min-width: 1024px) 42vw, (min-width: 768px) 70vw, 100vw"
+              sizes="(min-width: 1280px) 460px, (min-width: 1024px) 34vw, (min-width: 768px) 54vw, (min-width: 640px) 68vw, 78vw"
               alt="Pilates short spine practice with the feet in straps"
             />
           </div>
         </div>
 
         <div className="w-full flex flex-col items-center !mt-20 !mb-24">
-          <p className="reveal-p !text-[34px] md:!text-[40px] !text-center">
+          <p className="reveal-p !text-[30px] md:!text-[40px] !text-center">
             If you are curious to…
           </p>
 
-          <ul className="reveal-p handWrite2 !my-8 !text-center list-none">
-            <li>book a private session</li>
-            <li>explore apparatuses</li>
-            <li>move on the mat</li>
+          <ul className="reveal-p handWrite2 !my-8  !text-center list-none">
+            <li className="!text-[28px]">book a private session</li>
+            <li className="!text-[28px]">explore apparatuses</li>
+            <li className="!text-[28px]">move on the mat</li>
           </ul>
 
           <Link

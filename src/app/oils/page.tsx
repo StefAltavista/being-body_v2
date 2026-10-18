@@ -147,12 +147,19 @@ export default function OilsPage() {
 
   return (
     <Container classname="w-full items-start justify-start mt-10 overflow-hidden">
-      <div ref={container} className="w-full">
+      <div ref={container} className="w-full relative">
+        <Image
+          alt="aroma logo"
+          src={"/img/aroma.webp"}
+          width={800}
+          height={1800}
+          className="absolute opacity-20 right-0"
+        />
         <Background rotate={330} imageClassName="opacity-100" />
         <header className="relative w-full">
-          <div className="flex items-center">
+          <div className="flex items-center border-b border-slate-400 ">
             <Image
-              className="mr-6 brightness-0 pb-2"
+              className="mr-6 pb-2"
               src="/icons/oil12.svg"
               width={80}
               height={80}
@@ -169,15 +176,15 @@ export default function OilsPage() {
           <br /> a unique vision carefully created to evoke a specific feeling,
           support intention, and nurture the mind, body, and spirit.
         </p>{" "}
-        <div className=" mx-auto mt-16 flex flex-col w-full w-full flex items-center justify-center  ">
+        <div className="border-y w-[100%] md:!w-[50%] border-slate-400 mx-auto mt-16 flex flex-col w-full w-full flex items-center justify-center  ">
           <h2 className="zeppelin !text-[30px]  font-normal sm:!text-[34px]">
-            Offerings
+            : : Offerings : :
           </h2>
         </div>
         <OilsShowcaseCarousel />
-        <section className="relative  mx-auto mt-14 w-full max-w-6xl">
-          <h3 className="reveal-p  !mt-26 !my-2 !text-center  !text-[36px] tracking-[0.18em]">
-            : : : : Uses &amp; Rituals : : : :
+        <section className="relative  mx-auto mt-2 w-full max-w-6xl">
+          <h3 className=" border-t border-slate-400 zeppelin reveal-p    !text-center  !text-[36px] tracking-[0.18em]">
+            : : Uses and Rituals : :
           </h3>
           <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-center md:!text-[24px] leading-relaxed">
             There are no rules for exploring them, <br></br>but here are some
@@ -186,8 +193,10 @@ export default function OilsPage() {
           </p>
           <div className="lg:w-[70%] mx-auto mt-12 grid grid-cols-1 items-center  md:grid-cols-3 ">
             {rituals.map((ritual, i) => (
-              <div key={ritual.name} className="flex flex-col items-center">
-                <h1 className="zeppelin">{ritual.name}</h1>
+              <div key={ritual.name} className="flex flex-col items-center ">
+                <h1 className="zeppelin border-t border-slate-400">
+                  {ritual.name}
+                </h1>
 
                 <Image
                   src={`/img/oil_use_${i}.png`}
@@ -203,7 +212,7 @@ export default function OilsPage() {
                   size={20}
                   fontSize={"20px"}
                 /> */}
-                <p className="reveal-p  !mt-10 max-w-[270px] !text-center !text-[24px] leading-relaxed">
+                <p className="reveal-p sm:mb-0 mb-6 !mt-10 max-w-[270px] !text-center !text-[24px] leading-relaxed">
                   {ritual.instruction}
                 </p>
               </div>

@@ -15,21 +15,22 @@ export const oils: OilBlend[] = [
   {
     slug: "helios",
     name: "Helios",
-    intention: "Renewal",
+    intention: "Renewing",
     ingredients: "Helichrysum, Linden, Neroli, Jasmin, Sweet Orange",
     character: "Gentle and warm, powerful in restoration",
     benefit:
       "Can sooth skin, ease tension and cradle emotions, Nurturing inner & outer radience",
     images: [
       "/img/oils/helios-foto.jpg",
-      "/img/oils/helios-logo.webp",
-      "/img/oils/helios-design.webp",
+      "/img/oils/helios-logo.png",
+      "/img/oils/helios-design.png",
     ],
     poem: [
       "This blend is inspired by the last light of summer",
       "warm earth holding sky, scattered moments softly glowing",
       "nostalgic waves of honeyed tranquility",
-      "relaxed, open”,“sensuous surrender to settling in",
+      "relaxed, open",
+      "sensuous surrender to settling in",
     ],
     description:
       "my travels of sunnier days I found a new friend on Isola di Elba - Helichrysum Italicum. Golden flowers shining, perched in peaks and valleys of salty spray and parched stone. Preserved drops of sun, “immortelle”, produced in summer but retaining their colour after picking.  Radiant. Resilient. A natural remedy for bruising and swelling, easing joint and muscle pain, soothing irritation and inflammation, healing wounds, stimulating cell regeneration, and even cooling the burns from the very sun it emulates. This Mediterranean flower is a very powerful topical ally and soothing companion.Inspired by our meeting I began to mix a special blend focused on channeling the plants powers, cushioned in the recollection of the landscape and moment in which we found each other. Helichrysum, golden herbaceous, Linden, honeyed tender - weaving a soft, sun-baked memory.  Neroli, luminous citrus - conjuring the golden air,  Jasmine, hypnotic floral - shifting, welcoming nocturnal.  Sweet Orange, sparkling zest - shimmering, lifting. A spell to wrap you in the warmth of nostalgia, cultivate the deep glow of inner strength and summon the sun that remains after summer has passed 🌾 🌞",
@@ -45,10 +46,13 @@ export const oils: OilBlend[] = [
     images: [
       "/img/oils/zefiros-foto.jpg",
       "/img/oils/zefiros-logo.png",
-      "/img/oils/zefiros-design.webp",
+      "/img/oils/zefiros-design.png",
     ],
     poem: [
-      "This blend is inspired by a breeze of new beginnings”,“soft lapping against limbs”,“floating footsteps, rustling of leaves”,“dulcept harmonies carrying, calling",
+      "This blend is inspired by a breeze of new beginnings",
+      "soft lapping against limbs",
+      "floating footsteps, rustling of leaves",
+      "dulcept harmonies carrying, calling",
     ],
     description:
       "This blend brings me back to sweet citrus blooms that enveloped the air of a spontaneous trip to Spain one spring. We walked the streets without plan, silky sun kissing pale hands and fresh necks. Swaying overhead, an unspoken guide, overtaking the senses and caring us forward with soft, encouraging gusts. Faint currents leading us down unknown channels, leading us out of the grey skies and opening our eyes to new possibilities. Bergamot, airy and uplifting, Ylang-Ylang sensual and floating, Cedar, grounding and woody. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze 🌼✨",
@@ -64,7 +68,7 @@ export const oils: OilBlend[] = [
     images: [
       "/img/oils/cc-foto.webp",
       "/img/oils/cc-logo.webp",
-      "/img/oils/cc-design.webp",
+      "/img/oils/cc-design.png",
     ],
     poem: [
       "This blend is inspired by trickling tranquility",
@@ -143,28 +147,28 @@ export const oils: OilBlend[] = [
       "Gentle silver fir, focusing fennel, and sacred frankincense—a spell to hear the harmony of voices that echo in our internal mountain ranges. 🌬️🍃",
     backgroundHue: 175,
   },
-  {
-    slug: "zephyrous-zest",
-    name: "Zephyrous Zest",
-    intention: "Elevating",
-    ingredients: "Cedarwood, Bergamot, Ylang-Ylang",
-    character: "Buoyant and effervescent, powerful in inspiration",
-    benefit: "Can boost mood, self-esteem, and ease anxiety",
-    images: [
-      "/img/oils/zz-foto.webp",
-      "/img/oils/zz-logo.webp",
-      "/img/oils/zz-design.jpg",
-    ],
-    poem: [
-      "This blend is inspired by the sweet breeze of spring",
-      "Soft licks lapping against limbs",
-      "Floating footsteps, rustle of leaves",
-      "Dulcet harmonies carrying, calling",
-    ],
-    description:
-      "Anchoring cedar, uplifting bergamot, and stimulating ylang-ylang. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze of serenity 🌬️✨",
-    backgroundHue: 245,
-  },
+  // {
+  //   slug: "zephyrous-zest",
+  //   name: "Zephyrous Zest",
+  //   intention: "Elevating",
+  //   ingredients: "Cedarwood, Bergamot, Ylang-Ylang",
+  //   character: "Buoyant and effervescent, powerful in inspiration",
+  //   benefit: "Can boost mood, self-esteem, and ease anxiety",
+  //   images: [
+  //     "/img/oils/zz-foto.webp",
+  //     "/img/oils/zz-logo.webp",
+  //     "/img/oils/zz-design.jpg",
+  //   ],
+  //   poem: [
+  //     "This blend is inspired by the sweet breeze of spring",
+  //     "Soft licks lapping against limbs",
+  //     "Floating footsteps, rustle of leaves",
+  //     "Dulcet harmonies carrying, calling",
+  //   ],
+  //   description:
+  //     "Anchoring cedar, uplifting bergamot, and stimulating ylang-ylang. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze of serenity 🌬️✨",
+  //   backgroundHue: 245,
+  // },
 ];
 
 export function getOilBySlug(slug: string) {

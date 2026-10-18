@@ -45,13 +45,13 @@ export default function Contact() {
   );
 
   return (
-    <Container classname="w-full justify-start items-start overflow-hidden">
-      <div ref={container} className="relative w-full pb-28 pt-10">
+    <Container classname="w-full justify-start items-start overflow-hidden ">
+      <div ref={container} className="relative w-full pb-28 pt-10 ">
         <Background rotate={310} imageClassName="opacity-60" />
 
-        <div className="flex items-center">
+        <div className="flex items-center border-b border-slate-400">
           <Image
-            className="mr-6 brightness-0 pb-2"
+            className="mr-6 pb-2"
             src="/icons/hand.svg"
             width={80}
             height={80}
@@ -60,8 +60,8 @@ export default function Contact() {
           <h1 className="zeppelin">Contact</h1>
         </div>
 
-        <main className="mx-auto  grid w-full max-w-[1180px] grid-cols-1   lg:mt-20 lg:grid-cols-2 lg:gap-24">
-          <section className="contact-copy ">
+        <main className="mx-auto  grid w-full  grid-cols-1   lg:mt-20 lg:grid-cols-2 lg:gap-24">
+          <section className="contact-copy order-2">
             <p className="handWrite2 !mb-4 !mt-0 !text-left !text-[21px] md:!text-[24px]">
               Let&apos;s connect
             </p>
@@ -88,7 +88,7 @@ export default function Contact() {
           </section>
 
           <section
-            className="order-1 flex w-full justify-center lg:order-2"
+            className="order-1 flex w-full justify-center"
             aria-label="Being Body contact artwork"
           >
             <div className="relative w-full max-w-[620px] pb-10 pr-4 pt-6 sm:pr-10 lg:pb-14 lg:pt-8">

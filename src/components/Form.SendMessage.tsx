@@ -87,8 +87,21 @@ function MessageField({
     </div>
   );
 }
-export default function SendMessageForm({ close }: { close: () => void }) {
-  const [data, setData] = useState<bookingRequestDataType>(initialData);
+type SendMessageFormProps = {
+  close: () => void;
+  initialMessage?: string;
+  title?: string;
+};
+
+export default function SendMessageForm({
+  close,
+  initialMessage = "",
+  title = "Send a message",
+}: SendMessageFormProps) {
+  const [data, setData] = useState<bookingRequestDataType>(() => ({
+    ...initialData,
+    message: initialMessage,
+  }));
   const [errors, setErrors] = useState<
     Partial<Record<keyof bookingRequestDataType, string>>
   >({});
@@ -180,7 +193,7 @@ export default function SendMessageForm({ close }: { close: () => void }) {
       <header className={styles.header}>
         <div>
           <p className={styles.eyebrow}>Let&apos;s connect</p>
-          <h2>Send a message</h2>
+          <h2>{title}</h2>
           <p className={styles.intro}>
             Ask a question, check availability, or simply say hello.
           </p>

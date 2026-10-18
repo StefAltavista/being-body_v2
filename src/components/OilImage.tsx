@@ -23,7 +23,7 @@ export default function OilImage({
 
   return (
     <div
-      className={`relative aspect-square w-full shrink-0 overflow-hidden border border-white/65 bg-white/30 shadow-[inset_0_2px_14px_rgba(255,255,255,0.86),0_18px_55px_rgba(62,91,112,0.12)] ${
+      className={`relative aspect-square w-full shrink-0 overflow-hidden  border border-white/65 bg-white/30 shadow-[inset_0_2px_14px_rgba(255,255,255,0.86),0_18px_55px_rgba(62,91,112,0.12)] ${
         isCircle
           ? "max-w-[290px] rounded-full sm:max-w-[330px]"
           : `max-w-[520px] ${cornerClass}`

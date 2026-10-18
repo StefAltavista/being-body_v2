@@ -9,8 +9,11 @@ export default function About({ format }: { format: string }) {
 
       <div className="about-layout">
         <div className="about-copy about-intro">
-          <p>
+          <h3 className="zeppelin border-b border-slate-400">
+            {" "}
             Hi, I am Katia.
+          </h3>
+          <p>
             <br />
             The body has always intrigued me. I have been a mover since a young
             age, and years of focus on my anatomy as a tool created a{" "}

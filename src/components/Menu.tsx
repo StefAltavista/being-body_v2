@@ -54,7 +54,7 @@ export default function Menu({
           <Link key={i} href={x.link}>
             <div className="flex items-start  pt-4 ">
               <Image
-                className="ml-2 brightness-0"
+                className="ml-2"
                 src={x.icon}
                 width={40}
                 height={40}

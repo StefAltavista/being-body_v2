@@ -41,10 +41,10 @@ export default function Page() {
     <Container classname=" mt-10 overflow-hidden">
       <div ref={container} className="w-full">
         <Background rotate={80} imageClassName="opacity-100" />
-        <div className="w-full relative">
-          <div className="flex items-center">
+        <div className="w-full relative ">
+          <div className="flex items-center border-b border-slate-400">
             <Image
-              className="mr-6 brightness-0 pb-2"
+              className="mr-6 pb-2"
               src="/icons/workshop.svg"
               width={80}
               height={80}

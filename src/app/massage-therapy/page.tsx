@@ -71,13 +71,19 @@ export default function Page() {
 
   return (
     <Container classname="w-full justify-start items-start mt-10 overflow-hidden">
-      <div ref={container} className="w-full">
+      <div ref={container} className="w-full relative">
         <Background rotate={50} imageClassName="opacity-100" />
-
+        <Image
+          alt="aroma logo"
+          src={"/img/flower.webp"}
+          width={800}
+          height={1800}
+          className="absolute opacity-20 right-0 top-30 md:top-0 !z-[-20]"
+        />
         <div className="w-full relative">
-          <div className="flex flex items-center ">
+          <div className="flex flex items-center  border-b border-slate-400">
             <Image
-              className="mr-6 brightness-0 pb-2 rotate-[90deg]"
+              className="mr-6 pb-2 rotate-[90deg]"
               src={"/icons/hands1.svg"}
               width={80}
               height={80}
@@ -88,57 +94,64 @@ export default function Page() {
               <h1 className="zeppelin">Massage Therapy</h1>
             </div>
           </div>
-
           <div className="mb-6 w-full">
-            <p className="reveal-p md:!text-[32px] !text-[22px] !mt-8 !text-left">
-              Guided bodywork sessions that relieve tension, ease pain and
-              restore balance to body and mind. <br></br>
+            <p className="reveal-p md:!text-[32px] !text-[24px] !mt-2 !text-left">
+              Bodywork sessions that relieve tension, ease pain and restore
+              balance to body and mind. <br></br>
               Working with attention and love to discover roots of pain and
               dissolve them.<br></br>
             </p>
-
-            <p className="!mt-20 handWrite2 reveal-p md:!text-[26px] !text-center">
-              &ldquo;I see this rhythmical symbiosis of movement and breath to
-              be a dance between giver and receiver.&rdquo;
-            </p>
           </div>
+          <div className=" ">
+            <h3 className="zeppelin  reveal-p  !text-right !mt-24 !text-[28px] ">
+              Various techniques
+            </h3>
+          </div>
+          <p className="handWrite2  w-full !text-right !mb-16 md:!text-[22px]">
+            Guided by what the body tells me. <br />
+            Your input and intention is key to each session, I am but the
+            conduit of your connection.
+            <br />
+            My goal is to use elements of different therapeutic practices in
+            harmony, <br />
+            to generate a holistic experience in alignment with each individuals
+            healing path.
+          </p>{" "}
           <BookButton />
-
+          <div className="w-full flex justify-center">
+            <h3 className="zeppelin reveal-p border-b w-[100%] md:!w-[50%] !mt-8 !text-[32px] border-t text-center border-slate-400">
+              : : Presence in touch : :
+            </h3>
+          </div>
           <div className="w-full flex flex-col items-center mb-8">
-            <div className="massage-hero-wrapper relative sm:w-full md:w-[70%] lg:w-[40%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
+            <div className="bg-white massage-hero-wrapper relative sm:w-full md:w-[70%] lg:w-[40%] h-[80vh] my-8 flex items-center overflow-hidden rounded-full">
               <Image
-                className="massage-hero-image z-[-1] opacity-80 rounded-full left-0 top-0 object-cover"
+                className="massage-hero-image z-0  !opacity-90 rounded-full left-0 top-0 object-cover"
                 src={"/photos/massage2.webp"}
                 fill
                 sizes="(min-width: 1024px) 50vw, (min-width: 768px) 80vw, 100vw"
                 alt="icon"
               />
 
-              <div className="px-15 flex flex-col items-center">
-                <h3 className="reveal-p underline  !text-white mb-8">
-                  Presence in touch
-                </h3>
-
-                <p className="  !text-white !text-center !text-[36px] ">
-                  With knowledge of body mechanics and alignment, I map the body
-                  using fluid, rhythmic motion to restore energy circulation,
+              <div className="px-15 flex flex-col items-center z-20">
+                <p className="  !text-white !text-center !text-[30px] ">
+                  With knowledge of body mechanics and alignment,
+                  <br />I map the body using fluid, rhythmic motion to restore
+                  energy circulation, <br />
                   relax and release with gentle pressure applied through natural
-                  gravity, and focus on trigger and pressure points to release
-                  tension and pain with the help of mindful breath.
+                  gravity, <br />
+                  and focus on trigger and pressure points to release tension
+                  and pain with the help of mindful breath.
                 </p>
               </div>
             </div>
           </div>
-          <p className="handWrite2 !text-center w-full !mt-16 md:!text-[26px]">
-            I blend various techniques, <br></br> guided by what the body tells
-            me. Your input and intention is key to each session, I am but the
-            conduit of your connection.
-            <br />
-            <br />
-            My goal is to use elements of different therapeutic practices in
-            harmony, to generate a holistic experience in alignment with each
-            individuals healing path.
-          </p>
+          <div className="w-full flex justify-center ">
+            <p className="!mt-20 zeppelin border-y max-w-[100%] md:!max-w-[50%] border-slate-400 reveal-p !text-[26px] !text-center">
+              Rhythmical symbiosis of movement and breath to be a dance between
+              giver and receiver.
+            </p>
+          </div>
         </div>
         <div className=" w-full flex flex-col justify-center items-center md:px-18 !my-26">
           <div className="w-full flex flex-col items-center lg:grid lg:grid-cols-1 lg:gap-x-16 lg:gap-y-20 lg:items-start">
@@ -150,7 +163,7 @@ export default function Page() {
                 size={28}
                 fontSize="24px"
               />
-              <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
+              <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
                 Aromatherapy goes very deeply into the psyche on all levels of
                 human experience, influencing feeling and enhancing mind, mood
                 and emotion. I blend oils for each session, a mix for each
@@ -167,7 +180,7 @@ export default function Page() {
                 size={20}
                 fontSize="22px"
               />
-              <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
+              <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
                 My knowledge of body mechanics and meridian lines allows me to
                 map the body in its warious pathways; using Metta, loving
                 kindness, in forms of deep and rhythmic pressure.
@@ -182,7 +195,7 @@ export default function Page() {
                 size={20}
                 fontSize="24px"
               />
-              <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
+              <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
                 I work with the body in long flowing motions, incorporating
                 multiple parts of the body instead of isolating them,
                 instigating a peace and stability that can only be found in the
@@ -199,11 +212,11 @@ export default function Page() {
                 size={28}
                 fontSize="24px"
               />
-              <p className="reveal-p !my-16 lg:!my-8 handWrite2 !text-center md:!text-[26px]">
+
+              <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
                 Along the energy pathways there are points that, when triggered,
                 can stimulate the nervous system to provide relief from pain and
                 stress.
-                <br />
               </p>
             </div>
           </div>

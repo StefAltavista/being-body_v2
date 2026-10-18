@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 export type AppointmentOption = {
+  id: string;
   title: string;
   description: string;
   image: string;
@@ -12,12 +13,14 @@ type AppointmentCardProps = {
   appointment: AppointmentOption;
   imageOnRight?: boolean;
   onCalendar: () => void;
+  onRequest: () => void;
 };
 
 export default function AppointmentCard({
   appointment,
   imageOnRight = false,
   onCalendar,
+  onRequest,
 }: AppointmentCardProps) {
   const imageOrder = imageOnRight ? "lg:order-2" : "lg:order-1";
   const detailsOrder = imageOnRight ? "lg:order-1" : "lg:order-2";
@@ -40,19 +43,29 @@ export default function AppointmentCard({
       <div
         className={`flex flex-col justify-center px-1 py-3 sm:px-3 ${detailsOrder}`}
       >
-        <h3 className="zeppelin border-b !mb-5 !text-left !text-[26px] tracking-[0.06em] sm:!text-[32px]">
+        <h3 className="zeppelin border-y border-slate-400  w-[100%] md:!w-[60%] !mb-5 !text-left !text-[26px] tracking-[0.06em] sm:!text-[32px]">
           {appointment.title}
         </h3>
         <p className="!text-left !text-[23px] leading-relaxed sm:!text-[26px]">
           {appointment.description}
         </p>
-        <button
-          type="button"
-          onClick={onCalendar}
-          className="mt-8 w-fit  border border-slate-500/35 bg-white/55 px-3 py-1 !text-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_10px_24px_rgba(73,105,126,0.12)] transition hover:-translate-y-0.5 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500"
-        >
-          View Calendar
-        </button>
+        {appointment.id == "massage" ? (
+          <button
+            type="button"
+            onClick={onCalendar}
+            className="mt-8 w-fit  border border-slate-500/35 bg-white/55 px-3 py-1 !text-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_10px_24px_rgba(73,105,126,0.12)] transition hover:-translate-y-0.5 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500"
+          >
+            View Calendar
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={onRequest}
+            className="mt-8 w-fit  border border-slate-500/35 bg-white/55 px-3 py-1 !text-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_10px_24px_rgba(73,105,126,0.12)] transition hover:-translate-y-0.5 hover:bg-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-500"
+          >
+            Request Private Class
+          </button>
+        )}
       </div>
     </article>
   );
