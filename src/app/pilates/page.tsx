@@ -173,7 +173,7 @@ export default function PilatesPage() {
 
         <div className="w-full flex flex-col justify-center items-center ">
           <h3 className="zeppelin mb-16   !text-center border-y border-slate-400  w-[100%] md:!w-[50%]">
-            : : Different Practices : :
+            Different Practices
           </h3>
 
           <div className="w-full flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-x-16 lg:gap-y-20 lg:items-start">
@@ -214,7 +214,7 @@ export default function PilatesPage() {
           </div>
           <div className=" w-full flex justify-center">
             <h3 className="border-y border-slate-400  w-[100%] md:!w-[50%] zeppelin mb-16  !text-center">
-              : : Next Availabilities : :
+              Next Availabilities
             </h3>
           </div>
 

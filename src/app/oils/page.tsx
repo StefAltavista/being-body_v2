@@ -178,13 +178,13 @@ export default function OilsPage() {
         </p>{" "}
         <div className="border-y w-[100%] md:!w-[50%] border-slate-400 mx-auto mt-16 flex flex-col w-full w-full flex items-center justify-center  ">
           <h2 className="zeppelin !text-[30px]  font-normal sm:!text-[34px]">
-            : : Offerings : :
+            Offerings
           </h2>
         </div>
         <OilsShowcaseCarousel />
         <section className="relative  mx-auto mt-2 w-full max-w-6xl">
-          <h3 className=" border-t border-slate-400 zeppelin reveal-p    !text-center  !text-[36px] tracking-[0.18em]">
-            : : Uses and Rituals : :
+          <h3 className=" border-y border-slate-400 max-w-[100%] md:max-w-[100%] zeppelin reveal-p    !text-center  !text-[36px] tracking-[0.18em]">
+            Uses and Rituals
           </h3>
           <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-center md:!text-[24px] leading-relaxed">
             There are no rules for exploring them, <br></br>but here are some

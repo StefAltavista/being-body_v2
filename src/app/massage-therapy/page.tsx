@@ -120,7 +120,7 @@ export default function Page() {
           <BookButton />
           <div className="w-full flex justify-center">
             <h3 className="zeppelin reveal-p border-b w-[100%] md:!w-[50%] !mt-8 !text-[32px] border-t text-center border-slate-400">
-              : : Presence in touch : :
+              Presence in touch
             </h3>
           </div>
           <div className="w-full flex flex-col items-center mb-8">
