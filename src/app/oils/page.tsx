@@ -182,18 +182,23 @@ export default function OilsPage() {
           </h2>
         </div>
         <OilsShowcaseCarousel />
-        <section className="relative  mx-auto mt-2 w-full max-w-6xl">
-          <h3 className=" border-y border-slate-400 max-w-[100%] md:max-w-[100%] zeppelin reveal-p    !text-center  !text-[36px] tracking-[0.18em]">
-            Uses and Rituals
-          </h3>
-          <p className="handWrite2 reveal-p mx-auto !mb-20 !mt-10 w-full !text-center md:!text-[24px] leading-relaxed">
+        <section className="relative  mx-auto mt-12 w-full">
+          <div className="min-w-full justify-center flex ">
+            <h3 className=" border-y border-slate-400 w-[100%] md:w-[50%] zeppelin reveal-p    !text-center  !text-[36px] tracking-[0.18em]">
+              Uses and Rituals
+            </h3>
+          </div>
+          <p className="handWrite2 reveal-p mx-auto !mb-6 !mt-10 w-full !text-center md:!text-[24px] leading-relaxed">
             There are no rules for exploring them, <br></br>but here are some
             ideas and intentions to spark your own unique, feeling, and
             ever-evolving practice.
           </p>
-          <div className="lg:w-[70%] mx-auto mt-12 grid grid-cols-1 items-center  md:grid-cols-3 ">
+          <div className="lg:w-[70%] mx-auto mt-6 grid grid-cols-1 items-center  md:grid-cols-3 ">
             {rituals.map((ritual, i) => (
-              <div key={ritual.name} className="flex flex-col items-center ">
+              <div
+                key={ritual.name}
+                className="flex flex-col items-center mt-20 md:mt-0"
+              >
                 <h1 className="zeppelin border-t border-slate-400">
                   {ritual.name}
                 </h1>
@@ -212,7 +217,7 @@ export default function OilsPage() {
                   size={20}
                   fontSize={"20px"}
                 /> */}
-                <p className="reveal-p sm:mb-0 mb-6 !mt-10 max-w-[270px] !text-center !text-[24px] leading-relaxed">
+                <p className="reveal-p sm:mb-0 mb-6 !mt-4 max-w-[270px] !text-center !text-[24px] leading-relaxed">
                   {ritual.instruction}
                 </p>
               </div>

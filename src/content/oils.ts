@@ -32,8 +32,9 @@ export const oils: OilBlend[] = [
       "relaxed, open",
       "sensuous surrender to settling in",
     ],
+
     description:
-      "my travels of sunnier days I found a new friend on Isola di Elba - Helichrysum Italicum. Golden flowers shining, perched in peaks and valleys of salty spray and parched stone. Preserved drops of sun, “immortelle”, produced in summer but retaining their colour after picking.  Radiant. Resilient. A natural remedy for bruising and swelling, easing joint and muscle pain, soothing irritation and inflammation, healing wounds, stimulating cell regeneration, and even cooling the burns from the very sun it emulates. This Mediterranean flower is a very powerful topical ally and soothing companion.Inspired by our meeting I began to mix a special blend focused on channeling the plants powers, cushioned in the recollection of the landscape and moment in which we found each other. Helichrysum, golden herbaceous, Linden, honeyed tender - weaving a soft, sun-baked memory.  Neroli, luminous citrus - conjuring the golden air,  Jasmine, hypnotic floral - shifting, welcoming nocturnal.  Sweet Orange, sparkling zest - shimmering, lifting. A spell to wrap you in the warmth of nostalgia, cultivate the deep glow of inner strength and summon the sun that remains after summer has passed 🌾 🌞",
+      "This blend contains Helichrysum Italicum from Isola di Elba. Also known as “immortelle”, preserved drops of sun both radiant and resilient. This Mediterranean flower is a very powerful topical ally and soothing compagnion: helping calm reactive, irritated skin and supporting regeneration and elasticity. This oil sooths both physically and emotionally. Helichrysum, golden herbaceous, Linden, honeyed tender - weaving a soft, sunbaked memory. Neroli, luminous citrus - conjuring the golden air. Jasmine, hypnotic floral - shifting, welcoming nocturnal. Sweet Orange, sparkling zest - shimmering, lifting. A spell to summon the sun that remains after summer has passed, wrap you in the warmth of nostolgia and cultivate a deep glow both inside and out 🌞",
     backgroundHue: 305,
   },
   {
@@ -55,7 +56,7 @@ export const oils: OilBlend[] = [
       "dulcept harmonies carrying, calling",
     ],
     description:
-      "This blend brings me back to sweet citrus blooms that enveloped the air of a spontaneous trip to Spain one spring. We walked the streets without plan, silky sun kissing pale hands and fresh necks. Swaying overhead, an unspoken guide, overtaking the senses and caring us forward with soft, encouraging gusts. Faint currents leading us down unknown channels, leading us out of the grey skies and opening our eyes to new possibilities. Bergamot, airy and uplifting, Ylang-Ylang sensual and floating, Cedar, grounding and woody. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze 🌼✨",
+      "Bergamot, airy and uplifting, Ylang-Ylang sensual and floating, Cedar, grounding and woody. A spell for navigating swirling gusts, motivating withering winds, soothing inner conflict, and finding balance. Light and bright, encouraging us with the calls of a sweet, soft breeze 🌼✨",
     backgroundHue: 305,
   },
   {

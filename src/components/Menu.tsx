@@ -18,57 +18,73 @@ export default function Menu({
       className={menuState}
       style={{
         zIndex: 998,
-        overflow: "scroll",
-        paddingRight: "80px",
-
         background:
           "linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(233, 242, 255) 50%, rgb(238, 245, 252) 70%, rgba(255,255,255,0) 100%)",
       }}
     >
-      <div
-        className={
-          menuState +
-          "  overlay top-0 w-[200vw] h-[100vh] fixed bg-[rgba(255, 255, 255, 0)] "
-        }
+      <button
+        type="button"
+        aria-label="Close menu"
+        className="overlay absolute inset-0 z-0 h-full w-full cursor-default border-0 bg-transparent"
         onClick={() => toggle("close")}
       />
 
-      {!home && (
-        <Link href="/" className="flex items-start  pt-4 ">
-          <Image
-            src="/icons/home_flower.svg"
-            width={50}
-            height={50}
-            alt="icon"
-          />
-          <p
-            className="!relative !inline-block cursor-pointer hover:!text-blue-800 after:!content-[''] after:!absolute after:!left-0 after:!-bottom-0.5 after:!h-px after:!w-0 after:!bg-current after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full !my-1"
+      <nav className="relative z-10 flex min-h-max w-full flex-1 flex-col items-start">
+        {!home && (
+          <Link
+            href="/"
+            className="flex min-h-14 w-fit flex-1 items-center gap-2"
             onClick={() => toggle("close")}
           >
-            Home
-          </p>
-        </Link>
-      )}
-      {MenuContent &&
-        MenuContent.map((x, i) => (
-          <Link key={i} href={x.link}>
-            <div className="flex items-start  pt-4 ">
+            <Image
+              src="/icons/home_flower.svg"
+              width={50}
+              height={50}
+              alt=""
+            />
+            <p className="!relative !my-1 !inline-block cursor-pointer hover:!text-blue-800 after:!absolute after:!-bottom-0.5 after:!left-0 after:!h-px after:!w-0 after:!bg-current after:!content-[''] after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full">
+              Home
+            </p>
+          </Link>
+        )}
+
+        {MenuContent.map((item) => (
+          <Link
+            key={item.link}
+            href={item.link}
+            className="flex min-h-14 w-fit flex-1 items-center gap-2"
+            onClick={() => toggle("close")}
+          >
+            {item.link === "/about" ? (
+              <span
+                aria-hidden="true"
+                className="ml-2 h-10 w-10 shrink-0 bg-[#1F495E]"
+                style={{
+                  WebkitMaskImage: `url(${item.icon})`,
+                  maskImage: `url(${item.icon})`,
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                }}
+              />
+            ) : (
               <Image
                 className="ml-2"
-                src={x.icon}
+                src={item.icon}
                 width={40}
                 height={40}
-                alt="icon"
+                alt=""
               />
-              <p
-                className="!relative !inline-block cursor-pointer hover:!text-blue-800 after:!content-[''] after:!absolute after:!left-0 after:!-bottom-0.5 after:!h-px after:!w-0 after:!bg-current after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full !my-1"
-                onClick={() => toggle("close")}
-              >
-                {x.title}
-              </p>
-            </div>
+            )}
+            <p className="!relative !my-1 !inline-block cursor-pointer hover:!text-blue-800 after:!absolute after:!-bottom-0.5 after:!left-0 after:!h-px after:!w-0 after:!bg-current after:!content-[''] after:!transition-[width] after:!duration-300 after:!ease-out hover:after:!w-full">
+              {item.title}
+            </p>
           </Link>
         ))}
+      </nav>
     </div>
   );
 }

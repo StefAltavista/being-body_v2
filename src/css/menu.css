@@ -1,19 +1,25 @@
 #menu {
   position: fixed;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   transition: 800ms;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   flex-direction: column;
+  box-sizing: border-box;
   padding-left: 0px;
   width: auto;
   height: 100vh;
+  height: 100dvh;
   top: 0px;
   max-width: 100%;
   margin-left: 0px;
   padding-right: 10px;
-  padding-top: 100px;
+  padding-top: max(100px, env(safe-area-inset-top));
+  padding-bottom: calc(32px + env(safe-area-inset-bottom));
 }
 
 #menu a p {
@@ -23,15 +29,19 @@
 
 .open {
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 80px;
   width: 100vw;
   opacity: 1;
   left: 0;
+  visibility: visible;
+  pointer-events: auto;
 }
 .close {
   padding-left: 0px;
   padding-right: 0px;
   width: 0vw;
   opacity: 0;
-  left: -200;
+  left: -100vw;
+  visibility: hidden;
+  pointer-events: none;
 }

@@ -46,7 +46,7 @@ export default function Card({ content }: { content: CardContent }) {
         <p className="!text-[26px]  tracking-wide !text-center relative">
           {content.quote}
         </p>
-        <div className=" relative border-white border-y  my-8 ">
+        <div className=" relative border-slate-500 border-y  my-8 ">
           <h3 className="relative !text-[35px] border-white tracking-wider z-2 zeppelin w-full text-center !font-bold      decoration-1 underline-offset-8 decoration-color-[rgb(31, 100, 93)]  ">
             {content.title}
           </h3>

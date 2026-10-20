@@ -169,7 +169,7 @@ export default function OilCarousel({
           >
             {slides.map((slide, slideIndex) => (
               <Link
-                href={`oils/${slug}`}
+                href={`/oils/${slug}`}
                 key={`${slide.src}-${slideIndex}`}
                 className="!cursor-pointer flex h-full w-full shrink-0 items-center justify-center"
                 aria-hidden={slide.clone}

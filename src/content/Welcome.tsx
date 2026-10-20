@@ -5,36 +5,39 @@ import { useRef } from "react";
 export default function Welcome() {
   const welcomRef = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => {
-    gsap.set([".welcome_img", ".welcome_text"], {
-      willChange: "transform, opacity, filter",
-    });
+  useGSAP(
+    () => {
+      gsap.set([".welcome_img", ".welcome_text"], {
+        willChange: "transform, opacity, filter",
+      });
 
-    gsap
-      .timeline({
-        defaults: {
-          ease: "power3.out",
-          force3D: true,
-        },
-      })
-      .from(".welcome_img", {
-        scale: 1.12,
-        filter: "blur(10px)",
-        autoAlpha: 0,
-        duration: 2,
-        clearProps: "willChange",
-      })
-      .from(
-        ".welcome_text",
-        {
-          filter: "blur(5px)",
+      gsap
+        .timeline({
+          defaults: {
+            ease: "power3.out",
+            force3D: true,
+          },
+        })
+        .from(".welcome_img", {
+          scale: 1.12,
+          filter: "blur(10px)",
           autoAlpha: 0,
-          duration: 1,
+          duration: 2,
           clearProps: "willChange",
-        },
-        "+=1",
-      );
-  }, { scope: welcomRef });
+        })
+        .from(
+          ".welcome_text",
+          {
+            filter: "blur(5px)",
+            autoAlpha: 0,
+            duration: 1,
+            clearProps: "willChange",
+          },
+          "+=1",
+        );
+    },
+    { scope: welcomRef },
+  );
 
   return (
     <div
