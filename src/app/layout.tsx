@@ -17,7 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://beingbody.net"),
+  metadataBase: new URL("https://beingbody.net"),
 
   title: "Being Body",
   description: "Massage - Bodywork - Pilates - Movement",
