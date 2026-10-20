@@ -21,7 +21,7 @@ export default function QuestionnairePage() {
         <h1>Wellness Questionare</h1>
         <p className={styles.intro}>
           This information helps me prepare a thoughtful and comfortable session
-          for you.
+          for you!
         </p>
       </header>
       <QuestionnaireForm />
