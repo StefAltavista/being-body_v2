@@ -103,7 +103,7 @@ export default function Page() {
             </p>
           </div>
           <div className=" ">
-            <h3 className="zeppelin  reveal-p  !text-right !mt-24 !text-[28px] ">
+            <h3 className="zeppelin  reveal-p  !text-right !mt-24  ">
               Various techniques
             </h3>
           </div>
@@ -119,7 +119,7 @@ export default function Page() {
           </p>{" "}
           <BookButton />
           <div className="w-full flex justify-center">
-            <h3 className="zeppelin reveal-p border-b w-[100%] md:!w-[50%] !mt-8 !text-[32px] border-t text-center border-slate-400">
+            <h3 className="zeppelin reveal-p border-b w-[100%] md:!w-[50%] !mt-8  border-t text-center border-slate-400">
               Presence in touch
             </h3>
           </div>
@@ -134,23 +134,22 @@ export default function Page() {
               />
 
               <div className="px-15 flex flex-col items-center z-20">
-                <p className="  !text-white !text-center !text-[30px] ">
-                  With knowledge of body mechanics and alignment,
-                  <br />I map the body using fluid, rhythmic motion to restore
-                  energy circulation, <br />
-                  relax and release with gentle pressure applied through natural
-                  gravity, <br />
-                  and focus on trigger and pressure points to release tension
-                  and pain with the help of mindful breath.
+                <p className="  !text-white !text-center !text-[26px] md:!text-[30px]  ">
+                  With knowledge of body mechanics and alignment I map the body
+                  using fluid, rhythmic motion to restore energy and aide
+                  circulation. <br />
+                  <br />
+                  Through gentle pressure and focus on trigger points I relax
+                  and release tension with the help of mindful breath.
                 </p>
               </div>
             </div>
           </div>
           <div className="w-full flex justify-center ">
-            <p className="!mt-20 zeppelin border-y max-w-[100%] md:!max-w-[50%] border-slate-400 reveal-p !text-[26px] !text-center">
-              Rhythmical symbiosis of movement and breath to be a dance between
-              giver and receiver.
-            </p>
+            <h3 className="!mt-20 zeppelin border-y max-w-[100%] md:!max-w-[50%] border-slate-400 reveal-p  !text-center">
+              Rhythmical symbiosis of movement and breath; a dance between giver
+              and receiver
+            </h3>
           </div>
         </div>
         <div className=" w-full flex flex-col justify-center items-center md:px-18 !my-26">
@@ -164,11 +163,10 @@ export default function Page() {
                 fontSize="24px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
-                Aromatherapy goes very deeply into the psyche on all levels of
-                human experience, influencing feeling and enhancing mind, mood
-                and emotion. I blend oils for each session, a mix for each
-                individual based on their pain and their intentions.
-                <br />
+                Aromatherapy goes deeply into the psyche on all levels of human
+                experience, influencing feeling and enhancing mind, mood and
+                emotion. I blend oils for each session, a mix for each
+                individual based on their intentions.
               </p>
             </div>
 
@@ -181,9 +179,9 @@ export default function Page() {
                 fontSize="22px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
-                My knowledge of body mechanics and meridian lines allows me to
-                map the body in its warious pathways; using Metta, loving
-                kindness, in forms of deep and rhythmic pressure.
+                Knowledge of body mechanics and meridian lines allows me to map
+                the bodies various pathways, using Metta, loving kindness, in
+                forms of deep and rhythmic pressure.{" "}
               </p>
             </div>
 
@@ -196,11 +194,10 @@ export default function Page() {
                 fontSize="24px"
               />
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
-                I work with the body in long flowing motions, incorporating
-                multiple parts of the body instead of isolating them,
-                instigating a peace and stability that can only be found in the
-                mind when a specific focus cannot be made, but instead a full
-                feeling.
+                Working in long flowing motions to incorporate multiple parts of
+                the body instead of isolating them. This instigates peace and
+                stability that is found when a specific focus cannot be made but
+                instead, a full feeling.
               </p>
             </div>
 
@@ -214,7 +211,7 @@ export default function Page() {
               />
 
               <p className="reveal-p !my-16 lg:!my-8 handWrite2 max-w-[100%] md:max-w-[60%] !text-center !text-[24px] ">
-                Along the energy pathways there are points that, when triggered,
+                Finding points along the energy pathways that, when triggered,
                 can stimulate the nervous system to provide relief from pain and
                 stress.
               </p>
