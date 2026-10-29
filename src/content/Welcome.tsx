@@ -43,7 +43,7 @@ export default function Welcome() {
     <div
       id="welcome"
       ref={welcomRef}
-      className="min-h-[100vh] flex flex-col justify-center pb-20"
+      className="min-h-[100vh] flex flex-col items-center justify-center pb-20"
     >
       <div className="welcome_img  ">
         <Image
