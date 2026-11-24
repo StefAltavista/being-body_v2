@@ -23,7 +23,7 @@ const rituals = [
   },
   {
     name: "Massage",
-    instruction: "Add 5 to 7 drops to a cupped palm’s worth of base oil",
+    instruction: "Add 5 to 7 drops to a cupped palm`s worth of base oil",
     delay: "2s",
   },
 ];
