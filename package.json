@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:cloudflare": "NEXT_PRIVATE_STANDALONE=true next build && opennextjs-cloudflare build --skipNextBuild",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@opennextjs/cloudflare": "^1.20.18",
     "googleapis": "^159.0.0",
     "gsap": "^3.13.0",
     "next": "^15.5.9",
