@@ -79,25 +79,55 @@ export default function BookApointmentPage() {
       {selectedAppointment && (
         <Modal close={() => setSelectedAppointment(null)} color="bg-[#f8f5f0]">
           {(requestClose) => (
-            <div className="mx-auto flex w-full max-w-5xl flex-col pb-4">
-              <div className="mb-6 flex items-start justify-between gap-5">
+            <div className="mx-auto flex w-full max-w-5xl flex-col ">
+              <div className=" flex items-start justify-between gap-5 border-b border-slate-300">
                 <div>
                   <h3 className="!mb-1 !text-[28px] sm:!text-[32px]">
                     Book your {selectedAppointment.title}
                   </h3>
-                  <p className="handWrite2 !mt-0 !text-left !text-[18px] sm:!text-[20px]">
-                    Choose a date and time that feels right for you.
-                  </p>
                 </div>
                 <button
                   type="button"
                   onClick={requestClose}
                   aria-label="Close calendar"
-                  className="shrink-0 rounded-full border border-slate-500/35 bg-white/60 px-4 py-2 !text-[20px] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500"
+                  className="shrink-0 rounded-full border border-slate-500/35 bg-white/60 px-2  !text-[20px] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500"
                 >
                   Close
                 </button>
               </div>
+              {selectedAppointment.id === "massage" && (
+                <div className="  space-y-4 text-left">
+                  <p>
+                    The studio is in Neukölln 12051, Berlin. Full address upon
+                    booking confirmation.
+                  </p>
+                  <p className="!mb-4">
+                    My session options vary in length, and are all offered on a
+                    sliding scale, so the prices are based on what people can
+                    offer within range :)
+                  </p>
+
+                  <ul className=" ml-4 space-y-1 ">
+                    <li>
+                      {" "}
+                      <p className="handWrite1 ">30 min : 20-30 €</p>
+                    </li>
+                    <li>
+                      {" "}
+                      <p className="handWrite1 ">60 min : 40-60 €</p>
+                    </li>
+                    <li>
+                      {" "}
+                      <p className="handWrite1 ">90 min : 70-90 €</p>
+                    </li>
+                  </ul>
+                  <p>
+                    My goal is to try to make the practice as accessible as
+                    possible, while still honouring the time, effort, energy and
+                    experience put into the practice
+                  </p>
+                </div>
+              )}
               <CalBookingEmbed eventUrl={selectedAppointment.url} />
             </div>
           )}
